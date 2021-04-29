@@ -1,0 +1,14 @@
+;;files to ignore
+;;settings.py
+db.sqlite3
+
+;;extensions to ignore
+*.log
+*.pot
+*.pyc
+*.session
+
+;;directories to ignore
+.idea/
+/static/
+media/
