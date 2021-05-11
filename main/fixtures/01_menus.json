@@ -1,0 +1,10 @@
+[
+  {
+    "model": "main.menu",
+    "pk": 1,
+    "fields": {
+      "name": "Главная",
+      "parent": null
+    }
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "model": "main.page",
+    "pk": 1,
+    "fields": {
+      "name": "Главная",
+      "slug": "index",
+      "menu": "login",
+      "html": "Текст страницы индекс"
+    }
+  }
+]
