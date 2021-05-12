@@ -9,8 +9,8 @@ from django.utils.html import escape, mark_safe, format_html
 class MenuAdmin(admin.ModelAdmin):
     ordering = ['order']
 
-    list_display = ('name', 'admin_str', 'parent', 'order_actions')
-    list_display_links = ['name']
+    list_display = ('admin_str', 'parent', 'order_actions', 'order')
+    list_display_links = ['admin_str']
     readonly_fields = ['order']
 
     def get_urls(self):

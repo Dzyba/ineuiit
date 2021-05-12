@@ -2,7 +2,7 @@ from django.db.models import Model
 from django.db.models import CASCADE, SET_NULL
 from django.db.models import ForeignKey, CharField, IntegerField
 from django.db.models import F
-from django.db.models.signals import pre_delete, pre_save
+from django.db.models.signals import pre_delete, pre_save, post_delete, post_save
 from django.dispatch import receiver
 
 # Функция получения порядкового номера по умолчанию
@@ -23,44 +23,44 @@ class Menu(Model):
         return self.name
 
     def order_up(self):
-        childs = self.childs
-        childs_count = len(childs)
+        childs_all = self.childs_all
+        childs_all_count = len(childs_all)
         higher = self.higher
         if higher:
-            higher_childs = higher.childs
-            higher_childs_count = len(higher_childs)
+            higher_childs_all = higher.childs_all
+            higher_childs_all_count = len(higher_childs_all)
 
-            higher.order += childs_count + 1
+            higher.order += childs_all_count + 1
             higher.save()
 
-            if higher_childs:
-                higher_childs.update(order=F('order') + childs_count + 1)
+            if higher_childs_all:
+                higher_childs_all.update(order=F('order') + childs_all_count + 1)
         else:
-            higher_childs_count = 0
+            higher_childs_all_count = 0
 
-        self.order -= higher_childs_count + 1
+        self.order -= higher_childs_all_count + 1
         self.save()
-        childs.update(order=F('order')-higher_childs_count-1)
+        childs_all.update(order=F('order')-higher_childs_all_count-1)
 
     def order_down(self):
-        childs = self.childs
-        childs_count = len(childs)
+        childs_all = self.childs_all
+        childs_all_count = len(childs_all)
         lower = self.lower
         if lower:
-            lower_childs = lower.childs
-            lower_childs_count = len(lower_childs)
+            lower_childs_all = lower.childs_all
+            lower_childs_all_count = len(lower_childs_all)
 
-            lower.order -= childs_count + 1
+            lower.order -= childs_all_count + 1
             lower.save()
 
-            if lower_childs:
-                lower_childs.update(order=F('order') - childs_count - 1)
+            if lower_childs_all:
+                lower_childs_all.update(order=F('order') - childs_all_count - 1)
         else:
-            lower_childs_count = 0
+            lower_childs_all_count = 0
 
-        self.order += lower_childs_count + 1
+        self.order += lower_childs_all_count + 1
         self.save()
-        childs.update(order=F('order')+lower_childs_count+1)
+        childs_all.update(order=F('order')+lower_childs_all_count+1)
 
     @property
     def level(self):
@@ -139,6 +139,17 @@ class Menu(Model):
     childs_all.fget.short_description = 'Подпункты, все'
 
     @property
+    def childs_all_last(self):
+        childs_all = self.childs_all
+        return _childs_all(self.childs).last() if childs_all else None
+    childs_all.fget.short_description = 'Подпункты, все, последний'
+
+    @property
+    def childs_all_count(self):
+        return _childs_all(self.childs).count()
+    childs_all_count.fget.short_description = 'Подпункты, все, количество'
+
+    @property
     def childs_last(self):
         return Menu.objects.filter(parent=self).order_by('order').last()
     childs_last.fget.short_description = 'Подпункты, последний'
@@ -153,6 +164,16 @@ class Menu(Model):
         return _admin_str(self, self.name)
     admin_str.fget.short_description = 'Дерево'
 
+    @staticmethod
+    def reorder(exclude_ids=[]):
+        menus = Menu.objects.all().exclude(id__in=exclude_ids).order_by('order')
+        i = 1
+        for menu in menus:
+            print(menu.name, menu.order, '-->', i)
+            menu.order = i
+            menu.save()
+            i += 1
+
 # Функция для рекурсии
 def _admin_str(obj, name):
     if not obj.parent:
@@ -162,47 +183,76 @@ def _admin_str(obj, name):
 # Функция рекурсии для получения всех подпунктов
 def _childs_all(childs):
     for child in childs:
-        childs += _childs_all(list(child.childs))
+        childs = childs | _childs_all(child.childs)
     return childs
 
 # Сигналы --------------------------------------------------------------------------------------------------------------
 
+# Вспомогательная функция добавления в дерево
+def _add_menu(instance):
+    parent = instance.parent
+    if parent:
+        child_all_last = parent.childs_all_last
+        if child_all_last:
+            instance.order = child_all_last.order + 1
+            child_all_last.lower_order.update(order=F('order') + 1)
+        else:
+            instance.order = parent.order + 1
+            parent.lower_order.update(order=F('order') + 1)
+    return False
+
 # Удаление объекта
-@receiver(pre_delete, sender=Menu)
-def address_pre_delete(sender, instance, using, **kwargs):
-    childs_count = instance.childs_count
-    lowers = instance.lower_order
-    lowers.update(order=F('order')-childs_count-1)
+@receiver(post_delete, sender=Menu)
+def menu_post_delete(sender, instance, using, **kwargs):
+    Menu.reorder()
 
 # Создание и изменение объекта
 @receiver(pre_save, sender=Menu)
-def address_pre_save(sender, instance, raw, using, update_fields, **kwargs):
+def menu_pre_save(sender, instance, raw, using, update_fields, **kwargs):
+    # Добавление
     if not instance.pk:
-        parent = instance.parent
-        if parent:
-            print(parent.childs_all)
+        return _add_menu(instance)
 
-            child_last = parent.childs_last
-            instance.order = child_last.order + 1
-            child_last.lower_order.update(order=F('order')+1)
-        return False
-
+    # Изменение
     try:
         old_parent = Menu.objects.get(pk=instance.pk).parent
     except Menu.DoesNotExist:
         return False
 
-    # if not old_parent == instance.parent:
-    #     childs_count = instance.childs_count
-    #     lowers = instance.lower_order
-    #     lowers.update(order=F('order') - childs_count - 1)
-    #
-    #     parent = instance.parent
-    #     if parent:
-    #         child_last = Menu.objects.filter(parent=instance.parent).order_by('order').last()
-    #         instance.order = child_last.order + 1
-    #         child_last.lower_order.update(order=F('order') + 1)
+    # Порядок меняется, если поменялся родитель
+    if not old_parent == instance.parent:
+        childs_all = instance.childs_all
+        # childs_all_include = childs_all | Menu.objects.filter(id=instance.id)
 
-        # childs = Menu.objects.filter(parent=instance.parent).order_by('order')
-        # if parent:
-        #     pass
+        parent = instance.parent
+        if not parent:
+            base_order = Menu.objects.all().order_by('order').last().order
+            instance_order = instance.order
+
+            Menu.objects.filter(id=instance.id).update(order=base_order + 1)
+            childs_all.update(order=base_order + F('order') - instance_order + 1)
+            Menu.reorder()
+
+            instance.order = Menu.objects.filter(id=instance.id)[0].order
+
+        else:
+            pass
+
+        # else:
+        #     child_all_last = parent.childs_all_last
+        #     if child_all_last:
+        #         instance.order = child_all_last.order + 1
+        #         child_all_last.lower_order.update(order=F('order') + 1)
+        #     else:
+        #         instance.order = parent.order + 1
+        #         parent.lower_order.update(order=F('order') + 1)
+
+        # ids = [id[0] for id in childs_all.values_list('id')] + [instance.id]
+        # Menu.reorder(ids)
+
+        # old_order = instance.order
+        # _add_menu(instance)
+        #
+        # print('---->', old_order, instance.order, [(child.name, child.order) for child in childs_all])
+        # childs_all.update(order=F('order') - (old_order - instance.order))
+        # print('====>', old_order, instance.order, [(child.name, child.order) for child in childs_all])

@@ -39,8 +39,8 @@
     "model": "main.menu",
     "pk": 5,
     "fields": {
-      "name": "Верхний уровень 2",
-      "parent": 1,
+      "name": "Последний уровень 1",
+      "parent": 4,
       "order": 5
     }
   },
@@ -48,9 +48,18 @@
     "model": "main.menu",
     "pk": 6,
     "fields": {
-      "name": "Нижний уровень 3",
-      "parent": 5,
+      "name": "Верхний уровень 2",
+      "parent": 1,
       "order": 6
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 7,
+    "fields": {
+      "name": "Нижний уровень 3",
+      "parent": 6,
+      "order": 7
     }
   }
 ]
