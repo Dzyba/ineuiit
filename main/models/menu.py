@@ -222,12 +222,12 @@ def menu_pre_save(sender, instance, raw, using, update_fields, **kwargs):
     # Порядок меняется, если поменялся родитель
     if not old_parent == instance.parent:
         childs_all = instance.childs_all
-        # childs_all_include = childs_all | Menu.objects.filter(id=instance.id)
+        childs_all_include = childs_all | Menu.objects.filter(id=instance.id)
 
         parent = instance.parent
+        instance_order = instance.order
         if not parent:
             base_order = Menu.objects.all().order_by('order').last().order
-            instance_order = instance.order
 
             Menu.objects.filter(id=instance.id).update(order=base_order + 1)
             childs_all.update(order=base_order + F('order') - instance_order + 1)
@@ -236,23 +236,20 @@ def menu_pre_save(sender, instance, raw, using, update_fields, **kwargs):
             instance.order = Menu.objects.filter(id=instance.id)[0].order
 
         else:
-            pass
+            childs_all_include_ids = [child.id for child in childs_all_include]
+            childs_all_include_count = len(childs_all_include_ids)
+            # last_order = childs_all_include.last().order # instance_order - first_order
 
-        # else:
-        #     child_all_last = parent.childs_all_last
-        #     if child_all_last:
-        #         instance.order = child_all_last.order + 1
-        #         child_all_last.lower_order.update(order=F('order') + 1)
-        #     else:
-        #         instance.order = parent.order + 1
-        #         parent.lower_order.update(order=F('order') + 1)
+            parent_childs_all_last = parent.childs_all_last
+            if parent_childs_all_last:
+                base_order = parent_childs_all_last.order
+                lowers = parent_childs_all_last.lower_order.exclude(id__in=childs_all_include_ids)
+            else:
+                base_order = parent.order
+                lowers = parent.lower_order.exclude(id__in=childs_all_include_ids)
 
-        # ids = [id[0] for id in childs_all.values_list('id')] + [instance.id]
-        # Menu.reorder(ids)
+            lowers.update(order=F('order') + childs_all_include_count)
+            childs_all_include.update(order=base_order + F('order') - instance_order + 1)
+            Menu.reorder()
 
-        # old_order = instance.order
-        # _add_menu(instance)
-        #
-        # print('---->', old_order, instance.order, [(child.name, child.order) for child in childs_all])
-        # childs_all.update(order=F('order') - (old_order - instance.order))
-        # print('====>', old_order, instance.order, [(child.name, child.order) for child in childs_all])
+            instance.order = Menu.objects.filter(id=instance.id)[0].order
