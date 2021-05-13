@@ -5,6 +5,7 @@
     "fields": {
       "name": "Главная",
       "parent": null,
+      "kind": "group",
       "order": 1
     }
   },
@@ -14,6 +15,7 @@
     "fields": {
       "name": "О факультете",
       "parent": 1,
+      "kind": "group",
       "order": 2
     }
   },
@@ -23,6 +25,7 @@
     "fields": {
       "name": "Структура",
       "parent": 2,
+      "kind": "group",
       "order": 3
     }
   },
@@ -32,6 +35,7 @@
     "fields": {
       "name": "Деканат",
       "parent": 3,
+      "kind": "page",
       "order": 4
     }
   },
@@ -41,6 +45,7 @@
     "fields": {
       "name": "Кафедры",
       "parent": 3,
+      "kind": "cathedra_list",
       "order": 5
     }
   },
@@ -48,8 +53,9 @@
     "model": "main.menu",
     "pk": 6,
     "fields": {
-      "name": "История кафедры",
+      "name": "Кафедрa",
       "parent": 5,
+      "kind": "cathedra_item",
       "order": 6
     }
   },
@@ -57,8 +63,9 @@
     "model": "main.menu",
     "pk": 7,
     "fields": {
-      "name": "Состав кафедры",
-      "parent": 5,
+      "name": "История кафедры",
+      "parent": 6,
+      "kind": "cathedra_page",
       "order": 7
     }
   },
@@ -66,8 +73,9 @@
     "model": "main.menu",
     "pk": 8,
     "fields": {
-      "name": "Учебно-методическая работа",
-      "parent": 5,
+      "name": "Состав кафедры",
+      "parent": 6,
+      "kind": "cathedra_page",
       "order": 8
     }
   },
@@ -75,8 +83,9 @@
     "model": "main.menu",
     "pk": 9,
     "fields": {
-      "name": "Научная работа",
-      "parent": 5,
+      "name": "Учебно-методическая работа",
+      "parent": 6,
+      "kind": "cathedra_page",
       "order": 9
     }
   },
@@ -84,8 +93,9 @@
     "model": "main.menu",
     "pk": 10,
     "fields": {
-      "name": "Учёный совет",
-      "parent": 3,
+      "name": "Научная работа",
+      "parent": 6,
+      "kind": "cathedra_page",
       "order": 10
     }
   },
@@ -93,8 +103,9 @@
     "model": "main.menu",
     "pk": 11,
     "fields": {
-      "name": "Патриотический музей",
+      "name": "Учёный совет",
       "parent": 3,
+      "kind": "page",
       "order": 11
     }
   },
@@ -102,8 +113,9 @@
     "model": "main.menu",
     "pk": 12,
     "fields": {
-      "name": "Учебно-практическая телестудия",
+      "name": "Патриотический музей",
       "parent": 3,
+      "kind": "page",
       "order": 12
     }
   },
@@ -111,8 +123,9 @@
     "model": "main.menu",
     "pk": 13,
     "fields": {
-      "name": "Образование",
-      "parent": 2,
+      "name": "Учебно-практическая телестудия",
+      "parent": 3,
+      "kind": "page",
       "order": 13
     }
   },
@@ -120,8 +133,9 @@
     "model": "main.menu",
     "pk": 14,
     "fields": {
-      "name": "Образовательные стандарты",
-      "parent": 13,
+      "name": "Образование",
+      "parent": 2,
+      "kind": "group",
       "order": 14
     }
   },
@@ -129,8 +143,9 @@
     "model": "main.menu",
     "pk": 15,
     "fields": {
-      "name": "Образовательные программы",
-      "parent": 13,
+      "name": "Образовательные стандарты",
+      "parent": 14,
+      "kind": "page",
       "order": 15
     }
   },
@@ -138,8 +153,9 @@
     "model": "main.menu",
     "pk": 16,
     "fields": {
-      "name": "Сотрудники",
-      "parent": 2,
+      "name": "Образовательные программы",
+      "parent": 14,
+      "kind": "page",
       "order": 16
     }
   },
@@ -147,8 +163,9 @@
     "model": "main.menu",
     "pk": 17,
     "fields": {
-      "name": "Сотрудник",
-      "parent": 16,
+      "name": "Сотрудники",
+      "parent": 2,
+      "kind": "staff_list",
       "order": 17
     }
   },
@@ -156,8 +173,9 @@
     "model": "main.menu",
     "pk": 18,
     "fields": {
-      "name": "История",
-      "parent": 2,
+      "name": "Сотрудник",
+      "parent": 17,
+      "kind": "staff_item",
       "order": 18
     }
   },
@@ -165,8 +183,9 @@
     "model": "main.menu",
     "pk": 19,
     "fields": {
-      "name": "Контакты",
+      "name": "История",
       "parent": 2,
+      "kind": "page",
       "order": 19
     }
   },
@@ -174,8 +193,9 @@
     "model": "main.menu",
     "pk": 20,
     "fields": {
-      "name": "Абитуриентам",
-      "parent": 1,
+      "name": "Контакты",
+      "parent": 2,
+      "kind": "page",
       "order": 20
     }
   },
@@ -183,8 +203,9 @@
     "model": "main.menu",
     "pk": 21,
     "fields": {
-      "name": "День открытых дверей",
-      "parent": 20,
+      "name": "Абитуриентам",
+      "parent": 1,
+      "kind": "group",
       "order": 21
     }
   },
@@ -192,8 +213,9 @@
     "model": "main.menu",
     "pk": 22,
     "fields": {
-      "name": "Поступление",
-      "parent": 20,
+      "name": "День открытых дверей",
+      "parent": 21,
+      "kind": "page",
       "order": 22
     }
   },
@@ -201,8 +223,9 @@
     "model": "main.menu",
     "pk": 23,
     "fields": {
-      "name": "Бакалавриат",
-      "parent": 22,
+      "name": "Поступление",
+      "parent": 21,
+      "kind": "group",
       "order": 23
     }
   },
@@ -210,8 +233,9 @@
     "model": "main.menu",
     "pk": 24,
     "fields": {
-      "name": "Магистратура",
-      "parent": 22,
+      "name": "Бакалавриат",
+      "parent": 23,
+      "kind": "page",
       "order": 24
     }
   },
@@ -219,8 +243,9 @@
     "model": "main.menu",
     "pk": 25,
     "fields": {
-      "name": "Аспирантура",
-      "parent": 22,
+      "name": "Магистратура",
+      "parent": 23,
+      "kind": "page",
       "order": 25
     }
   },
@@ -228,8 +253,9 @@
     "model": "main.menu",
     "pk": 26,
     "fields": {
-      "name": "Стоимость обучения",
-      "parent": 22,
+      "name": "Аспирантура",
+      "parent": 23,
+      "kind": "page",
       "order": 26
     }
   },
@@ -237,8 +263,9 @@
     "model": "main.menu",
     "pk": 27,
     "fields": {
-      "name": "Наши выпускники",
-      "parent": 22,
+      "name": "Стоимость обучения",
+      "parent": 23,
+      "kind": "page",
       "order": 27
     }
   },
@@ -246,8 +273,9 @@
     "model": "main.menu",
     "pk": 28,
     "fields": {
-      "name": "Приёмная комиссия",
-      "parent": 20,
+      "name": "Наши выпускники",
+      "parent": 23,
+      "kind": "page",
       "order": 28
     }
   },
@@ -255,8 +283,9 @@
     "model": "main.menu",
     "pk": 29,
     "fields": {
-      "name": "Перевод в восстановление",
-      "parent": 20,
+      "name": "Приёмная комиссия",
+      "parent": 21,
+      "kind": "page",
       "order": 29
     }
   },
@@ -264,8 +293,9 @@
     "model": "main.menu",
     "pk": 30,
     "fields": {
-      "name": "Иностранным абитуриентам",
-      "parent": 20,
+      "name": "Перевод в восстановление",
+      "parent": 21,
+      "kind": "page",
       "order": 30
     }
   },
@@ -273,8 +303,9 @@
     "model": "main.menu",
     "pk": 31,
     "fields": {
-      "name": "Студентам",
-      "parent": 1,
+      "name": "Иностранным абитуриентам",
+      "parent": 21,
+      "kind": "page",
       "order": 31
     }
   },
@@ -282,8 +313,9 @@
     "model": "main.menu",
     "pk": 32,
     "fields": {
-      "name": "Расписание",
-      "parent": 31,
+      "name": "Студентам",
+      "parent": 1,
+      "kind": "group",
       "order": 32
     }
   },
@@ -291,8 +323,9 @@
     "model": "main.menu",
     "pk": 33,
     "fields": {
-      "name": "Вакантные места",
-      "parent": 31,
+      "name": "Расписание",
+      "parent": 32,
+      "kind": "schedule",
       "order": 33
     }
   },
@@ -300,8 +333,9 @@
     "model": "main.menu",
     "pk": 34,
     "fields": {
-      "name": "Стипендия",
-      "parent": 31,
+      "name": "Вакантные места",
+      "parent": 32,
+      "kind": "page",
       "order": 34
     }
   },
@@ -309,8 +343,9 @@
     "model": "main.menu",
     "pk": 35,
     "fields": {
-      "name": "Материальная поддержка",
-      "parent": 31,
+      "name": "Стипендия",
+      "parent": 32,
+      "kind": "page",
       "order": 35
     }
   },
@@ -318,8 +353,9 @@
     "model": "main.menu",
     "pk": 36,
     "fields": {
-      "name": "Студенческая жизнь",
-      "parent": 31,
+      "name": "Материальная поддержка",
+      "parent": 32,
+      "kind": "page",
       "order": 36
     }
   },
@@ -327,8 +363,9 @@
     "model": "main.menu",
     "pk": 37,
     "fields": {
-      "name": "Библиотека",
-      "parent": 31,
+      "name": "Студенческая жизнь",
+      "parent": 32,
+      "kind": "page",
       "order": 37
     }
   },
@@ -336,8 +373,9 @@
     "model": "main.menu",
     "pk": 38,
     "fields": {
-      "name": "Международные программы",
-      "parent": 31,
+      "name": "Библиотека",
+      "parent": 32,
+      "kind": "page",
       "order": 38
     }
   },
@@ -345,8 +383,9 @@
     "model": "main.menu",
     "pk": 39,
     "fields": {
-      "name": "Научная работа",
-      "parent": 1,
+      "name": "Международные программы",
+      "parent": 32,
+      "kind": "page",
       "order": 39
     }
   },
@@ -354,8 +393,9 @@
     "model": "main.menu",
     "pk": 40,
     "fields": {
-      "name": "Гранты и конкурсы",
-      "parent": 39,
+      "name": "Научная работа",
+      "parent": 1,
+      "kind": "group",
       "order": 40
     }
   },
@@ -363,8 +403,9 @@
     "model": "main.menu",
     "pk": 41,
     "fields": {
-      "name": "Конференции",
-      "parent": 39,
+      "name": "Гранты и конкурсы",
+      "parent": 40,
+      "kind": "page",
       "order": 41
     }
   },
@@ -372,8 +413,9 @@
     "model": "main.menu",
     "pk": 42,
     "fields": {
-      "name": "Аспирантура",
-      "parent": 39,
+      "name": "Конференции",
+      "parent": 40,
+      "kind": "page",
       "order": 42
     }
   },
@@ -381,9 +423,20 @@
     "model": "main.menu",
     "pk": 43,
     "fields": {
-      "name": "Международные сотрудничества",
-      "parent": 39,
+      "name": "Аспирантура",
+      "parent": 40,
+      "kind": "page",
       "order": 43
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 44,
+    "fields": {
+      "name": "Международные сотрудничества",
+      "parent": 40,
+      "kind": "page",
+      "order": 44
     }
   }
 ]

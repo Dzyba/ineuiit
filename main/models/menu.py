@@ -1,6 +1,6 @@
 from django.db.models import Model
 from django.db.models import CASCADE, SET_NULL
-from django.db.models import ForeignKey, CharField, IntegerField
+from django.db.models import ForeignKey, CharField, IntegerField, TextChoices
 from django.db.models import F
 from django.db.models.signals import pre_delete, pre_save, post_delete, post_save
 from django.dispatch import receiver
@@ -10,8 +10,29 @@ def get_default_order():
   return Menu.objects.all().count() + 1
 
 class Menu(Model):
+    class Kind(TextChoices):
+        DEFAULT = 'default', '-'
+        GROUP = 'group', 'Группа (без страницы)'
+        GROUP_PAGE = 'group_page', 'Группа (co страницей)'
+        PAGE = 'page', 'Страница'
+        SCHEDULE = 'schedule', 'Расписание'
+        STAFF_LIST = 'staff_list', 'Сотрудники'
+        STAFF_ITEM = 'staff_item', 'Сотрудник'
+        CATHEDRA_LIST = 'cathedra_list', 'Кафедры'
+        CATHEDRA_ITEM = 'cathedra_item', 'Кафедра'
+        CATHEDRA_PAGE = 'cathedra_page', 'Страница кафедры'
+
+        @staticmethod
+        def get_list():
+            return [kind.label for kind in Menu.Kind]
+
+        @staticmethod
+        def get_choice_list():
+            return [[kind.value, kind.label] for kind in Menu.Kind]
+
     name = CharField(max_length=200, verbose_name='Название')
     parent = ForeignKey('Menu', null=True, blank=True, default=None, on_delete=CASCADE, verbose_name='Родительский пункт')
+    kind = CharField(choices=Kind.choices, max_length=20, default=Kind.DEFAULT, verbose_name='Тип')
     order = IntegerField(default=get_default_order, verbose_name='Порядок')
 
     class Meta:
@@ -169,7 +190,6 @@ class Menu(Model):
         menus = Menu.objects.all().exclude(id__in=exclude_ids).order_by('order')
         i = 1
         for menu in menus:
-            print(menu.name, menu.order, '-->', i)
             menu.order = i
             menu.save()
             i += 1

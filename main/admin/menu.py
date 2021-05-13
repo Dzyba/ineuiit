@@ -9,7 +9,7 @@ from django.utils.html import escape, mark_safe, format_html
 class MenuAdmin(admin.ModelAdmin):
     ordering = ['order']
 
-    list_display = ('admin_str', 'parent', 'order_actions', 'order')
+    list_display = ('admin_str', 'parent', 'order_actions', 'kind', 'order')
     list_display_links = ['admin_str']
     readonly_fields = ['order']
 
