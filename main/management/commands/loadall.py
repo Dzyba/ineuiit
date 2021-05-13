@@ -7,7 +7,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         fixtures = sorted(os.listdir('main/fixtures'))
-        excludes = []
+        excludes = ['01_menus_test.json']
         for fixture in fixtures:
             if fixture not in excludes:
                 execute_from_command_line(['manage.py', 'loaddata', fixture])

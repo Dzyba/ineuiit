@@ -12,7 +12,7 @@
     "model": "main.menu",
     "pk": 2,
     "fields": {
-      "name": "Верхний уровень 1",
+      "name": "О факультете",
       "parent": 1,
       "order": 2
     }
@@ -21,7 +21,7 @@
     "model": "main.menu",
     "pk": 3,
     "fields": {
-      "name": "Нижний уровень 1",
+      "name": "Структура",
       "parent": 2,
       "order": 3
     }
@@ -30,8 +30,8 @@
     "model": "main.menu",
     "pk": 4,
     "fields": {
-      "name": "Нижний уровень 2",
-      "parent": 2,
+      "name": "Деканат",
+      "parent": 3,
       "order": 4
     }
   },
@@ -39,8 +39,8 @@
     "model": "main.menu",
     "pk": 5,
     "fields": {
-      "name": "Последний уровень 1",
-      "parent": 4,
+      "name": "Кафедры",
+      "parent": 3,
       "order": 5
     }
   },
@@ -48,8 +48,8 @@
     "model": "main.menu",
     "pk": 6,
     "fields": {
-      "name": "Верхний уровень 2",
-      "parent": 1,
+      "name": "История кафедры",
+      "parent": 5,
       "order": 6
     }
   },
@@ -57,9 +57,333 @@
     "model": "main.menu",
     "pk": 7,
     "fields": {
-      "name": "Нижний уровень 3",
-      "parent": 6,
+      "name": "Состав кафедры",
+      "parent": 5,
       "order": 7
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 8,
+    "fields": {
+      "name": "Учебно-методическая работа",
+      "parent": 5,
+      "order": 8
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 9,
+    "fields": {
+      "name": "Научная работа",
+      "parent": 5,
+      "order": 9
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 10,
+    "fields": {
+      "name": "Учёный совет",
+      "parent": 3,
+      "order": 10
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 11,
+    "fields": {
+      "name": "Патриотический музей",
+      "parent": 3,
+      "order": 11
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 12,
+    "fields": {
+      "name": "Учебно-практическая телестудия",
+      "parent": 3,
+      "order": 12
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 13,
+    "fields": {
+      "name": "Образование",
+      "parent": 2,
+      "order": 13
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 14,
+    "fields": {
+      "name": "Образовательные стандарты",
+      "parent": 13,
+      "order": 14
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 15,
+    "fields": {
+      "name": "Образовательные программы",
+      "parent": 13,
+      "order": 15
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 16,
+    "fields": {
+      "name": "Сотрудники",
+      "parent": 2,
+      "order": 16
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 17,
+    "fields": {
+      "name": "Сотрудник",
+      "parent": 16,
+      "order": 17
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 18,
+    "fields": {
+      "name": "История",
+      "parent": 2,
+      "order": 18
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 19,
+    "fields": {
+      "name": "Контакты",
+      "parent": 2,
+      "order": 19
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 20,
+    "fields": {
+      "name": "Абитуриентам",
+      "parent": 1,
+      "order": 20
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 21,
+    "fields": {
+      "name": "День открытых дверей",
+      "parent": 20,
+      "order": 21
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 22,
+    "fields": {
+      "name": "Поступление",
+      "parent": 20,
+      "order": 22
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 23,
+    "fields": {
+      "name": "Бакалавриат",
+      "parent": 22,
+      "order": 23
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 24,
+    "fields": {
+      "name": "Магистратура",
+      "parent": 22,
+      "order": 24
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 25,
+    "fields": {
+      "name": "Аспирантура",
+      "parent": 22,
+      "order": 25
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 26,
+    "fields": {
+      "name": "Стоимость обучения",
+      "parent": 22,
+      "order": 26
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 27,
+    "fields": {
+      "name": "Наши выпускники",
+      "parent": 22,
+      "order": 27
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 28,
+    "fields": {
+      "name": "Приёмная комиссия",
+      "parent": 20,
+      "order": 28
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 29,
+    "fields": {
+      "name": "Перевод в восстановление",
+      "parent": 20,
+      "order": 29
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 30,
+    "fields": {
+      "name": "Иностранным абитуриентам",
+      "parent": 20,
+      "order": 30
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 31,
+    "fields": {
+      "name": "Студентам",
+      "parent": 1,
+      "order": 31
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 32,
+    "fields": {
+      "name": "Расписание",
+      "parent": 31,
+      "order": 32
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 33,
+    "fields": {
+      "name": "Вакантные места",
+      "parent": 31,
+      "order": 33
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 34,
+    "fields": {
+      "name": "Стипендия",
+      "parent": 31,
+      "order": 34
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 35,
+    "fields": {
+      "name": "Материальная поддержка",
+      "parent": 31,
+      "order": 35
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 36,
+    "fields": {
+      "name": "Студенческая жизнь",
+      "parent": 31,
+      "order": 36
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 37,
+    "fields": {
+      "name": "Библиотека",
+      "parent": 31,
+      "order": 37
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 38,
+    "fields": {
+      "name": "Международные программы",
+      "parent": 31,
+      "order": 38
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 39,
+    "fields": {
+      "name": "Научная работа",
+      "parent": 1,
+      "order": 39
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 40,
+    "fields": {
+      "name": "Гранты и конкурсы",
+      "parent": 39,
+      "order": 40
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 41,
+    "fields": {
+      "name": "Конференции",
+      "parent": 39,
+      "order": 41
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 42,
+    "fields": {
+      "name": "Аспирантура",
+      "parent": 39,
+      "order": 42
+    }
+  },
+  {
+    "model": "main.menu",
+    "pk": 43,
+    "fields": {
+      "name": "Международные сотрудничества",
+      "parent": 39,
+      "order": 43
     }
   }
 ]
