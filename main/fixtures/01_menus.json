@@ -5,7 +5,7 @@
     "fields": {
       "name": "Главная",
       "parent": null,
-      "kind": "group",
+      "kind": "index",
       "order": 1
     }
   },

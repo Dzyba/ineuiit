@@ -5,7 +5,7 @@
     "fields": {
       "name": "Главная",
       "slug": "index",
-      "menu": "login",
+      "menu": null,
       "html": "Текст страницы индекс"
     }
   }

@@ -12,6 +12,7 @@ def get_default_order():
 class Menu(Model):
     class Kind(TextChoices):
         DEFAULT = 'default', '-'
+        INDEX = 'index', 'Главная'
         GROUP = 'group', 'Группа (без страницы)'
         GROUP_PAGE = 'group_page', 'Группа (co страницей)'
         PAGE = 'page', 'Страница'
