@@ -1,0 +1,62 @@
+{% load static %}
+<div class="navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="logo">
+                    <a class="navbar-brand" href="index.html"><img src="{% static "main/edupix/img/logo.png" %}" alt=""></a>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                <div class="main-menu">
+                    <nav class="navbar navbar-expand-lg">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                            <span class="navbar-toggler-icon"></span>
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                            <ul class="navbar-nav m-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="{ url 'main:index' }">{{ menus.menu.name }}
+                                        <span class="sub-nav-toggler">
+                                        </span>
+                                    </a>
+                                </li>
+                                {% for menu in menus.childs %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">{{ menu.menu.name }}
+                                        <span class="sub-nav-toggler">
+                                        </span>
+                                    </a>
+                                    {% if menu.childs %}
+                                    <ul class="sub-menu">
+                                        {% for menu in menu.childs %}
+                                        <li>
+                                            <a href="about.html">{{ menu.menu.name }}</a>
+                                            {% if menu.childs %}
+                                            <ul class="dropdown-menu">
+                                                {% for menu in menu.childs %}
+                                                <li><a class="dropdown-item" href="#">{{ menu.menu.name }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                            {% endif %}
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </nav>
+<!--                    <div class="search-box">-->
+<!--                        <button class="search-btn"><i class="la la-search"></i></button>-->
+<!--                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

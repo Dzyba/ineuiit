@@ -10,6 +10,7 @@ class IndexView(View):
         page = Page.objects.get(slug='index')
         context['header'] = page.name
         context['sitename'] = Setting.get('sitename')
-        context['menu'] = Menu.objects.all().order_by('order')
+        context['menus'] = Menu.get_dict()
+        print(context['menus'])
         context['page'] = page
         return render(request, self.template_name, context)

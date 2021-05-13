@@ -195,6 +195,37 @@ class Menu(Model):
             menu.save()
             i += 1
 
+    @staticmethod
+    def get_dict():
+        menu_0 = Menu.objects.filter(kind=Menu.Kind.INDEX).first()
+        menus = {
+            'menu': menu_0,
+            'childs': []
+        }
+
+        menus_1 = menu_0.childs
+        for menu_1 in menus_1:
+            menus['childs'].append({
+                'menu': menu_1,
+                'childs': []
+            })
+
+            menus_2 = menu_1.childs
+            for menu_2 in menus_2:
+                menus['childs'][-1]['childs'].append({
+                    'menu': menu_2,
+                    'childs': []
+                })
+
+                menus_3 = menu_2.childs
+                for menu_3 in menus_3:
+                    menus['childs'][-1]['childs'][-1]['childs'].append({
+                        'menu': menu_3,
+                        'childs': []
+                    })
+
+        return menus
+
 # Функция для рекурсии
 def _admin_str(obj, name):
     if not obj.parent:
