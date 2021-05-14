@@ -2,13 +2,12 @@ from django.db.models import Model
 from django.db.models import CharField, TextField, ForeignKey
 from django.db.models import SET_NULL
 from .setting import Setting
-from .menu import Menu
 
 
 class Page(Model):
     name = CharField(max_length=200, verbose_name='Название')
     slug = CharField(max_length=200, verbose_name='Техническое имя')
-    menu = ForeignKey(Menu, blank=True, null=True, on_delete=SET_NULL, verbose_name='Меню')
+    menu = ForeignKey('Menu', blank=True, null=True, on_delete=SET_NULL, verbose_name='Меню')
     html = TextField(verbose_name='HTML')
 
     def __str__(self):

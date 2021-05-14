@@ -4,6 +4,7 @@ from django.db.models import ForeignKey, CharField, IntegerField, TextChoices
 from django.db.models import F
 from django.db.models.signals import pre_delete, pre_save, post_delete, post_save
 from django.dispatch import receiver
+from .page import Page
 
 # Функция получения порядкового номера по умолчанию
 def get_default_order():
@@ -184,6 +185,21 @@ class Menu(Model):
     @property
     def admin_str(self):
         return _admin_str(self, self.name)
+    admin_str.fget.short_description = 'Дерево'
+
+    @property
+    def url(self):
+        if self.kind == Menu.Kind.INDEX:
+            return ''
+        elif self.kind == Menu.Kind.PAGE or self.kind == Menu.Kind.GROUP_PAGE:
+            try:
+                print('---->', self)
+                return Page.objects.get(menu=self).slug
+            except:
+                pass
+
+        return 'javascript:void(0);'
+
     admin_str.fget.short_description = 'Дерево'
 
     @staticmethod

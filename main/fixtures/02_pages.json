@@ -8,5 +8,25 @@
       "menu": null,
       "html": "Текст страницы индекс"
     }
+  },
+  {
+    "model": "main.page",
+    "pk": 2,
+    "fields": {
+      "name": "Структура",
+      "slug": "structure",
+      "menu": 3,
+      "html": "Структура"
+    }
+  },
+  {
+    "model": "main.page",
+    "pk": 3,
+    "fields": {
+      "name": "Образование",
+      "slug": "education",
+      "menu": 14,
+      "html": "Образование"
+    }
   }
 ]

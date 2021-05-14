@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>{{ header }} | {{ sitename }}</title>
+
+	<!--Favicon-->
+	<link rel="icon" href="{% static "main/favicons/favicon.ico" %}" type="image/jpg" />
+	<!-- Bootstrap CSS -->
+	<link href="{% static "main/edupix/css/bootstrap.min.css" %}" rel="stylesheet">
+	<!-- Font Awesome CSS-->
+	<link href="{% static "main/edupix/css/font-awesome.min.css" %}" rel="stylesheet">
+	<!-- Line Awesome CSS -->
+	<link href="{% static "main/edupix/css/line-awesome.min.css" %}" rel="stylesheet">
+	<!-- Animate CSS-->
+	<link href="{% static "main/edupix/css/animate.css" %}" rel="stylesheet">
+	<!-- Flaticon CSS -->
+	<link href="{% static "main/edupix/css/flaticon.css" %}" rel="stylesheet">
+	<!-- Owl Carousel CSS -->
+	<link href="{% static "main/edupix/css/owl.carousel.css" %}" rel="stylesheet">
+	<!-- Style CSS -->
+	<link href="{% static "main/edupix/css/style.css" %}" rel="stylesheet">
+	<!-- Responsive CSS -->
+	<link href="{% static "main/edupix/css/responsive.css" %}" rel="stylesheet">
+
+	<!-- jquery -->
+	<script src="{% static "main/edupix/js/jquery-1.12.4.min.js" %}"></script>
+
+	<!-- Main app style and script -->
+	<link href="{% static "main/css/style.css" %}" rel="stylesheet">
+	<script src="{% static "main/js/script.js" %}"></script>
+</head>
+
+<body>
+
+<!-- Pre-Loader -->
+<div id="loader">
+	<div class="loading">
+		<div class="spinner">
+			<div class="double-bounce1"></div>
+			<div class="double-bounce2"></div>
+		</div>
+	</div>
+</div>
+
+{% include 'main/edupix/_top.html' %}
+
+{% include 'main/edupix/_header.html' %}
+
+{% block content %}{% endblock %}
+
+{% include 'main/edupix/_footer.html' %}
+
+{% include 'main/edupix/_bottom.html' %}
+
+{% include 'main/edupix/_scroll_top_button.html' %}
+
+<!-- Popper JS -->
+<script src="{% static "main/edupix/js/popper.min.js" %}"></script>
+<!-- Bootstrap JS -->
+<script src="{% static "main/edupix/js/bootstrap.min.js" %}"></script>
+<!-- Wow JS -->
+<script src="{% static "main/edupix/js/wow.min.js" %}"></script>
+<!-- Way Points JS -->
+<script src="{% static "main/edupix/js/jquery.waypoints.min.js" %}"></script>
+<!-- Counter Up JS -->
+<script src="{% static "main/edupix/js/jquery.counterup.min.js" %}"></script>
+<!-- CountDown JS -->
+<script src="{% static "main/edupix/js/jquery.countdown.js" %}"></script>
+<!-- Owl Carousel JS -->
+<script src="{% static "main/edupix/js/owl.carousel.min.js" %}"></script>
+<!-- Sticky JS -->
+<script src="{% static "main/edupix/js/jquery.sticky.js" %}"></script>
+<!-- Main JS -->
+<script src="{% static "main/edupix/js/main.js" %}"></script>
+</body>
+</html>
