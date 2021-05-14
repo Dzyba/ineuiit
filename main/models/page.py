@@ -11,7 +11,7 @@ class Page(Model):
     html = TextField(verbose_name='HTML')
 
     def __str__(self):
-        return '%s -> %s' % (self.menu, self.name)
+        return '%s -> %s' % (self.menu if self.menu else '|', self.name)
 
     @staticmethod
     def get(slug):

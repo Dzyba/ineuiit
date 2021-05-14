@@ -193,7 +193,6 @@ class Menu(Model):
             return ''
         elif self.kind == Menu.Kind.PAGE or self.kind == Menu.Kind.GROUP_PAGE:
             try:
-                print('---->', self)
                 return Page.objects.get(menu=self).slug
             except:
                 pass

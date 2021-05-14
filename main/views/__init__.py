@@ -1,2 +1,3 @@
-from .main import *
+from .index import *
+from .page import *
 from .admin import *
