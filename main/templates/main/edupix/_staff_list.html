@@ -9,7 +9,7 @@
             <img src="{{ person.image.url }}" alt="">
         </div>
     </div>
-    <div class="content"><a href="{{ person.slug }}">{ person.name }}, {{ person.position }}</a></div>
+    <div class="content"><a href="{{ person.url }}">{ person.name }}, {{ person.position }}</a></div>
 </div>
 {% endif %}
 {% endfor %}
@@ -22,7 +22,7 @@
             <img src="{{ person.image.url }}" alt="">
         </div>
     </div>
-    <div class="content"><a href="{{ person.slug }}">{{ person.name }}, {{ person.position }}</a></div>
+    <div class="content"><a href="{{ person.url }}">{{ person.name }}, {{ person.position }}</a></div>
 </div>
 <br>
 {% endif %}

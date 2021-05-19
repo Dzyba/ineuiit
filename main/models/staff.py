@@ -30,6 +30,10 @@ class Staff(Model):
     def __str__(self):
         return '%s -> %s' % (self.cathedra if self.cathedra else '|', self.name)
 
+    @property
+    def url(self):
+        return '/staff/' + self.slug
+
     class Meta:
         verbose_name = 'Сотрудник'
         verbose_name_plural = 'Сотрудники'
