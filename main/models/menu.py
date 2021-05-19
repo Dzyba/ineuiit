@@ -26,7 +26,7 @@ class Menu(Model):
         STAFF_ITEM = 'staff_item', 'Сотрудник'
         CATHEDRA_LIST = 'cathedra_list', 'Список кафедр'
         CATHEDRA_ITEM = 'cathedra_item', 'Кафедра'
-        DIRECTION = 'direction', 'Направление'
+        DIRECTION_ITEM = 'direction_item', 'Направление'
         INNER_LINK = 'inner_link', 'Внутренняя ссылка'
 
         @staticmethod

@@ -1,20 +1,18 @@
 from django.contrib import admin
-from main.models import Menu
+from main.models import Menu, Page, FileObject, InnerLink, Cathedra, Staff
 from django.contrib.admin.views.decorators import staff_member_required
 from main.views import AdminMenuOrderUpView, AdminMenuOrderDownView
 from django.urls import reverse, path
 from django.utils.html import escape, mark_safe, format_html
 from .page import PageInline
-from .file_object import FileObjectInline
-from .inner_link import InnerLinkInline
 
 @admin.register(Menu)
 class MenuAdmin(admin.ModelAdmin):
     ordering = ['order']
 
-    list_display = ('admin_str', 'parent', 'order_actions', 'kind', 'order')
+    list_display = ('admin_str', 'parent', 'order_actions', 'kind', 'kind_obj') # order
     list_display_links = ['admin_str']
-    readonly_fields = ['order']
+    # readonly_fields = ['order']
 
     # inlines = [PageInline, FileObjectInline, InnerLinkInline]
 
@@ -45,8 +43,65 @@ class MenuAdmin(admin.ModelAdmin):
             return '-'
     order_actions.short_description = 'Порядок'
 
-    # def has_add_permission(self, request):
-    #     return False
-    #
-    # def has_delete_permission(self, request, obj=None):
-    #     return False
+    def kind_obj(self, obj):
+        error_tag = '<span style="color:red;">%s</span>'
+        if obj.kind == Menu.Kind.DEFAULT:
+            return '-'
+        elif obj.kind == Menu.Kind.INDEX:
+            try:
+                page = Page.objects.get(slug='index', menu=obj)
+                link = reverse('admin:main_page_change', args=[page.id])
+                return mark_safe('<a href="%s">%s</a>' % (link, 'страница'))
+            except Page.DoesNotExist:
+                return mark_safe(error_tag % ('нет страницы'))
+            except Page.MultipleObjectsReturned:
+                return mark_safe(error_tag % ('дублирование страниц'))
+
+        elif obj.kind == Menu.Kind.PAGE or obj.kind == Menu.Kind.GROUP_PAGE:
+            try:
+                page = Page.objects.get(menu=obj)
+                link = reverse('admin:main_page_change', args=[page.id])
+                return mark_safe('<a href="%s">%s</a>' % (link, 'страница'))
+            except Page.DoesNotExist:
+                return mark_safe(error_tag % ('нет страницы'))
+            except Page.MultipleObjectsReturned:
+                return mark_safe(error_tag % ('дублирование страниц'))
+
+        elif obj.kind == Menu.Kind.GROUP:
+            return '-'
+
+        elif obj.kind == Menu.Kind.FILEOBJECT:
+            try:
+                file_object = FileObject.objects.get(menu=obj)
+                link = reverse('admin:main_fileobject_change', args=[file_object.id])
+                return mark_safe('<a href="%s">%s</a>' % (link, 'файл'))
+            except FileObject.DoesNotExist:
+                return mark_safe(error_tag % ('нет файла'))
+            except FileObject.MultipleObjectsReturned:
+                return mark_safe(error_tag % ('дублирование файлов'))
+
+        elif obj.kind == Menu.Kind.INNER_LINK:
+            try:
+                inner_link = InnerLink.objects.get(menu=obj)
+                link = reverse('admin:main_innerlink_change', args=[inner_link.id])
+                return mark_safe('<a href="%s">%s</a>' % (link, 'внутренняя ссылка'))
+            except InnerLink.DoesNotExist:
+                return mark_safe(error_tag % ('нет внутренней ссылки'))
+            except InnerLink.MultipleObjectsReturned:
+                return mark_safe(error_tag % ('дублирование внутренних ссылок'))
+
+        elif obj.kind == Menu.Kind.CATHEDRA_LIST or obj.kind == Menu.Kind.CATHEDRA_ITEM:
+            cathedras_count = Cathedra.objects.all().count()
+            if cathedras_count:
+                link = reverse('admin:main_cathedra_changelist')
+                return mark_safe('<a href="%s">кафедры <b>%s</b> шт.</a>' % (link, cathedras_count))
+            else:
+                return mark_safe(error_tag % ('нет кафедр'))
+
+        return '-'
+
+    # STAFF_ITEM = 'staff_item', 'Сотрудник'
+    # SCHEDULE = 'schedule', 'Расписание'
+    # DIRECTION_ITEM = 'direction', 'Направление'
+
+    kind_obj.short_description = 'Объект'
