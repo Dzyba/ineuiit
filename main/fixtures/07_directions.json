@@ -1,0 +1,79 @@
+[
+  {
+    "model": "main.direction",
+    "pk": 1,
+    "fields": {
+      "name": "09.03.01 Информатика и вычислительная техника",
+      "slug": "ict",
+      "degree": "magistracy",
+      "image": "main/images/directions/images/default.png",
+      "html": ""
+    }
+  },
+  {
+    "model": "main.direction",
+    "pk": 2,
+    "fields": {
+      "name": "09.03.02 Информационные системы и технологии",
+      "slug": "ist",
+      "degree": "magistracy",
+      "image": "main/images/directions/images/default.png",
+      "html": ""
+    }
+  },
+  {
+    "model": "main.direction",
+    "pk": 3,
+    "fields": {
+      "name": "38.03.01 Экономика",
+      "slug": "economics",
+      "degree": "magistracy",
+      "image": "main/images/directions/images/default.png",
+      "html": ""
+    }
+  },
+  {
+    "model": "main.direction",
+    "pk": 4,
+    "fields": {
+      "name": "38.03.02 Менеджмент",
+      "slug": "mag_management",
+      "degree": "magistracy",
+      "image": "main/images/directions/images/default.png",
+      "html": ""
+    }
+  },
+  {
+    "model": "main.direction",
+    "pk": 5,
+    "fields": {
+      "name": "42.03.01 Реклама и связи с общественностью",
+      "slug": "advertisement",
+      "degree": "magistracy",
+      "image": "main/images/directions/images/default.png",
+      "html": ""
+    }
+  },
+  {
+    "model": "main.direction",
+    "pk": 6,
+    "fields": {
+      "name": "46.03.02 Документоведение и архивоведение",
+      "slug": "documents",
+      "degree": "magistracy",
+      "image": "main/images/directions/images/default.png",
+      "html": ""
+    }
+  },
+  {
+    "model": "main.direction",
+    "pk": 7,
+    "fields": {
+      "name": "38.04.02 Менеджмент",
+      "slug": "bac_management",
+      "degree": "baccalaureate",
+      "image": "main/images/directions/images/default.png",
+      "html": ""
+    }
+  }
+]

@@ -1,0 +1,173 @@
+[
+  {
+    "model": "main.exam",
+    "pk": 1,
+    "fields": {
+      "name": "Математика",
+      "score": "39 баллов",
+      "direction": 1
+    }
+  },
+  {
+    "model": "main.exam",
+    "pk": 2,
+    "fields": {
+      "name": "Физика / информатика",
+      "score": "39 / 44 балла",
+      "direction": 1
+    }
+  },
+  {
+    "model": "main.exam",
+    "pk": 3,
+    "fields": {
+      "name": "Русский язык",
+      "score": "40 баллов",
+      "direction": 1
+    }
+  },
+  {
+    "model": "main.exam",
+    "pk": 4,
+    "fields": {
+      "name": "Математика",
+      "score": "39 баллов",
+      "direction": 2
+    }
+  },
+  {
+    "model": "main.exam",
+    "pk": 5,
+    "fields": {
+      "name": "Физика / информатика",
+      "score": "39 / 44 балла",
+      "direction": 2
+    }
+  },
+  {
+    "model": "main.exam",
+    "pk": 6,
+    "fields": {
+      "name": "Русский язык",
+      "score": "40 баллов",
+      "direction": 2
+    }
+  },
+  {
+    "model": "main.exam",
+    "pk": 7,
+    "fields": {
+      "name": "Математика",
+      "score": "39 баллов",
+      "direction": 3
+    }
+  },
+  {
+    "model": "main.exam",
+    "pk": 8,
+    "fields": {
+      "name": "Русский язык",
+      "score": "40 баллов",
+      "direction": 3
+    }
+  },
+  {
+    "model": "main.exam",
+    "pk": 9,
+    "fields": {
+      "name": "Обществознание / информатика",
+      "score": "39 / 44 балла",
+      "direction": 3
+    }
+  },
+  {
+    "model": "main.exam",
+    "pk": 10,
+    "fields": {
+      "name": "Математика",
+      "score": "39 баллов",
+      "direction": 4
+    }
+  },
+  {
+    "model": "main.exam",
+    "pk": 11,
+    "fields": {
+      "name": "Русский язык",
+      "score": "40 баллов",
+      "direction": 4
+    }
+  },
+  {
+    "model": "main.exam",
+    "pk": 12,
+    "fields": {
+      "name": "Обществознание / информатика",
+      "score": "39 / 44 балла",
+      "direction": 4
+    }
+  },
+  {
+    "model": "main.exam",
+    "pk": 13,
+    "fields": {
+      "name": "История",
+      "score": "35 баллов",
+      "direction": 5
+    }
+  },
+  {
+    "model": "main.exam",
+    "pk": 14,
+    "fields": {
+      "name": "Русский язык",
+      "score": "40 баллов",
+      "direction": 5
+    }
+  },
+  {
+    "model": "main.exam",
+    "pk": 15,
+    "fields": {
+      "name": "Обществознание / информатика",
+      "score": "39 / 44 балла",
+      "direction": 5
+    }
+  },
+  {
+    "model": "main.exam",
+    "pk": 16,
+    "fields": {
+      "name": "История",
+      "score": "35 баллов",
+      "direction": 6
+    }
+  },
+  {
+    "model": "main.exam",
+    "pk": 17,
+    "fields": {
+      "name": "Русский язык",
+      "score": "40 баллов",
+      "direction": 6
+    }
+  },
+  {
+    "model": "main.exam",
+    "pk": 18,
+    "fields": {
+      "name": "Обществознание / информатика",
+      "score": "39 / 44 балла",
+      "direction": 6
+    }
+  },
+  {
+    "model": "main.exam",
+    "pk": 19,
+    "fields": {
+      "name": "Профильный экзамен",
+      "score": "50 баллов",
+      "direction": 7
+    }
+  }
+]
