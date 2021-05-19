@@ -5,6 +5,8 @@ from django.db.models import F
 from django.db.models.signals import pre_delete, pre_save, post_delete, post_save
 from django.dispatch import receiver
 from .page import Page
+from .cathedra import Cathedra
+
 from .file_object import FileObject
 
 # Функция получения порядкового номера по умолчанию
@@ -201,9 +203,9 @@ class Menu(Model):
         elif self.kind == Menu.Kind.FILEOBJECT:
             return FileObject.objects.get(menu=self).object.path
         elif self.kind == Menu.Kind.SCHEDULE:
-            pass # TODO
+            return 'schedule'
         elif self.kind == Menu.Kind.CATHEDRA_LIST:
-            pass # TODO
+            return 'cathedras'
         elif self.kind == Menu.Kind.CATHEDRA_ITEM:
             pass # TODO
         elif self.kind == Menu.Kind.STAFF_ITEM:
@@ -214,8 +216,6 @@ class Menu(Model):
             parent_url = self.parent.url if self.parent else ''
             inner_link = Page.objects.get(menu=self).slug
             return '%s%s' % (parent_url, inner_link.slug)
-
-
 
         return 'javascript:void(0);'
 
@@ -240,26 +240,47 @@ class Menu(Model):
 
         menus_1 = menu_0.childs
         for menu_1 in menus_1:
-            menus['childs'].append({
-                'menu': menu_1,
-                'childs': []
-            })
+            items, is_childs = menu_1._get_menu_dict_items()
+            for item in items:
+                menus['childs'].append(item)
 
-            menus_2 = menu_1.childs
-            for menu_2 in menus_2:
-                menus['childs'][-1]['childs'].append({
-                    'menu': menu_2,
-                    'childs': []
-                })
+            if is_childs:
+                menus_2 = menu_1.childs
+                for menu_2 in menus_2:
+                    items, is_childs = menu_2._get_menu_dict_items()
+                    for item in items:
+                        menus['childs'][-1]['childs'].append(item)
 
-                menus_3 = menu_2.childs
-                for menu_3 in menus_3:
-                    menus['childs'][-1]['childs'][-1]['childs'].append({
-                        'menu': menu_3,
-                        'childs': []
-                    })
+                    if is_childs:
+                        menus_3 = menu_2.childs
+                        for menu_3 in menus_3:
+                            items, is_childs = menu_3._get_menu_dict_items()
+                            for item in items:
+                                menus['childs'][-1]['childs'][-1]['childs'].append(item)
 
         return menus
+
+    def _get_menu_dict_items(self):
+        is_childs = True
+        if self.kind == Menu.Kind.CATHEDRA_ITEM:
+            cathedras = Cathedra.objects.all()
+            items = [
+                {
+                    'menu': {
+                        'name': cathedra.name,
+                        'slug': 'cathedra/' + cathedra.slug
+                    },
+                    'childs': []
+                } for cathedra in cathedras]
+
+            is_childs = False
+        elif self.kind == Menu.Kind.STAFF_ITEM:
+            items = [{'menu': self, 'childs': []}] # TODO
+        else:
+            items = [{'menu': self, 'childs': []}]
+
+
+        return items, is_childs
 
 # Функция для рекурсии
 def _admin_str(obj, name):

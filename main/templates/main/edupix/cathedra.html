@@ -1,0 +1,120 @@
+{% extends 'main/edupix/layout.html' %}
+{% load static %}
+{% block content %}
+<!-- Programme Details -->
+<div id="programme-page" class="programme-details-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="programme-list">
+                    <h5>Кафедра</h5>
+                    {% for inner_link in inner_links %}
+                    <a href="{{ inner_link.slug }}">{{ inner_link.name }}<span><i class="las la-arrow-right"></i></span></a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="single-programme">
+                    <img src="{{ cathedra.image.url }}" alt="">
+
+                    {{ cathedra.html | safe}}
+
+                    <h5>Руководитель кафедры экономики и управления</h5>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="single-programme-bg">
+                                <img src="assets/img/eiu/razmanova.jpg" alt="">
+                            </div>
+                        </div>
+                        <div id="right"><div class="content"> Разманова Светлана Валерьевна, д.э.н., доцент </div></div>
+                    </div>
+                    <br><br><h5>Штатные сотрудники</h5>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="single-programme-bg">
+                                <img src="assets/img/eiu/nazarova.jpg" alt="">
+                            </div>
+                        </div>
+                        <div id="right"><div class="content"> Назарова Инесса Георгиевна, д.э.н., доцент</div></div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="single-programme-bg">
+                                <img src="assets/img/eiu/pavlovskaya.png" alt="">
+                            </div>
+                        </div>
+                        <div id="right"><div class="content"> Павловская Алла Васильевна, к.э.н., профессор</div></div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="single-programme-bg">
+                                <img src="assets/img/eiu/climochkina.png" alt="">
+                            </div>
+                        </div>
+                        <div id="right"><div class="content"> Климочкина Наталья Ивановна, к.э.н., доцент</div></div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="single-programme-bg">
+                                <img src="assets/img/eiu/parmusin.jpg" alt="">
+                            </div>
+                        </div>
+                        <div id="right"><div class="content"> Пармузин Петр Николаевич, к.э.н., доцент</div></div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="single-programme-bg">
+                                <img src="assets/img/eiu/plyusnina.jpg" alt="">
+                            </div>
+                        </div>
+                        <div id="right"><div class="content"> Плюснина Оксана Владимировна, к.э.н., доцент</div></div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="single-programme-bg">
+                                <img src="assets/img/eiu/sokolovskaya.png" alt="">
+                            </div>
+                        </div>
+                        <div id="right"><div class="content"> Соколовская Елена Николаевна, к.э.н., доцент</div></div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="single-programme-bg">
+                                <img src="assets/img/cat/4.jpg" alt="">
+                            </div>
+                        </div>
+                        <div id="right"><div class="content">Нестерова Ольга Валентиновна, доцент</div></div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="single-programme-bg">
+                                <img src="assets/img/eiu/samatova.jpg" alt="">
+                            </div>
+                        </div>
+                        <div id="right"><div class="content">Саматова Тамара Борисовна, доцент</div></div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="single-programme-bg">
+                                <img src="assets/img/eiu/andruhova.jpg" alt="">
+                            </div>
+                        </div>
+                        <div id="right"><div class="content">Андрухова Ольга ,старший преподаватель</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'main/edupix/layout.html' %}
+{% load static %}
+{% block content %}
+<!-- Program Area -->
+<div class="programe-area section-padding">
+    <div class="container">
+        <div class="row">
+        </div>
+        <div class="programe-wrapper">
+            <div class="row no-gutters">
+                {% for cathedra in cathedras %}
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="programe-inner">
+                        <div class="programe-icon">
+                            <img src="{{ cathedra.icon.url }}" alt="">
+                        </div>
+                        <h5><a href="{% url 'main:cathedra' cathedra.slug %}">{{ cathedra.name }}</a></h5>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="spacer">
+    <div class="spacer-bg gray-bg bg-cover">
+    </div>
+</div>
+{% endblock %}
