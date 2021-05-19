@@ -5,6 +5,7 @@ from django.db.models import F
 from django.db.models.signals import pre_delete, pre_save, post_delete, post_save
 from django.dispatch import receiver
 from .page import Page
+from .file_object import FileObject
 
 # Функция получения порядкового номера по умолчанию
 def get_default_order():
@@ -17,12 +18,13 @@ class Menu(Model):
         GROUP = 'group', 'Группа (без страницы)'
         GROUP_PAGE = 'group_page', 'Группа (co страницей)'
         PAGE = 'page', 'Страница'
+        FILEOBJECT = 'fileobject', 'Ссылка на файл'
         SCHEDULE = 'schedule', 'Расписание'
-        STAFF_LIST = 'staff_list', 'Сотрудники'
         STAFF_ITEM = 'staff_item', 'Сотрудник'
-        CATHEDRA_LIST = 'cathedra_list', 'Кафедры'
+        CATHEDRA_LIST = 'cathedra_list', 'Список кафедр'
         CATHEDRA_ITEM = 'cathedra_item', 'Кафедра'
-        CATHEDRA_PAGE = 'cathedra_page', 'Страница кафедры'
+        DIRECTION = 'direction', 'Направление'
+        INNER_LINK = 'inner_link', 'Внутренняя ссылка'
 
         @staticmethod
         def get_list():
@@ -196,6 +198,24 @@ class Menu(Model):
                 return Page.objects.get(menu=self).slug
             except:
                 pass
+        elif self.kind == Menu.Kind.FILEOBJECT:
+            return FileObject.objects.get(menu=self).object.path
+        elif self.kind == Menu.Kind.SCHEDULE:
+            pass # TODO
+        elif self.kind == Menu.Kind.CATHEDRA_LIST:
+            pass # TODO
+        elif self.kind == Menu.Kind.CATHEDRA_ITEM:
+            pass # TODO
+        elif self.kind == Menu.Kind.STAFF_ITEM:
+            pass # TODO
+        elif self.kind == Menu.Kind.DIRECTION:
+            pass # TODO
+        elif self.kind == Menu.Kind.INNER_LINK:
+            parent_url = self.parent.url if self.parent else ''
+            inner_link = Page.objects.get(menu=self).slug
+            return '%s%s' % (parent_url, inner_link.slug)
+
+
 
         return 'javascript:void(0);'
 

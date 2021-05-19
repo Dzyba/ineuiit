@@ -1,0 +1,38 @@
+[
+  {
+    "model": "main.innerlink",
+    "pk": 1,
+    "fields": {
+      "name": "История кафедры",
+      "slug": "#history",
+      "menu": 15
+    }
+  },
+  {
+    "model": "main.innerlink",
+    "pk": 2,
+    "fields": {
+      "name": "Учебно-методическая работа",
+      "slug": "#methodic",
+      "menu": 16
+    }
+  },
+  {
+    "model": "main.innerlink",
+    "pk": 2,
+    "fields": {
+      "name": "Научная работа",
+      "slug": "#science",
+      "menu": 17
+    }
+  },
+  {
+    "model": "main.innerlink",
+    "pk": 2,
+    "fields": {
+      "name": "Состав кафедры",
+      "slug": "#staff",
+      "menu": 18
+    }
+  }
+]

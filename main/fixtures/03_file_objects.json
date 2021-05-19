@@ -1,0 +1,22 @@
+[
+  {
+    "model": "main.fileobject",
+    "pk": 1,
+    "fields": {
+      "name": "Образовательные стандарты",
+      "slug": "education_standards",
+      "menu": 9,
+      "object": "main/file_objects/education_standards.docx"
+    }
+  },
+  {
+    "model": "main.fileobject",
+    "pk": 2,
+    "fields": {
+      "name": "Образовательные программы",
+      "slug": "education_programs",
+      "menu": 10,
+      "object": "main/file_objects/education_programs.docx"
+    }
+  }
+]
