@@ -58,7 +58,8 @@ Version: 1.0
 
 /* Google Font Import 
 ======================= */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 
 /*	Theme Main Color:#FCC741
@@ -76,8 +77,8 @@ body {
 }
 
 body {
-	font-family: 'Poppins', sans-serif;
-	font-size: 16px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
 	line-height: 20px;
 	font-weight: 400;
 	position: relative;
@@ -94,7 +95,7 @@ h4,
 h5,
 h6 {
 	position: relative;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-weight: 500;
 	margin: 0;
 	color: #1d2143;
@@ -115,24 +116,24 @@ h3 {
 a {
 	text-decoration: none;
 	cursor: pointer;
-	font-family: 'Poppins', sans-serif;
-	color: #FCC741;
+	font-family: 'Roboto', sans-serif;
+	color: #3c5ef5;
 	font-size: 16px;
 	-webkit-transition: 0.5s;
 	transition: 0.5s;
 }
 
 p {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 26px;
 	position: relative;
-	color: #777;
+	color: rgb(0, 0, 0);
 }
 
 p.highlight {
-	color: #898a9c;
+	color: #000000;
 	font-size: 16px;
 	line-height: 27px;
 }
@@ -546,8 +547,10 @@ textarea::placeholder {
 	background-repeat: no-repeat;
 	width: 100%;
 	height: 100%;
+}	
+#right { text-align: right; }
+.content {
 }
-
 .overlay {
 	position: absolute;
 	content: "";
@@ -845,19 +848,19 @@ textarea::placeholder {
 }
 
 .header-area .main-menu .navbar-nav .nav-link.active {
-	color: #FCC741;
+	color: #007bff;
 }
 
 #header-3.header-area .main-menu .navbar-nav .nav-link.active {
-	color: #FCC741;
+	color: #007bff;
 }
 
 #header-2.header-area .main-menu .navbar-nav .nav-link.active {
-	color: #FCC741;
+	color: #007bff;
 }
 
 .header-area .main-menu li.nav-item:hover > a {
-	color: #777;
+	color: rgb(0, 0, 0);
 }
 
 .header-area.absolute-header {
@@ -1102,7 +1105,7 @@ textarea::placeholder {
 	display: block;
 	width: 170px;
 	position: relative;
-	color: #777;
+	color: rgb(0, 0, 0);
 	font-size: 14px;
 	font-weight: 500;
 	line-height: 20px;
@@ -1230,7 +1233,7 @@ textarea::placeholder {
 }
 
 .main-menu .sub-menu li:hover > a {
-	color: #FCC741;
+	color: #007bff;
 }
 
 .dropdown-toggle::after {
@@ -1525,7 +1528,7 @@ textarea::placeholder {
 ====================== */
 
 .programe-area {
-	background: #1A3759;
+	background: #ffffff;
 	background-size: cover;
 	height: 500px;
 	position: relative;
@@ -1606,7 +1609,7 @@ p.course-qty {
 .course-area .main-btn {
 	background: #fff;
 	color: #333;
-	margin-top: 40px;
+	margin-top: 0px;
 	box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.10);
 }
 
@@ -2785,7 +2788,6 @@ p.course-qt {
 	text-align: center;
 	box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.10);
 }
-}
 
 .single-price-item:hover {
 	box-shadow: 0 0 10px #f6f6f6;
@@ -3508,7 +3510,7 @@ a.reply-btn {
 .category h6 span,
 .review h6 span {
 	display: block;
-	color: #777;
+	color: rgb(0, 0, 0);
 	font-size: 14px;
 	margin-bottom: 4px;
 }
@@ -3518,7 +3520,7 @@ a.reply-btn {
 }
 
 .review li a {
-	color: #333;
+	color: rgb(0, 0, 0);
 }
 
 .single-course-img {

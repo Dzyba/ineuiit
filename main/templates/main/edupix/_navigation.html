@@ -19,12 +19,12 @@
 
                         <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                             <ul class="navbar-nav m-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="{{ menus.menu.url | safe }}">{{ menus.menu.name }}
-                                        <span class="sub-nav-toggler">
-                                        </span>
-                                    </a>
-                                </li>
+<!--                                <li class="nav-item">-->
+<!--                                    <a class="nav-link active" href="{{ menus.menu.url | safe }}">{{ menus.menu.name }}-->
+<!--                                        <span class="sub-nav-toggler">-->
+<!--                                        </span>-->
+<!--                                    </a>-->
+<!--                                </li>-->
                                 {% for menu in menus.childs %}
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ menu.url }}">{{ menu.menu.name }}
