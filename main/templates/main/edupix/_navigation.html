@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="logo">
-                    <a class="navbar-brand" href="index.html"><img src="{% static "main/edupix/img/logo.png" %}" alt=""></a>
+                    <a class="navbar-brand" href="/"><img src="{% static "main/img/logo.png" %}" alt=""></a>
                 </div>
             </div>
 
@@ -20,14 +20,14 @@
                         <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                             <ul class="navbar-nav m-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="{{ menu.menu.url }}">{{ menus.menu.name }}
+                                    <a class="nav-link active" href="{{ menus.menu.url | safe }}">{{ menus.menu.name }}
                                         <span class="sub-nav-toggler">
                                         </span>
                                     </a>
                                 </li>
                                 {% for menu in menus.childs %}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ menu.menu.url }}">{{ menu.menu.name }}
+                                    <a class="nav-link" href="{{ menu.url }}">{{ menu.menu.name }}
                                         <span class="sub-nav-toggler">
                                         </span>
                                     </a>
@@ -35,11 +35,11 @@
                                     <ul class="sub-menu">
                                         {% for menu in menu.childs %}
                                         <li class="dropdown-submenu">
-                                            <a href="{{ menu.menu.url }}">{{ menu.menu.name }}</a>
+                                            <a href="{{ menu.url }}">{{ menu.menu.name }}</a>
                                             {% if menu.childs %}
                                             <ul class="dropdown-menu">
                                                 {% for menu in menu.childs %}
-                                                <li><a class="dropdown-item" href="{{ menu.menu.url }}">{{ menu.menu.name }}</a></li>
+                                                <li><a class="dropdown-item" href="{{ menu.url }}">{{ menu.menu.name }}</a></li>
                                                 {% endfor %}
                                             </ul>
                                             {% endif %}
@@ -52,6 +52,7 @@
                             </ul>
                         </div>
                     </nav>
+
 
 <!--                    <div class="search-box">-->
 <!--                        <button class="search-btn"><i class="la la-search"></i></button>-->

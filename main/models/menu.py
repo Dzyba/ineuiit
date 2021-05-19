@@ -6,6 +6,7 @@ from django.db.models.signals import pre_delete, pre_save, post_delete, post_sav
 from django.dispatch import receiver
 from .page import Page
 from .cathedra import Cathedra
+from .inner_link import InnerLink
 
 from .file_object import FileObject
 
@@ -194,28 +195,28 @@ class Menu(Model):
     @property
     def url(self):
         if self.kind == Menu.Kind.INDEX:
-            return ''
+            return '/'
         elif self.kind == Menu.Kind.PAGE or self.kind == Menu.Kind.GROUP_PAGE:
             try:
-                return Page.objects.get(menu=self).slug
+                return '/' + Page.objects.get(menu=self).slug
             except:
                 pass
         elif self.kind == Menu.Kind.FILEOBJECT:
             return FileObject.objects.get(menu=self).object.path
         elif self.kind == Menu.Kind.SCHEDULE:
-            return 'schedule'
+            return '/schedule'
         elif self.kind == Menu.Kind.CATHEDRA_LIST:
-            return 'cathedras'
+            return '/cathedras'
         elif self.kind == Menu.Kind.CATHEDRA_ITEM:
-            pass # TODO
+            return '/cathedra/'
         elif self.kind == Menu.Kind.STAFF_ITEM:
-            pass # TODO
+            return '/staff/'
         elif self.kind == Menu.Kind.DIRECTION:
-            pass # TODO
+            return '/direction/'
         elif self.kind == Menu.Kind.INNER_LINK:
             parent_url = self.parent.url if self.parent else ''
-            inner_link = Page.objects.get(menu=self).slug
-            return '%s%s' % (parent_url, inner_link.slug)
+            inner_link = InnerLink.objects.get(menu=self).slug
+            return '%s%s' % (parent_url, inner_link)
 
         return 'javascript:void(0);'
 
@@ -264,20 +265,27 @@ class Menu(Model):
         is_childs = True
         if self.kind == Menu.Kind.CATHEDRA_ITEM:
             cathedras = Cathedra.objects.all()
-            items = [
-                {
-                    'menu': {
-                        'name': cathedra.name,
-                        'slug': 'cathedra/' + cathedra.slug
-                    },
-                    'childs': []
+            inner_links_menus = Menu.objects.filter(parent=self, kind=Menu.Kind.INNER_LINK)
+            inner_links =  InnerLink.objects.filter(menu__parent=self)
+            items = [{
+                    'menu': { 'name': cathedra.name },
+                    'url':self.url + cathedra.slug,
+                    'childs': [
+                        {
+                            'menu': {
+                                'name': link.name
+                            },
+                            'url': self.url + cathedra.slug + link.slug,
+                            'childs': []
+                        }
+                    for link in inner_links]
                 } for cathedra in cathedras]
 
             is_childs = False
         elif self.kind == Menu.Kind.STAFF_ITEM:
-            items = [{'menu': self, 'childs': []}] # TODO
+            items = [{'menu': self, 'url':self.url, 'childs': []}] # TODO
         else:
-            items = [{'menu': self, 'childs': []}]
+            items = [{'menu': self, 'url':self.url, 'childs': []}]
 
 
         return items, is_childs
