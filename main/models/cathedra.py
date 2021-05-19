@@ -14,7 +14,7 @@ class Cathedra(Model):
     image = ImageField(upload_to='main/images/cathedras/images', null=True, blank=True, verbose_name='Картинка')
 
     def __str__(self):
-        return '%s -> %s' % (self.menu if self.menu else '|', self.name)
+        return self.name
 
     @staticmethod
     def get_menu(menu):

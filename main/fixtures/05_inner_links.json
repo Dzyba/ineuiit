@@ -3,8 +3,8 @@
     "model": "main.innerlink",
     "pk": 1,
     "fields": {
-      "name": "История кафедры",
-      "slug": "#history",
+      "name": "Описание",
+      "slug": "#description",
       "menu": 15
     }
   },
@@ -12,8 +12,8 @@
     "model": "main.innerlink",
     "pk": 2,
     "fields": {
-      "name": "Учебно-методическая работа",
-      "slug": "#methodic",
+      "name": "История",
+      "slug": "#history",
       "menu": 16
     }
   },
@@ -21,8 +21,8 @@
     "model": "main.innerlink",
     "pk": 3,
     "fields": {
-      "name": "Научная работа",
-      "slug": "#science",
+      "name": "Контакты",
+      "slug": "#contacts",
       "menu": 17
     }
   },
@@ -30,7 +30,7 @@
     "model": "main.innerlink",
     "pk": 4,
     "fields": {
-      "name": "Состав кафедры",
+      "name": "Сотрудники",
       "slug": "#staff",
       "menu": 18
     }

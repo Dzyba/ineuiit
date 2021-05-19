@@ -1,0 +1,14 @@
+[
+  {
+    "model": "main.staff",
+    "pk": 1,
+    "fields": {
+      "name": "",
+      "cathedra": null,
+      "category": "staff",
+      "position": "",
+      "image": "main/images/cathedras/images/ЭиУ.jpg",
+      "html": ""
+    }
+  }
+]

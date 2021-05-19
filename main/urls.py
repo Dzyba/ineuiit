@@ -9,5 +9,6 @@ urlpatterns = [
     path('', IndexView.as_view(), name='index'),
     path('cathedras', CathedrasView.as_view(), name='cathedras'),
     path('cathedra/<slug:slug>', CathedraView.as_view(), name='cathedra'),
+    path('staff/<slug:slug>', StaffView.as_view(), name='staff'),
     path('<slug:slug>', PageView.as_view(), name='page')
 ]

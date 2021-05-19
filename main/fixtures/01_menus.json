@@ -144,7 +144,7 @@
     "model": "main.menu",
     "pk": 15,
     "fields": {
-      "name": "История кафедры",
+      "name": "Описание",
       "parent": 14,
       "kind": "inner_link",
       "order": 15
@@ -154,7 +154,7 @@
     "model": "main.menu",
     "pk": 16,
     "fields": {
-      "name": "Учебно-методическая работа",
+      "name": "История",
       "parent": 14,
       "kind": "inner_link",
       "order": 16
@@ -164,7 +164,7 @@
     "model": "main.menu",
     "pk": 17,
     "fields": {
-      "name": "Научная работа",
+      "name": "Контакты",
       "parent": 14,
       "kind": "inner_link",
       "order": 17
@@ -174,7 +174,7 @@
     "model": "main.menu",
     "pk": 18,
     "fields": {
-      "name": "Состав кафедры",
+      "name": "Сотрудники",
       "parent": 14,
       "kind": "inner_link",
       "order": 18

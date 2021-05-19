@@ -1,0 +1,29 @@
+<h2 id="staff">Сотрудники</h2>
+
+<h5>Руководители кафедры экономики и управления</h5>
+{% for person in staff %}
+{% if person.category == "leader" %}
+<div class="row">
+    <div class="col-lg-6">
+        <div class="single-programme-bg">
+            <img src="{{ person.image.url }}" alt="">
+        </div>
+    </div>
+    <div class="content">{{ person.name }}, {{ person.position }}</div>
+</div>
+{% endif %}
+{% endfor %}
+<br><br><h5>Штатные сотрудники</h5>
+{% for person in staff %}
+{% if person.category != "leader" %}
+<div class="row">
+    <div class="col-lg-6">
+        <div class="single-programme-bg">
+            <img src="{{ person.image.url }}" alt="">
+        </div>
+    </div>
+    <div class="content">{{ person.name }}, {{ person.position }}</div>
+</div>
+<br>
+{% endif %}
+{% endfor %}
