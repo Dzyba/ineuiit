@@ -10,9 +10,11 @@ class CathedraView(View):
 
         cathedra = Cathedra.objects.get(slug=kwargs['slug'])
         staff = Staff.objects.filter(cathedra=cathedra)
+        menu = Menu.objects.filter(kind=Menu.Kind.CATHEDRA_ITEM).first()
 
         context['header'] = cathedra.name
         context['sitename'] = Setting.get('sitename')
+        context['breadcrumbs'] = menu.get_breadcrumbs_dict()
         context['menus'] = Menu.get_dict()
         context['cathedra'] = cathedra
         context['staff'] = staff

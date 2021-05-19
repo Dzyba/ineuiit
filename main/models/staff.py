@@ -30,6 +30,15 @@ class Staff(Model):
     def __str__(self):
         return '%s -> %s' % (self.cathedra if self.cathedra else '|', self.name)
 
+    def get_breadcrumbs_dict(self, menu):
+        breadcrumbs = menu.get_breadcrumbs_dict()
+        breadcrumbs.append({
+            'name': self.cathedra.name,
+            'url': '/cathedra/' + self.cathedra.slug
+        })
+
+        return breadcrumbs
+
     @property
     def url(self):
         return '/staff/' + self.slug

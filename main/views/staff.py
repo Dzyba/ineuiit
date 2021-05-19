@@ -8,8 +8,10 @@ class StaffView(View):
     def get(self, request, *args, **kwargs):
         context = {}
         staff = Staff.objects.get(slug=kwargs['slug'])
+        menu = Menu.objects.filter(kind=Menu.Kind.CATHEDRA_ITEM).first()
         context['header'] = staff.name
         context['sitename'] = Setting.get('sitename')
+        context['breadcrumbs'] = staff.get_breadcrumbs_dict(menu)
         context['menus'] = Menu.get_dict()
         context['staff'] = staff
         return render(request, self.template_name, context)

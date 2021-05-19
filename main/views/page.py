@@ -7,11 +7,9 @@ class PageView(View):
 
     def get(self, request, *srgs, **kwargs):
         context = {}
-
-        # print('====>', self.kwargs['slug'])
-
         page = Page.objects.get(slug=kwargs['slug'])
         context['header'] = page.name
+        context['breadcrumbs'] = page.menu.get_breadcrumbs_dict()
         context['sitename'] = Setting.get('sitename')
         context['menus'] = Menu.get_dict()
         context['page'] = page

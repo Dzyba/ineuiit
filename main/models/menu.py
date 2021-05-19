@@ -286,8 +286,19 @@ class Menu(Model):
         else:
             items = [{'menu': self, 'url':self.url, 'childs': []}]
 
-
         return items, is_childs
+
+    def get_breadcrumbs_dict(self):
+        breadcrumbs = []
+        menu = self
+        while menu:
+            breadcrumbs.append({
+                'name': menu.name,
+                'url': menu.url
+            })
+            menu = menu.parent
+        breadcrumbs = list(reversed(breadcrumbs))[:-1]
+        return breadcrumbs
 
 # Функция для рекурсии
 def _admin_str(obj, name):

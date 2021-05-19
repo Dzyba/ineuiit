@@ -7,8 +7,10 @@ class CathedrasView(View):
 
     def get(self, request):
         context = {}
+        menu = Menu.objects.filter(kind=Menu.Kind.CATHEDRA_LIST).first()
         context['header'] = 'Кафедры'
         context['sitename'] = Setting.get('sitename')
+        context['breadcrumbs'] = menu.get_breadcrumbs_dict()
         context['menus'] = Menu.get_dict()
         context['cathedras'] = Cathedra.objects.all()
         return render(request, self.template_name, context)
