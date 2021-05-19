@@ -211,7 +211,7 @@ class Menu(Model):
             return '/cathedra/'
         elif self.kind == Menu.Kind.STAFF_ITEM:
             return '/staff/'
-        elif self.kind == Menu.Kind.DIRECTION:
+        elif self.kind == Menu.Kind.DIRECTION_ITEM:
             return '/direction/'
         elif self.kind == Menu.Kind.INNER_LINK:
             parent_url = self.parent.url if self.parent else ''
