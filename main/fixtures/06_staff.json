@@ -7,6 +7,7 @@
       "cathedra": 1,
       "category": "leader",
       "position": "д.э.н., доцент",
+      "slug": "razmanova",
       "image": "main/images/staff/images/razmanova.jpg",
       "html": ""
     }
@@ -19,6 +20,7 @@
       "cathedra": 1,
       "category": "staff",
       "position": "д.э.н., доцент",
+      "slug": "nazarova",
       "image": "main/images/staff/images/nazarova.jpg",
       "html": ""
     }
@@ -31,6 +33,7 @@
       "cathedra": 1,
       "category": "staff",
       "position": "к.э.н., профессор",
+      "slug": "pavlovskaya",
       "image": "main/images/staff/images/pavlovskaya.png",
       "html": ""
     }
@@ -43,6 +46,7 @@
       "cathedra": 1,
       "category": "staff",
       "position": "к.э.н., доцент",
+      "slug": "climochkina",
       "image": "main/images/staff/images/climochkina.png",
       "html": ""
     }
@@ -55,6 +59,7 @@
       "cathedra": 1,
       "category": "staff",
       "position": "к.э.н., доцент",
+      "slug": "parmusin",
       "image": "main/images/staff/images/parmusin.jpg",
       "html": ""
     }
@@ -67,6 +72,7 @@
       "cathedra": 1,
       "category": "staff",
       "position": "к.э.н., доцент",
+      "slug": "plyusnina",
       "image": "main/images/staff/images/plyusnina.jpg",
       "html": ""
     }
@@ -79,6 +85,7 @@
       "cathedra": 1,
       "category": "staff",
       "position": "к.э.н., доцент",
+      "slug": "sokolovskaya",
       "image": "main/images/staff/images/sokolovskaya.png",
       "html": ""
     }
@@ -91,6 +98,7 @@
       "cathedra": 1,
       "category": "staff",
       "position": "доцент",
+      "slug": "nesterova",
       "image": "main/images/staff/images/default.jpg",
       "html": ""
     }
@@ -103,6 +111,7 @@
       "cathedra": 1,
       "category": "staff",
       "position": "доцент",
+      "slug": "samatova",
       "image": "main/images/staff/images/samatova.jpg",
       "html": ""
     }
@@ -115,6 +124,7 @@
       "cathedra": 1,
       "category": "staff",
       "position": "старший преподаватель",
+      "slug": "andruhova",
       "image": "main/images/staff/images/andruhova.jpg",
       "html": ""
     }

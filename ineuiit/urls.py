@@ -7,6 +7,6 @@ from django.conf.urls.static import static
 admin.site.site_header = 'INEUIIT'
 admin.site.site_title = 'INEUIIT'
 urlpatterns = [
-    path('admin', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', include('main.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

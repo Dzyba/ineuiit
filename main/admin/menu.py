@@ -45,6 +45,7 @@ class MenuAdmin(admin.ModelAdmin):
 
     def kind_obj(self, obj):
         error_tag = '<span style="color:red;">%s</span>'
+        warning_tag = '<span style="color:yellow;">%s</span>'
         if obj.kind == Menu.Kind.DEFAULT:
             return '-'
         elif obj.kind == Menu.Kind.INDEX:
@@ -98,9 +99,16 @@ class MenuAdmin(admin.ModelAdmin):
             else:
                 return mark_safe(error_tag % ('нет кафедр'))
 
+        elif obj.kind == Menu.Kind.STAFF_ITEM:
+            staff_count = Staff.objects.all().count()
+            if staff_count:
+                link = reverse('admin:main_staff_changelist')
+                return mark_safe('<a href="%s">сотрудники <b>%s</b> шт.</a>' % (link, staff_count))
+            else:
+                return mark_safe(error_tag % ('нет сотрудников'))
+
         return '-'
 
-    # STAFF_ITEM = 'staff_item', 'Сотрудник'
     # SCHEDULE = 'schedule', 'Расписание'
     # DIRECTION_ITEM = 'direction', 'Направление'
 

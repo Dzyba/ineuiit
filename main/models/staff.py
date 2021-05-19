@@ -20,6 +20,7 @@ class Staff(Model):
 
     name = CharField(max_length=200, verbose_name='Имя')
     position = CharField(max_length=200, verbose_name='Должность')
+    slug = CharField(max_length=200, verbose_name='Техническое имя')
     cathedra = ForeignKey('Cathedra', null=True, blank=True, on_delete=SET_NULL, related_name='staff', verbose_name='Кафедра')
     category = CharField(choices=Category.choices, max_length=20, default=Category.STAFF, verbose_name='Категория')
     html = TextField(verbose_name='HTML')
