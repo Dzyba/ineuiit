@@ -1,6 +1,10 @@
 from django.contrib import admin
 from main.models import FileObject
 
+class FileObjectInline(admin.TabularInline):
+    model = FileObject
+    extra = 0
+    fields = ['name', 'slug', 'menu', 'object']
 
 @admin.register(FileObject)
 class FileObjectAdmin(admin.ModelAdmin):

@@ -4,6 +4,9 @@ from django.contrib.admin.views.decorators import staff_member_required
 from main.views import AdminMenuOrderUpView, AdminMenuOrderDownView
 from django.urls import reverse, path
 from django.utils.html import escape, mark_safe, format_html
+from .page import PageInline
+from .file_object import FileObjectInline
+from .inner_link import InnerLinkInline
 
 @admin.register(Menu)
 class MenuAdmin(admin.ModelAdmin):
@@ -12,6 +15,8 @@ class MenuAdmin(admin.ModelAdmin):
     list_display = ('admin_str', 'parent', 'order_actions', 'kind', 'order')
     list_display_links = ['admin_str']
     readonly_fields = ['order']
+
+    # inlines = [PageInline, FileObjectInline, InnerLinkInline]
 
     def get_urls(self):
         urls = super().get_urls()

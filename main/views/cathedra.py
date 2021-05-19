@@ -7,11 +7,15 @@ class CathedraView(View):
 
     def get(self, request, *args, **kwargs):
         context = {}
+
         cathedra = Cathedra.objects.get(slug=kwargs['slug'])
         staff = Staff.objects.filter(cathedra=cathedra)
+
         context['header'] = cathedra.name
         context['sitename'] = Setting.get('sitename')
         context['menus'] = Menu.get_dict()
         context['cathedra'] = cathedra
+        context['staff'] = staff
         context['inner_links'] = InnerLink.objects.filter(menu__parent__kind=Menu.Kind.CATHEDRA_ITEM)
+
         return render(request, self.template_name, context)

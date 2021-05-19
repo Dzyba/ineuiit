@@ -265,7 +265,6 @@ class Menu(Model):
         is_childs = True
         if self.kind == Menu.Kind.CATHEDRA_ITEM:
             cathedras = Cathedra.objects.all()
-            inner_links_menus = Menu.objects.filter(parent=self, kind=Menu.Kind.INNER_LINK)
             inner_links =  InnerLink.objects.filter(menu__parent=self)
             items = [{
                     'menu': { 'name': cathedra.name },

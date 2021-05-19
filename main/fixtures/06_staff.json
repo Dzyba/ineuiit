@@ -3,11 +3,119 @@
     "model": "main.staff",
     "pk": 1,
     "fields": {
-      "name": "",
-      "cathedra": null,
+      "name": "Разманова Светлана Валерьевна",
+      "cathedra": 1,
+      "category": "leader",
+      "position": "д.э.н., доцент",
+      "image": "main/images/staff/images/razmanova.jpg",
+      "html": ""
+    }
+  },
+  {
+    "model": "main.staff",
+    "pk": 2,
+    "fields": {
+      "name": "Назарова Инесса Георгиевна",
+      "cathedra": 1,
       "category": "staff",
-      "position": "",
-      "image": "main/images/cathedras/images/ЭиУ.jpg",
+      "position": "д.э.н., доцент",
+      "image": "main/images/staff/images/nazarova.jpg",
+      "html": ""
+    }
+  },
+  {
+    "model": "main.staff",
+    "pk": 3,
+    "fields": {
+      "name": "Павловская Алла Васильевна",
+      "cathedra": 1,
+      "category": "staff",
+      "position": "к.э.н., профессор",
+      "image": "main/images/staff/images/pavlovskaya.png",
+      "html": ""
+    }
+  },
+  {
+    "model": "main.staff",
+    "pk": 4,
+    "fields": {
+      "name": "Климочкина Наталья Ивановна",
+      "cathedra": 1,
+      "category": "staff",
+      "position": "к.э.н., доцент",
+      "image": "main/images/staff/images/climochkina.png",
+      "html": ""
+    }
+  },
+  {
+    "model": "main.staff",
+    "pk": 5,
+    "fields": {
+      "name": "Пармузин Петр Николаевич",
+      "cathedra": 1,
+      "category": "staff",
+      "position": "к.э.н., доцент",
+      "image": "main/images/staff/images/parmusin.jpg",
+      "html": ""
+    }
+  },
+  {
+    "model": "main.staff",
+    "pk": 6,
+    "fields": {
+      "name": "Плюснина Оксана Владимировна",
+      "cathedra": 1,
+      "category": "staff",
+      "position": "к.э.н., доцент",
+      "image": "main/images/staff/images/plyusnina.jpg",
+      "html": ""
+    }
+  },
+  {
+    "model": "main.staff",
+    "pk": 7,
+    "fields": {
+      "name": "Соколовская Елена Николаевна",
+      "cathedra": 1,
+      "category": "staff",
+      "position": "к.э.н., доцент",
+      "image": "main/images/staff/images/sokolovskaya.png",
+      "html": ""
+    }
+  },
+  {
+    "model": "main.staff",
+    "pk": 8,
+    "fields": {
+      "name": "Нестерова Ольга Валентиновна",
+      "cathedra": 1,
+      "category": "staff",
+      "position": "доцент",
+      "image": "main/images/staff/images/default.jpg",
+      "html": ""
+    }
+  },
+  {
+    "model": "main.staff",
+    "pk": 9,
+    "fields": {
+      "name": "Саматова Тамара Борисовна",
+      "cathedra": 1,
+      "category": "staff",
+      "position": "доцент",
+      "image": "main/images/staff/images/samatova.jpg",
+      "html": ""
+    }
+  },
+  {
+    "model": "main.staff",
+    "pk": 10,
+    "fields": {
+      "name": "Андрухова Ольга",
+      "cathedra": 1,
+      "category": "staff",
+      "position": "старший преподаватель",
+      "image": "main/images/staff/images/andruhova.jpg",
       "html": ""
     }
   }
