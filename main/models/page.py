@@ -1,11 +1,16 @@
 from django.db.models import Model
-from django.db.models import CharField, TextField, ForeignKey
+from django.db.models import CharField, TextField, ForeignKey, BooleanField
 from django.db.models import SET_NULL
 from .setting import Setting
 
 
 class Page(Model):
     name = CharField(max_length=200, verbose_name='Название')
+
+    is_sidebar = BooleanField(default=False, verbose_name='Сайдбар?')
+    sidebar_name = CharField(max_length=200, null=True, blank=True, default='', verbose_name='Сайдбар, название')
+    # sidebar_menu = ForeignKey('Menu', blank=True, null=True, on_delete=SET_NULL, verbose_name='Сайдбар, пункт меню')
+
     slug = CharField(max_length=200, verbose_name='Техническое имя')
     menu = ForeignKey('Menu', blank=True, null=True, on_delete=SET_NULL, verbose_name='Меню')
     html = TextField(verbose_name='HTML')

@@ -8,6 +8,7 @@ class Direction(Model):
     class Degree(TextChoices):
         MAGISTRACY = 'magistracy', 'Магистратура'
         BACCALAUREATE = 'baccalaureate', 'Бакалавриат'
+        POSTGRADUATE = 'postgraduate', 'Аспирантура'
 
         @staticmethod
         def get_list():
@@ -25,6 +26,10 @@ class Direction(Model):
 
     def __str__(self):
         return self.name
+
+    @property
+    def url(self):
+        return 'javascript:void(0);'
 
     class Meta:
         verbose_name = 'Направление'

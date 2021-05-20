@@ -1,0 +1,12 @@
+<p>Направления подготовки:</p>
+{% for direction in directions %}{% if direction.degree == "baccalaureate" %}
+<p class="highlight"><a class="active" href="{{ direction.url }}">{{ direction.name }}</a></p>
+{% endif %}{% endfor %}
+<p>Магистратура:</p>
+{% for direction in directions %}{% if direction.degree == "magistracy" %}
+<p class="highlight"><a class="active" href="{{ direction.url }}">{{ direction.name }}</a></p>
+{% endif %}{% endfor %}
+<p>Аспирантура:</p>
+{% for direction in directions %}{% if direction.degree == "postgraduate" %}
+<p class="highlight"><a class="active" href="{{ direction.url }}">{{ direction.name }}</a></p>
+{% endif %}{% endfor %}

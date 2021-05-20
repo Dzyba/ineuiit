@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "name": "09.03.01 Информатика и вычислительная техника",
-      "slug": "ict",
+      "slug": "mag_ict",
       "degree": "magistracy",
       "image": "main/images/directions/images/default.png",
       "html": ""
@@ -72,6 +72,17 @@
       "name": "38.04.02 Менеджмент",
       "slug": "bac_management",
       "degree": "baccalaureate",
+      "image": "main/images/directions/images/default.png",
+      "html": ""
+    }
+  },
+  {
+    "model": "main.direction",
+    "pk": 8,
+    "fields": {
+      "name": "09.03.01 Информатика и вычислительная техника",
+      "slug": "pg_ict",
+      "degree": "postgraduate",
       "image": "main/images/directions/images/default.png",
       "html": ""
     }

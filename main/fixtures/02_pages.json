@@ -4,28 +4,34 @@
     "pk": 1,
     "fields": {
       "name": "Главная",
+      "is_sidebar": false,
+      "sidebar_name": null,
       "slug": "index",
       "menu": 1,
-      "html": "Текст страницы индекс"
+      "html": ""
     }
   },
   {
     "model": "main.page",
     "pk": 2,
     "fields": {
-      "name": "Деканат",
-      "slug": "deanery",
-      "menu": 4,
-      "html": ""
+      "name": "Структура",
+      "is_sidebar": true,
+      "sidebar_name": null,
+      "slug": "structure",
+      "menu": 3,
+      "html": "{block_directions_p}"
     }
   },
   {
     "model": "main.page",
     "pk": 3,
     "fields": {
-      "name": "Учёный совет",
-      "slug": "council",
-      "menu": 5,
+      "name": "Образование",
+      "is_sidebar": true,
+      "sidebar_name": "Документы",
+      "slug": "education",
+      "menu": 8,
       "html": ""
     }
   },
@@ -33,9 +39,11 @@
     "model": "main.page",
     "pk": 4,
     "fields": {
-      "name": "Патриотический музей",
-      "slug": "museum",
-      "menu": 6,
+      "name": "Деканат",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "deanery",
+      "menu": 4,
       "html": ""
     }
   },
@@ -43,9 +51,11 @@
     "model": "main.page",
     "pk": 5,
     "fields": {
-      "name": "Учебно-практическая телестудия",
-      "slug": "tv-studio",
-      "menu": 7,
+      "name": "Учёный совет",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "council",
+      "menu": 5,
       "html": ""
     }
   },
@@ -53,9 +63,11 @@
     "model": "main.page",
     "pk": 6,
     "fields": {
-      "name": "История",
-      "slug": "history",
-      "menu": 11,
+      "name": "Патриотический музей",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "museum",
+      "menu": 6,
       "html": ""
     }
   },
@@ -63,9 +75,11 @@
     "model": "main.page",
     "pk": 7,
     "fields": {
-      "name": "Контакты",
-      "slug": "contacts",
-      "menu": 12,
+      "name": "Учебно-практическая телестудия",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "tv-studio",
+      "menu": 7,
       "html": ""
     }
   },
@@ -73,9 +87,11 @@
     "model": "main.page",
     "pk": 8,
     "fields": {
-      "name": "День открытых дверей",
-      "slug": "open_doors",
-      "menu": 21,
+      "name": "История",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "history",
+      "menu": 11,
       "html": ""
     }
   },
@@ -83,9 +99,11 @@
     "model": "main.page",
     "pk": 9,
     "fields": {
-      "name": "Бакалавриат",
-      "slug": "undergraduate",
-      "menu": 23,
+      "name": "Контакты",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "contacts",
+      "menu": 12,
       "html": ""
     }
   },
@@ -93,9 +111,11 @@
     "model": "main.page",
     "pk": 10,
     "fields": {
-      "name": "Магистратура",
-      "slug": "masters_degree",
-      "menu": 24,
+      "name": "День открытых дверей",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "open_doors",
+      "menu": 21,
       "html": ""
     }
   },
@@ -103,9 +123,11 @@
     "model": "main.page",
     "pk": 11,
     "fields": {
-      "name": "Аспирантура",
-      "slug": "postgraduate",
-      "menu": 25,
+      "name": "Бакалавриат",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "undergraduate",
+      "menu": 23,
       "html": ""
     }
   },
@@ -113,9 +135,11 @@
     "model": "main.page",
     "pk": 12,
     "fields": {
-      "name": "Стоимость обучения",
-      "slug": "prices",
-      "menu": 26,
+      "name": "Магистратура",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "masters_degree",
+      "menu": 24,
       "html": ""
     }
   },
@@ -123,9 +147,11 @@
     "model": "main.page",
     "pk": 13,
     "fields": {
-      "name": "Наши выпускники",
-      "slug": "graduates",
-      "menu": 27,
+      "name": "Аспирантура",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "postgraduate",
+      "menu": 25,
       "html": ""
     }
   },
@@ -133,9 +159,11 @@
     "model": "main.page",
     "pk": 14,
     "fields": {
-      "name": "Приёмная комиссия",
-      "slug": "selection_committee",
-      "menu": 30,
+      "name": "Стоимость обучения",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "prices",
+      "menu": 26,
       "html": ""
     }
   },
@@ -143,9 +171,11 @@
     "model": "main.page",
     "pk": 15,
     "fields": {
-      "name": "Перевод в восстановление",
-      "slug": "recovery",
-      "menu": 31,
+      "name": "Наши выпускники",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "graduates",
+      "menu": 27,
       "html": ""
     }
   },
@@ -153,9 +183,11 @@
     "model": "main.page",
     "pk": 16,
     "fields": {
-      "name": "Иностранным абитуриентам",
-      "slug": "foreign_applicants",
-      "menu": 32,
+      "name": "Приёмная комиссия",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "selection_committee",
+      "menu": 30,
       "html": ""
     }
   },
@@ -163,9 +195,11 @@
     "model": "main.page",
     "pk": 17,
     "fields": {
-      "name": "Вакантные места",
-      "slug": "vacancies",
-      "menu": 35,
+      "name": "Перевод в восстановление",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "recovery",
+      "menu": 31,
       "html": ""
     }
   },
@@ -173,9 +207,11 @@
     "model": "main.page",
     "pk": 18,
     "fields": {
-      "name": "Стипендия",
-      "slug": "stipend",
-      "menu": 36,
+      "name": "Иностранным абитуриентам",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "foreign_applicants",
+      "menu": 32,
       "html": ""
     }
   },
@@ -183,9 +219,11 @@
     "model": "main.page",
     "pk": 19,
     "fields": {
-      "name": "Материальная поддержка",
-      "slug": "material_support",
-      "menu": 37,
+      "name": "Вакантные места",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "vacancies",
+      "menu": 35,
       "html": ""
     }
   },
@@ -193,9 +231,11 @@
     "model": "main.page",
     "pk": 20,
     "fields": {
-      "name": "Студенческая жизнь",
-      "slug": "student_life",
-      "menu": 38,
+      "name": "Стипендия",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "stipend",
+      "menu": 36,
       "html": ""
     }
   },
@@ -203,9 +243,11 @@
     "model": "main.page",
     "pk": 21,
     "fields": {
-      "name": "Библиотека",
-      "slug": "library",
-      "menu": 39,
+      "name": "Материальная поддержка",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "material_support",
+      "menu": 37,
       "html": ""
     }
   },
@@ -213,18 +255,23 @@
     "model": "main.page",
     "pk": 22,
     "fields": {
-      "name": "Международные программы",
-      "slug": "international_programs",
-      "menu": 40
+      "name": "Студенческая жизнь",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "student_life",
+      "menu": 38,
+      "html": ""
     }
   },
   {
     "model": "main.page",
     "pk": 23,
     "fields": {
-      "name": "Гранты и конкурсы",
-      "slug": "grants",
-      "menu": 42,
+      "name": "Библиотека",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "library",
+      "menu": 39,
       "html": ""
     }
   },
@@ -232,19 +279,22 @@
     "model": "main.page",
     "pk": 24,
     "fields": {
-      "name": "Конференции",
-      "slug": "conferences",
-      "menu": 43,
-      "html": ""
+      "name": "Международные программы",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "international_programs",
+      "menu": 40
     }
   },
   {
     "model": "main.page",
     "pk": 25,
     "fields": {
-      "name": "Аспирантура",
-      "slug": "science_postgraduate",
-      "menu": 44,
+      "name": "Гранты и конкурсы",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "grants",
+      "menu": 42,
       "html": ""
     }
   },
@@ -252,7 +302,33 @@
     "model": "main.page",
     "pk": 26,
     "fields": {
+      "name": "Конференции",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "conferences",
+      "menu": 43,
+      "html": ""
+    }
+  },
+  {
+    "model": "main.page",
+    "pk": 27,
+    "fields": {
+      "name": "Аспирантура",
+      "is_sidebar": false,
+      "sidebar_name": null,
+      "slug": "science_postgraduate",
+      "menu": 44,
+      "html": ""
+    }
+  },
+  {
+    "model": "main.page",
+    "pk": 28,
+    "fields": {
       "name": "Международные сотрудничества",
+      "is_sidebar": false,
+      "sidebar_name": null,
       "slug": "international_cooperation",
       "menu": 45,
       "html": ""

@@ -1,0 +1,4 @@
+{% if header %}<p>{{ header }}</p>{% endif %}
+{% for menu in menus %}
+<p class="highlight"><a class="active" href="{{ menu.url }}">{{ menu.name }}</a></p>
+{% endfor %}

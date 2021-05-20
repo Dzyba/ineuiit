@@ -1,5 +1,29 @@
 {% extends 'main/edupix/layout.html' %}
 {% load static %}
 {% block content %}
-{{ page.html | safe }}
+<div id="programme-page" class="programme-details-section section-padding">
+    <div class="container">
+        <div class="row">
+            {% if sidebar %}
+            <div class="col-lg-4">
+                <div class="programme-list">
+                    {% if sidebar.header %}<h5>{{ sidebar.header }}</h5>{% endif %}
+                    {% for object in sidebar.objects %}
+                    <a href="{{ object.url }}">{{ object.name }}<span><i class="las la-arrow-right"></i></span></a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="single-programme">
+                    {{ html | safe }}
+                </div>
+            </div>
+            {% else %}
+            <div class="col-lg-12">
+                {{ html | safe }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock %}

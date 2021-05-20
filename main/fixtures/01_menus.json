@@ -25,7 +25,7 @@
     "fields": {
       "name": "Структура",
       "parent": 2,
-      "kind": "group",
+      "kind": "group_page",
       "order": 3
     }
   },
@@ -75,7 +75,7 @@
     "fields": {
       "name": "Образование",
       "parent": 2,
-      "kind": "group",
+      "kind": "group_page",
       "order": 8
     }
   },

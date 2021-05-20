@@ -202,7 +202,7 @@ class Menu(Model):
             except:
                 pass
         elif self.kind == Menu.Kind.FILEOBJECT:
-            return FileObject.objects.get(menu=self).object.path
+            return FileObject.objects.get(menu=self).object.url
         elif self.kind == Menu.Kind.SCHEDULE:
             return '/schedule'
         elif self.kind == Menu.Kind.CATHEDRA_LIST:
@@ -252,12 +252,13 @@ class Menu(Model):
                     for item in items:
                         menus['childs'][-1]['childs'].append(item)
 
-                    if is_childs:
-                        menus_3 = menu_2.childs
-                        for menu_3 in menus_3:
-                            items, is_childs = menu_3._get_menu_dict_items()
-                            for item in items:
-                                menus['childs'][-1]['childs'][-1]['childs'].append(item)
+                    # Третий уровень
+                    # if is_childs:
+                    #     menus_3 = menu_2.childs
+                    #     for menu_3 in menus_3:
+                    #         items, is_childs = menu_3._get_menu_dict_items()
+                    #         for item in items:
+                    #             menus['childs'][-1]['childs'][-1]['childs'].append(item)
 
         return menus
 
