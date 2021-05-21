@@ -104,7 +104,7 @@
       "sidebar_name": null,
       "slug": "contacts",
       "menu": 12,
-      "html": ""
+      "html": "<div class=\"info-content-area\">\n<div class=\"section-title\">\n<h2>Контакты факультета экономики, управления и информационных технологий</h2>\n</div>\n<p class=\"highlight\">Приемная декана, канцелярия факультета</p>\n<p>Адрес ул. Сенюкова, 13, Ухта, Респ. Коми, 169300</p>\n<p>Аудитория 000</p>\n<p><b>Телефон +7(8216)738627</b></p>\n<p><b>Почта ugtu.econ@yandex.ru</b></p>\n<p class=\"highlight\">Официальные сообщества в социальных сетях </p>\n<p><a class=\"active\" href=\"https://vk.com/ineuiit\">Факультет экономики, управления и информационных технологий в VK </a></p>\n</div>"
     }
   },
   {
