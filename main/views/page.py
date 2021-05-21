@@ -1,13 +1,20 @@
 from django.shortcuts import render
 from django.views import View
-from main.models import Setting, Menu, Page
+from main.models import Setting, Menu, Page, PageImage
 from .blocks import Blocks
+import re
 
 class PageView(View):
     template_name = 'main/edupix/page.html'
 
     def get(self, request, *srgs, **kwargs):
         page = Page.objects.get(slug=kwargs['slug'])
+        page_images = PageImage.objects.filter(page=page)
+        html = page.html.format(
+            block_directions_p=Blocks.block_directions_p(),
+            block_directions_table=Blocks.block_directions_table(),
+            **{'image_url_%s' % (page_image.slug):page_image.image.url for page_image in page_images }
+        )
 
         context = {}
         context['header'] = page.name
@@ -15,10 +22,7 @@ class PageView(View):
         context['sitename'] = Setting.get('sitename')
         context['menus'] = Menu.get_dict()
         context['page'] = page
-        context['html'] = page.html.format(
-            block_directions_p=Blocks.block_directions_p(),
-            block_directions_table=Blocks.block_directions_table(),
-        )
+        context['html'] = html
 
         if page.is_sidebar:
             context['sidebar'] = {

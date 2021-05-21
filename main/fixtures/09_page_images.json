@@ -1,0 +1,11 @@
+[
+  {
+    "model": "main.pageimage",
+    "pk": 1,
+    "fields": {
+      "page": 8,
+      "slug": "main",
+      "image": "main/images/page_image/images/history_main.jpg"
+    }
+  }
+]

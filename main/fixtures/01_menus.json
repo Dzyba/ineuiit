@@ -433,9 +433,9 @@
     "model": "main.menu",
     "pk": 40,
     "fields": {
-      "name": "Международные программы",
-      "parent": 33,
-      "kind": "page",
+      "name": "Научная работа",
+      "parent": 1,
+      "kind": "group",
       "is_visible": true,
       "order": 40
     }
@@ -444,9 +444,9 @@
     "model": "main.menu",
     "pk": 41,
     "fields": {
-      "name": "Научная работа",
-      "parent": 1,
-      "kind": "group",
+      "name": "Гранты и конкурсы",
+      "parent": 40,
+      "kind": "page",
       "is_visible": true,
       "order": 41
     }
@@ -455,8 +455,8 @@
     "model": "main.menu",
     "pk": 42,
     "fields": {
-      "name": "Гранты и конкурсы",
-      "parent": 41,
+      "name": "Конференции",
+      "parent": 40,
       "kind": "page",
       "is_visible": true,
       "order": 42
@@ -466,8 +466,8 @@
     "model": "main.menu",
     "pk": 43,
     "fields": {
-      "name": "Конференции",
-      "parent": 41,
+      "name": "Аспирантура",
+      "parent": 40,
       "kind": "page",
       "is_visible": true,
       "order": 43
@@ -477,22 +477,11 @@
     "model": "main.menu",
     "pk": 44,
     "fields": {
-      "name": "Аспирантура",
-      "parent": 41,
+      "name": "Международные сотрудничества",
+      "parent": 40,
       "kind": "page",
       "is_visible": true,
       "order": 44
-    }
-  },
-  {
-    "model": "main.menu",
-    "pk": 45,
-    "fields": {
-      "name": "Международные сотрудничества",
-      "parent": 41,
-      "kind": "page",
-      "is_visible": true,
-      "order": 45
     }
   }
 ]
