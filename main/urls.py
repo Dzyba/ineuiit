@@ -10,5 +10,6 @@ urlpatterns = [
     path('cathedras', CathedrasView.as_view(), name='cathedras'),
     path('cathedra/<slug:slug>', CathedraView.as_view(), name='cathedra'),
     path('staff/<slug:slug>', StaffView.as_view(), name='staff'),
+    path('direction/<slug:slug>', DirectionView.as_view(), name='direction'),
     path('<slug:slug>', PageView.as_view(), name='page')
 ]

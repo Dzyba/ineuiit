@@ -6,6 +6,7 @@
       "name": "Главная",
       "parent": null,
       "kind": "index",
+      "is_visible": true,
       "order": 1
     }
   },
@@ -16,6 +17,7 @@
       "name": "О факультете",
       "parent": 1,
       "kind": "group",
+      "is_visible": true,
       "order": 2
     }
   },
@@ -26,6 +28,7 @@
       "name": "Структура",
       "parent": 2,
       "kind": "group_page",
+      "is_visible": true,
       "order": 3
     }
   },
@@ -36,6 +39,7 @@
       "name": "Деканат",
       "parent": 3,
       "kind": "page",
+      "is_visible": true,
       "order": 4
     }
   },
@@ -46,6 +50,7 @@
       "name": "Учёный совет",
       "parent": 3,
       "kind": "page",
+      "is_visible": true,
       "order": 5
     }
   },
@@ -56,6 +61,7 @@
       "name": "Патриотический музей",
       "parent": 3,
       "kind": "page",
+      "is_visible": true,
       "order": 6
     }
   },
@@ -66,6 +72,7 @@
       "name": "Учебно-практическая телестудия",
       "parent": 3,
       "kind": "page",
+      "is_visible": true,
       "order": 7
     }
   },
@@ -76,6 +83,7 @@
       "name": "Образование",
       "parent": 2,
       "kind": "group_page",
+      "is_visible": true,
       "order": 8
     }
   },
@@ -86,6 +94,7 @@
       "name": "Образовательные стандарты",
       "parent": 8,
       "kind": "fileobject",
+      "is_visible": true,
       "order": 9
     }
   },
@@ -96,6 +105,7 @@
       "name": "Образовательные программы",
       "parent": 8,
       "kind": "fileobject",
+      "is_visible": true,
       "order": 10
     }
   },
@@ -106,6 +116,7 @@
       "name": "История",
       "parent": 2,
       "kind": "page",
+      "is_visible": true,
       "order": 11
     }
   },
@@ -116,6 +127,7 @@
       "name": "Контакты",
       "parent": 2,
       "kind": "page",
+      "is_visible": true,
       "order": 12
     }
   },
@@ -127,6 +139,7 @@
       "name": "Кафедры",
       "parent": 1,
       "kind": "cathedra_list",
+      "is_visible": true,
       "order": 13
     }
   },
@@ -137,6 +150,7 @@
       "name": "Кафедрa",
       "parent": 13,
       "kind": "cathedra_item",
+      "is_visible": true,
       "order": 14
     }
   },
@@ -147,6 +161,7 @@
       "name": "Описание",
       "parent": 14,
       "kind": "inner_link",
+      "is_visible": true,
       "order": 15
     }
   },
@@ -157,6 +172,7 @@
       "name": "История",
       "parent": 14,
       "kind": "inner_link",
+      "is_visible": true,
       "order": 16
     }
   },
@@ -167,6 +183,7 @@
       "name": "Контакты",
       "parent": 14,
       "kind": "inner_link",
+      "is_visible": true,
       "order": 17
     }
   },
@@ -177,6 +194,7 @@
       "name": "Сотрудники",
       "parent": 14,
       "kind": "inner_link",
+      "is_visible": true,
       "order": 18
     }
   },
@@ -187,6 +205,7 @@
       "name": "Сотрудник",
       "parent": 18,
       "kind": "staff_item",
+      "is_visible": true,
       "order": 19
     }
   },
@@ -197,6 +216,7 @@
       "name": "Абитуриентам",
       "parent": 1,
       "kind": "group",
+      "is_visible": true,
       "order": 20
     }
   },
@@ -207,6 +227,7 @@
       "name": "День открытых дверей",
       "parent": 20,
       "kind": "page",
+      "is_visible": true,
       "order": 21
     }
   },
@@ -216,7 +237,8 @@
     "fields": {
       "name": "Поступление",
       "parent": 20,
-      "kind": "group",
+      "kind": "group_page",
+      "is_visible": true,
       "order": 22
     }
   },
@@ -227,6 +249,7 @@
       "name": "Бакалавриат",
       "parent": 22,
       "kind": "page",
+      "is_visible": true,
       "order": 23
     }
   },
@@ -237,6 +260,7 @@
       "name": "Магистратура",
       "parent": 22,
       "kind": "page",
+      "is_visible": true,
       "order": 24
     }
   },
@@ -247,6 +271,7 @@
       "name": "Аспирантура",
       "parent": 22,
       "kind": "page",
+      "is_visible": true,
       "order": 25
     }
   },
@@ -257,6 +282,7 @@
       "name": "Стоимость обучения",
       "parent": 22,
       "kind": "page",
+      "is_visible": true,
       "order": 26
     }
   },
@@ -267,6 +293,7 @@
       "name": "Наши выпускники",
       "parent": 22,
       "kind": "page",
+      "is_visible": true,
       "order": 27
     }
   },
@@ -277,6 +304,7 @@
       "name": "Направления",
       "parent": 20,
       "kind": "group",
+      "is_visible": false,
       "order": 28
     }
   },
@@ -286,7 +314,8 @@
     "fields": {
       "name": "Направление",
       "parent": 28,
-      "kind": "direction",
+      "kind": "direction_item",
+      "is_visible": false,
       "order": 29
     }
   },
@@ -297,6 +326,7 @@
       "name": "Приёмная комиссия",
       "parent": 20,
       "kind": "page",
+      "is_visible": true,
       "order": 30
     }
   },
@@ -307,6 +337,7 @@
       "name": "Перевод в восстановление",
       "parent": 20,
       "kind": "page",
+      "is_visible": true,
       "order": 31
     }
   },
@@ -317,6 +348,7 @@
       "name": "Иностранным абитуриентам",
       "parent": 20,
       "kind": "page",
+      "is_visible": true,
       "order": 32
     }
   },
@@ -327,6 +359,7 @@
       "name": "Студентам",
       "parent": 1,
       "kind": "group",
+      "is_visible": true,
       "order": 33
     }
   },
@@ -337,6 +370,7 @@
       "name": "Расписание",
       "parent": 33,
       "kind": "schedule",
+      "is_visible": true,
       "order": 34
     }
   },
@@ -347,6 +381,7 @@
       "name": "Вакантные места",
       "parent": 33,
       "kind": "page",
+      "is_visible": true,
       "order": 35
     }
   },
@@ -357,6 +392,7 @@
       "name": "Стипендия",
       "parent": 33,
       "kind": "page",
+      "is_visible": true,
       "order": 36
     }
   },
@@ -367,6 +403,7 @@
       "name": "Материальная поддержка",
       "parent": 33,
       "kind": "page",
+      "is_visible": true,
       "order": 37
     }
   },
@@ -377,6 +414,7 @@
       "name": "Студенческая жизнь",
       "parent": 33,
       "kind": "page",
+      "is_visible": true,
       "order": 38
     }
   },
@@ -387,6 +425,7 @@
       "name": "Библиотека",
       "parent": 33,
       "kind": "page",
+      "is_visible": true,
       "order": 39
     }
   },
@@ -397,6 +436,7 @@
       "name": "Международные программы",
       "parent": 33,
       "kind": "page",
+      "is_visible": true,
       "order": 40
     }
   },
@@ -407,6 +447,7 @@
       "name": "Научная работа",
       "parent": 1,
       "kind": "group",
+      "is_visible": true,
       "order": 41
     }
   },
@@ -417,6 +458,7 @@
       "name": "Гранты и конкурсы",
       "parent": 41,
       "kind": "page",
+      "is_visible": true,
       "order": 42
     }
   },
@@ -427,6 +469,7 @@
       "name": "Конференции",
       "parent": 41,
       "kind": "page",
+      "is_visible": true,
       "order": 43
     }
   },
@@ -437,6 +480,7 @@
       "name": "Аспирантура",
       "parent": 41,
       "kind": "page",
+      "is_visible": true,
       "order": 44
     }
   },
@@ -447,6 +491,7 @@
       "name": "Международные сотрудничества",
       "parent": 41,
       "kind": "page",
+      "is_visible": true,
       "order": 45
     }
   }

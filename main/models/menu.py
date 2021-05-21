@@ -1,6 +1,6 @@
 from django.db.models import Model
 from django.db.models import CASCADE, SET_NULL
-from django.db.models import ForeignKey, CharField, IntegerField, TextChoices
+from django.db.models import ForeignKey, CharField, IntegerField, TextChoices, BooleanField
 from django.db.models import F
 from django.db.models.signals import pre_delete, pre_save, post_delete, post_save
 from django.dispatch import receiver
@@ -41,6 +41,8 @@ class Menu(Model):
     parent = ForeignKey('Menu', null=True, blank=True, default=None, on_delete=CASCADE, verbose_name='Родительский пункт')
     kind = CharField(choices=Kind.choices, max_length=20, default=Kind.DEFAULT, verbose_name='Тип')
     order = IntegerField(default=get_default_order, verbose_name='Порядок')
+
+    is_visible = BooleanField(default=True, verbose_name='Отображается?')
 
     class Meta:
         verbose_name = 'Пункт меню'
@@ -162,6 +164,11 @@ class Menu(Model):
     childs.fget.short_description = 'Подпункты'
 
     @property
+    def childs_visible(self):
+        return Menu.objects.filter(parent=self, is_visible=True).order_by('order')
+    childs.fget.short_description = 'Подпункты, видимые'
+
+    @property
     def childs_all(self):
         return _childs_all(self.childs)
     childs_all.fget.short_description = 'Подпункты, все'
@@ -233,20 +240,20 @@ class Menu(Model):
 
     @staticmethod
     def get_dict():
-        menu_0 = Menu.objects.filter(kind=Menu.Kind.INDEX).first()
+        menu_0 = Menu.objects.filter(kind=Menu.Kind.INDEX, is_visible=True).first()
         menus = {
             'menu': menu_0,
             'childs': []
         }
 
-        menus_1 = menu_0.childs
+        menus_1 = menu_0.childs_visible
         for menu_1 in menus_1:
             items, is_childs = menu_1._get_menu_dict_items()
             for item in items:
                 menus['childs'].append(item)
 
             if is_childs:
-                menus_2 = menu_1.childs
+                menus_2 = menu_1.childs_visible
                 for menu_2 in menus_2:
                     items, is_childs = menu_2._get_menu_dict_items()
                     for item in items:
@@ -254,7 +261,7 @@ class Menu(Model):
 
                     # Третий уровень
                     # if is_childs:
-                    #     menus_3 = menu_2.childs
+                    #     menus_3 = menu_2.childs_visible
                     #     for menu_3 in menus_3:
                     #         items, is_childs = menu_3._get_menu_dict_items()
                     #         for item in items:

@@ -16,3 +16,6 @@
 .dropdown-menu {
     padding: 0px;
 }
+table.borderless, .borderless tr, .borderless td, .borderless thead th {
+    border: none;
+}

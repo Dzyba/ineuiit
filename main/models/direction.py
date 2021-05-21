@@ -29,7 +29,11 @@ class Direction(Model):
 
     @property
     def url(self):
-        return 'javascript:void(0);'
+        return '/direction/' + self.slug
+
+    def get_breadcrumbs_dict(self, menu):
+        breadcrumbs = menu.get_breadcrumbs_dict()
+        return breadcrumbs
 
     class Meta:
         verbose_name = 'Направление'
@@ -38,7 +42,7 @@ class Direction(Model):
 class Exam(Model):
     name = CharField(max_length=200, verbose_name='Название')
     score = CharField(max_length=200, verbose_name='Балл')
-    direction = ForeignKey(Direction, on_delete=CASCADE, verbose_name='Направление')
+    direction = ForeignKey(Direction, on_delete=CASCADE, related_name='exams', verbose_name='Направление')
 
     def __str__(self):
         return self.name

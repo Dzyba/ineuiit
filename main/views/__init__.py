@@ -5,3 +5,4 @@ from .cathedra import *
 from .staff import *
 from .admin import *
 from .blocks import *
+from .directions import *

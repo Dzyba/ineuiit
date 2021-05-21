@@ -16,7 +16,8 @@ class PageView(View):
         context['menus'] = Menu.get_dict()
         context['page'] = page
         context['html'] = page.html.format(
-            block_directions_p=Blocks.block_directions_p()
+            block_directions_p=Blocks.block_directions_p(),
+            block_directions_table=Blocks.block_directions_table(),
         )
 
         if page.is_sidebar:

@@ -10,7 +10,7 @@ from .page import PageInline
 class MenuAdmin(admin.ModelAdmin):
     ordering = ['order']
 
-    list_display = ('admin_str', 'parent', 'order_actions', 'kind', 'kind_obj') # order
+    list_display = ('admin_str', 'parent', 'order_actions', 'kind', 'kind_obj', 'is_visible') # order
     list_display_links = ['admin_str']
     # readonly_fields = ['order']
 

@@ -1,0 +1,39 @@
+{% load nbsp %}
+<table class="table borderless">
+    <thead>
+        <tr>
+            <th scope="col" colspan="3">Перечень вступительных испытаний</th>
+        </tr>
+        <tr>
+            <th scope="col">Направление подготовки</th>
+            <th scope="col">Вступительные испытания</th>
+            <th scope="col">Минимальный балл</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td colspan="3"><i>Бакалавриат</i></td></tr>
+        {% for direction in directions %}{% if direction.degree == "baccalaureate" %}
+        <tr>
+            <td><a class="active" href="{{ direction.url }}">{{ direction.name }}</a></td>
+            <td>{% for exam in direction.exams.all %}{{ exam.name|nbsp }}<br>{% endfor %}</td>
+            <td>{% for exam in direction.exams.all %}{{ exam.score|nbsp }}<br>{% endfor %}</td>
+        </tr>
+        {% endif %}{% endfor %}
+        <tr><td colspan="3"><i>Магистратура</i></td></tr>
+        {% for direction in directions %}{% if direction.degree == "magistracy" %}
+        <tr>
+            <td><a class="active" href="{{ direction.url }}">{{ direction.name }}</a></td>
+            <td>{% for exam in direction.exams.all %}{{ exam.name|nbsp }}<br>{% endfor %}</td>
+            <td>{% for exam in direction.exams.all %}{{ exam.score|nbsp }}<br>{% endfor %}</td>
+        </tr>
+        {% endif %}{% endfor %}
+        <tr><td colspan="3"><i>Аспирантура</i></td></tr>
+        {% for direction in directions %}{% if direction.degree == "postgraduate" %}
+        <tr>
+            <td><a class="active" href="{{ direction.url }}">{{ direction.name }}</a></td>
+            <td>{% for exam in direction.exams.all %}{{ exam.name|nbsp }}<br>{% endfor %}</td>
+            <td>{% for exam in direction.exams.all %}{{ exam.score|nbsp }}<br>{% endfor %}</td>
+        </tr>
+        {% endif %}{% endfor %}
+    </tbody>
+</table>

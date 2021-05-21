@@ -1,4 +1,5 @@
 <p>Направления подготовки:</p>
+<p>Бакалавриат:</p>
 {% for direction in directions %}{% if direction.degree == "baccalaureate" %}
 <p class="highlight"><a class="active" href="{{ direction.url }}">{{ direction.name }}</a></p>
 {% endif %}{% endfor %}
