@@ -6,3 +6,4 @@ from .inner_link import *
 from .cathedra import *
 from .staff import *
 from .direction import *
+from .schedule import *
