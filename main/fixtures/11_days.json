@@ -1,0 +1,98 @@
+[
+  {
+    "model": "main.scheduleday",
+    "pk": 1,
+    "fields": {
+      "day": "1",
+      "group": 1
+    }
+  },
+  {
+    "model": "main.scheduleday",
+    "pk": 2,
+    "fields": {
+      "day": "2",
+      "group": 1
+    }
+  },
+  {
+    "model": "main.scheduleday",
+    "pk": 3,
+    "fields": {
+      "day": "3",
+      "group": 1
+    }
+  },
+  {
+    "model": "main.scheduleday",
+    "pk": 4,
+    "fields": {
+      "day": "4",
+      "group": 1
+    }
+  },
+  {
+    "model": "main.scheduleday",
+    "pk": 5,
+    "fields": {
+      "day": "5",
+      "group": 1
+    }
+  },
+  {
+    "model": "main.scheduleday",
+    "pk": 6,
+    "fields": {
+      "day": "6",
+      "group": 1
+    }
+  },
+  {
+    "model": "main.scheduleday",
+    "pk": 7,
+    "fields": {
+      "day": "1",
+      "group": 2
+    }
+  },
+  {
+    "model": "main.scheduleday",
+    "pk": 8,
+    "fields": {
+      "day": "2",
+      "group": 2
+    }
+  },
+  {
+    "model": "main.scheduleday",
+    "pk": 9,
+    "fields": {
+      "day": "3",
+      "group": 2
+    }
+  },
+  {
+    "model": "main.scheduleday",
+    "pk": 10,
+    "fields": {
+      "day": "4",
+      "group": 2
+    }
+  },
+  {
+    "model": "main.scheduleday",
+    "pk": 11,
+    "fields": {
+      "day": "5",
+      "group": 2
+    }
+  },
+  {
+    "model": "main.scheduleday",
+    "pk": 12,
+    "fields": {
+      "day": "6",
+      "group": 2
+    }
+  }
+]

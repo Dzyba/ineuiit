@@ -1,0 +1,20 @@
+[
+  {
+    "model": "main.schedulegroup",
+    "pk": 1,
+    "fields": {
+      "name": "Группа 001",
+      "slug": "grp001",
+      "message": null
+    }
+  },
+  {
+    "model": "main.schedulegroup",
+    "pk": 2,
+    "fields": {
+      "name": "Группа 002",
+      "slug": "grp002",
+      "message": null
+    }
+  }
+]

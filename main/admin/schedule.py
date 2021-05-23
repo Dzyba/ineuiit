@@ -6,7 +6,27 @@ from django.utils.html import escape, mark_safe
 class ScheduleDayInline(admin.TabularInline):
     model = ScheduleDay
     extra = 0
-    fields = ['number', 'name', 'group']
+    fields = ['day', 'schedule', 'day_link', 'group']
+    readonly_fields = ['schedule', 'day_link']
+
+    def schedule(self, obj):
+        timeslots = ScheduleTimeSlot.objects.filter(day=obj).order_by('number')
+        html = ''
+        for timeslot in timeslots:
+            if timeslot.appearance == ScheduleTimeSlot.Appearance.ALWAYS:
+                html += '<tr><td>%s</td><td colspan="2">%s</td></tr>' %(timeslot.time, timeslot.pair)
+            elif timeslot.appearance == ScheduleTimeSlot.Appearance.NUMERATOR:
+                html += '<tr><td>%s</td><td>%s</td><td></td></tr>' % (timeslot.time, timeslot.pair)
+            elif timeslot.appearance == ScheduleTimeSlot.Appearance.DENOMINATOR:
+                html += '<tr><td>%s</td><td></td><td>%s</td></tr>' % (timeslot.time, timeslot.pair)
+        html = '<table><tbody>%s</tbody></table>' %(html)
+        return mark_safe(html)
+    schedule.short_description = 'Расписание'
+
+    def day_link(self, obj):
+        link = reverse('admin:main_scheduleday_change', args=[obj.id])
+        return mark_safe(f'<a href="{link}">редактировать</a>')
+    day_link.short_description = 'Действия'
 
 class ScheduleTimeSlotInline(admin.TabularInline):
     model = ScheduleTimeSlot
@@ -22,8 +42,8 @@ class ScheduleGroupAdmin(admin.ModelAdmin):
 
 @admin.register(ScheduleDay)
 class ScheduleDayAdmin(admin.ModelAdmin):
-    list_display = ('number', 'name', 'group_link')
-    list_display_links = ['number', 'name']
+    list_display = ('day', 'group_link')
+    list_display_links = ['day']
 
     inlines = [ScheduleTimeSlotInline]
 

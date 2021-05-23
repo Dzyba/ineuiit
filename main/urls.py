@@ -11,5 +11,7 @@ urlpatterns = [
     path('cathedra/<slug:slug>', CathedraView.as_view(), name='cathedra'),
     path('staff/<slug:slug>', StaffView.as_view(), name='staff'),
     path('direction/<slug:slug>', DirectionView.as_view(), name='direction'),
+    path('schedule', ScheduleView.as_view(), name='schedules'),
+    path('schedule/<slug:slug>', ScheduleView.as_view(), name='schedule'),
     path('<slug:slug>', PageView.as_view(), name='page')
 ]

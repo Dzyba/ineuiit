@@ -6,3 +6,4 @@ from .staff import *
 from .admin import *
 from .blocks import *
 from .directions import *
+from .schedule import *
