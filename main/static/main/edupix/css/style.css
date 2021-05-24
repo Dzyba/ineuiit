@@ -180,7 +180,8 @@ table,
 th,
 tr,
 td {
-	border: 1px solid #191919;
+    border: 1px solid #dee2e6;
+	/*border: 1px solid #191919;*/
 }
 
 th,

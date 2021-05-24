@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n %}
+{% load webpush_notifications %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +35,9 @@
 	<!-- Main app style and script -->
 	<link href="{% static "main/css/style.css" %}" rel="stylesheet">
 	<script src="{% static "main/js/script.js" %}"></script>
+
+	<script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
+	{% webpush_header %}
 </head>
 
 <body>
@@ -52,6 +57,9 @@
 {% include 'main/edupix/_header.html' %}
 
 {% include 'main/edupix/_breadcroumbs.html' %}
+
+{% get_current_language as LANGUAGE_CODE %}
+1{{ LANGUAGE_CODE }}2
 
 {% block content %}{% endblock %}
 

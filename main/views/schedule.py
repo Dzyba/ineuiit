@@ -1,15 +1,18 @@
 from django.shortcuts import render
 from django.views import View
 from main.models import Setting, Menu, ScheduleGroup, ScheduleDay, ScheduleTimeSlot
+from django.utils import translation
 
 
 class ScheduleView(View):
     template_name = 'main/edupix/schedule.html'
 
     def get(self, request, *args, **kwargs):
-        context = {}
+        translation.activate('ru')
 
+        context = {}
         groups = ScheduleGroup.objects.all()
+        context['groups'] = groups
         menu = Menu.objects.filter(kind=Menu.Kind.SCHEDULE).first()
         if 'slug' not in kwargs:
             context['is_list'] = True
@@ -22,6 +25,9 @@ class ScheduleView(View):
             context['header'] = 'Расписание ' + group.name
             context['breadcrumbs'] = group.get_breadcrumbs_dict(menu)
             context['group'] = group
+            context['webpush'] = {
+                'group': group.slug
+            }
             context['schedule'] = group.get_schedule_dict()
 
         menu = Menu.objects.filter(kind=Menu.Kind.CATHEDRA_ITEM).first()

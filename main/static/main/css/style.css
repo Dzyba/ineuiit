@@ -19,3 +19,13 @@
 table.borderless, .borderless tr, .borderless td, .borderless thead th {
     border: none;
 }
+td.bg-success {
+    background-color: #cfe3d7!important;
+}
+td.bg-info {
+    background-color: #e2eff7!important;
+}
+div.bg-group-message {
+    padding: .75em;
+    background-color: #fcc741!important;
+}

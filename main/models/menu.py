@@ -277,15 +277,15 @@ class Menu(Model):
             items = [{
                     'menu': { 'name': cathedra.name },
                     'url':self.url + cathedra.slug,
-                    'childs': [
-                        {
-                            'menu': {
-                                'name': link.name
-                            },
-                            'url': self.url + cathedra.slug + link.slug,
-                            'childs': []
-                        }
-                    for link in inner_links]
+                    'childs': []
+                    #     {
+                    #         'menu': {
+                    #             'name': link.name
+                    #         },
+                    #         'url': self.url + cathedra.slug + link.slug,
+                    #         'childs': []
+                    #     }
+                    # for link in inner_links]
                 } for cathedra in cathedras]
 
             is_childs = False

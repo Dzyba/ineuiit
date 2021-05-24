@@ -1,5 +1,6 @@
 {% extends 'main/edupix/layout.html' %}
 {% load static %}
+{% load webpush_notifications %}
 {% block content %}
 <div id="programme-page" class="programme-details-section section-padding">
     <div class="container">
@@ -14,7 +15,43 @@
             </div>
             <div class="col-lg-8">
                 <div class="single-programme">
-                    ----
+                    {% if group.message %}
+                    <div class="row">
+                        <div class="col-lg-12 mb-3">
+                            <div class="bg-group-message">{{ group.message }}</div>
+                        </div>
+                        <div class="col-lg-12 mb-3">
+                            {% webpush_button with_class="btn" %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="row">
+                    {% for day in schedule %}
+                        <div class="col-lg-12">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="{{ day.rowspan }}">{{ day.day.get_day_display }}</th>
+                                        <td>Время</td>
+                                        <td class="bg-success">ЧС</td>
+                                        <td class="bg-info">ЗН</td>
+                                    </tr>
+                                {% for slot in day.timeslots %}
+                                    <tr>
+                                        <td width="20%">{{ slot.time }}</td>
+                                        {% if slot.is_whole %}
+                                        <td width="80%" colspan="2">{{ slot.pair_numerator|default:"" }}</td>
+                                        {% else %}
+                                        <td width="40%">{{ slot.pair_numerator|default:"" }}</td>
+                                        <td width="40%">{{ slot.pair_denominator|default:"" }}</td>
+                                        {% endif %}
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>

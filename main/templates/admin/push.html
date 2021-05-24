@@ -1,0 +1,58 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static admin_modify %}
+
+{% block extrahead %}
+{{ block.super }}
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/jquery-form/form@4.3.0/dist/jquery.form.min.js" integrity="sha384-qlmct0AOBiA2VPZkMY3+2WqkHtIQ9lSdAsAn5RUJD/3vA5MKDgSGcdmIv4ycVxyn" crossorigin="anonymous"></script>
+{% endblock %}
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/forms.css" %}">{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+  {% csrf_token %}
+  <fieldset class="module aligned ">
+    <div class="form-row field-customer">
+      <div>
+        <label class="required" for="id_task">Выберите задание:</label>
+        <div class="related-widget-wrapper">
+          {{ form.task }}
+          <div>{{ form.task.errors }}</div>
+        </div>
+      </div>
+    </div>
+    {% for placement in placements %}
+    <input type="hidden" name="_selected_action" value="{{ placement.pk }}" />
+    {% endfor %}
+    <input type="hidden" name="action" value="add_to_task" />
+    {{ form.path }}
+
+  </fieldset>
+  <div>
+    <a href="{% url 'admin:main_placement_changelist' %}" class="button" style="padding: 10px 15px;">Отмена</a>
+    <input type="submit" name="apply" value="Сохранить">
+  </div>
+</form>
+{{ form.media }}
+<script>
+(function($) {
+    $('#add-form').click(function() {
+        var index = $('#id_inline_test_models-TOTAL_FORMS').val();
+        var newTable = $('#id_inline_test_models-__prefix__-DELETE').parents('table').clone();
+        newTable.find(':input').each(function() {
+            for (attr of ['name', 'id'])
+                $(this).attr(
+                    attr,
+                    $(this).attr(attr).replace('__prefix__', index)
+                )
+        })
+        newTable.insertBefore($(this))
+        $('#id_inline_test_models-TOTAL_FORMS').val(
+            parseInt($('#id_inline_test_models-TOTAL_FORMS').val()) + 1
+        )
+        newTable.slideDown();
+    })
+})($)
+</script>
+{% endblock %}
+

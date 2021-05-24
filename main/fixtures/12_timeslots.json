@@ -1,0 +1,506 @@
+[
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 1,
+    "fields": {
+      "day": "1",
+      "number": 1,
+      "time": "08:30 - 10:05",
+      "pair_numerator": "ВП",
+      "pair_denominator": null,
+      "is_whole": true
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 2,
+    "fields": {
+      "day": "1",
+      "number": 2,
+      "time": "10:15 - 11:50",
+      "pair_numerator": "ВП",
+      "pair_denominator": null,
+      "is_whole": true
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 3,
+    "fields": {
+      "day": "1",
+      "number": 3,
+      "time": "12:00 - 13:35",
+      "pair_numerator": "ВП",
+      "pair_denominator": null,
+      "is_whole": true
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 4,
+    "fields": {
+      "day": "1",
+      "number": 4,
+      "time": "13:50 - 15:25",
+      "pair_numerator": "ВП",
+      "pair_denominator": null,
+      "is_whole": true
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 5,
+    "fields": {
+      "day": "1",
+      "number": 5,
+      "time": "15:40 - 17:15",
+      "pair_numerator": null,
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 6,
+    "fields": {
+      "day": "1",
+      "number": 6,
+      "time": "17:25 - 19:00",
+      "pair_numerator": null,
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 7,
+    "fields": {
+      "day": "1",
+      "number": 7,
+      "time": "19:10 - 20:45",
+      "pair_numerator": null,
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 8,
+    "fields": {
+      "day": "2",
+      "number": 1,
+      "time": "08:30 - 10:05",
+      "pair_numerator": null,
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 9,
+    "fields": {
+      "day": "2",
+      "number": 2,
+      "time": "10:15 - 11:50",
+      "pair_numerator": null,
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 10,
+    "fields": {
+      "day": "2",
+      "number": 3,
+      "time": "12:00 - 13:35",
+      "pair_numerator": "(лек) Программирование графических приложений Каф Волосатова Т. М.",
+      "pair_denominator": null,
+      "is_whole": true
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 11,
+    "fields": {
+      "day": "2",
+      "number": 4,
+      "time": "13:50 - 15:25",
+      "pair_numerator": "(лек) Электроника 520 Загидуллин Р. Ш.",
+      "pair_denominator": null,
+      "is_whole": true
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 12,
+    "fields": {
+      "day": "2",
+      "number": 5,
+      "time": "15:40 - 17:15",
+      "pair_numerator": "(лаб) Электроника кк 243л\t",
+      "pair_denominator": "(лаб) Программирование графических приложений кк 306.2э",
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 13,
+    "fields": {
+      "day": "2",
+      "number": 6,
+      "time": "17:25 - 19:00",
+      "pair_numerator": "(лаб) Электроника кк 243л\t",
+      "pair_denominator": "(лаб) Программирование графических приложений кк 306.2э",
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 14,
+    "fields": {
+      "day": "2",
+      "number": 7,
+      "time": "19:10 - 20:45",
+      "pair_numerator": null,
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 15,
+    "fields": {
+      "day": "3",
+      "number": 1,
+      "time": "08:30 - 10:05",
+      "pair_numerator": "(сем) Прикладная механика 824л Подчасов Е. О.",
+      "pair_denominator": null,
+      "is_whole": true
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 16,
+    "fields": {
+      "day": "3",
+      "number": 2,
+      "time": "10:15 - 11:50",
+      "pair_numerator": "(сем) Иностранный язык Каф",
+      "pair_denominator": null,
+      "is_whole": true
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 17,
+    "fields": {
+      "day": "3",
+      "number": 3,
+      "time": "12:00 - 13:35",
+      "pair_numerator": null,
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 18,
+    "fields": {
+      "day": "3",
+      "number": 4,
+      "time": "13:50 - 15:25",
+      "pair_numerator": "(сем) Элективный курс по физической культуре и спорту Каф",
+      "pair_denominator": null,
+      "is_whole": true
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 19,
+    "fields": {
+      "day": "3",
+      "number": 5,
+      "time": "15:40 - 17:15",
+      "pair_numerator": null,
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 20,
+    "fields": {
+      "day": "3",
+      "number": 6,
+      "time": "17:25 - 19:00",
+      "pair_numerator": null,
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 21,
+    "fields": {
+      "day": "3",
+      "number": 7,
+      "time": "19:10 - 20:45",
+      "pair_numerator": null,
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 22,
+    "fields": {
+      "day": "4",
+      "number": 1,
+      "time": "08:30 - 10:05",
+      "pair_numerator": "",
+      "pair_denominator": "",
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 23,
+    "fields": {
+      "day": "4",
+      "number": 2,
+      "time": "10:15 - 11:50",
+      "pair_numerator": "(сем) Элективный курс по физической культуре и спорту Каф",
+      "pair_denominator": null,
+      "is_whole": true
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 24,
+    "fields": {
+      "day": "4",
+      "number": 3,
+      "time": "12:00 - 13:35",
+      "pair_numerator": "(лек) Основы автоматизированного проектирования 520 Маничев В. Б.",
+      "pair_denominator": null,
+      "is_whole": true
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 25,
+    "fields": {
+      "day": "4",
+      "number": 4,
+      "time": "13:50 - 15:25",
+      "pair_numerator": "(лек) Базы данных Каф Пивоварова Н. В.",
+      "pair_denominator": null,
+      "is_whole": true
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 26,
+    "fields": {
+      "day": "4",
+      "number": 5,
+      "time": "15:40 - 17:15",
+      "pair_numerator": null,
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 27,
+    "fields": {
+      "day": "4",
+      "number": 6,
+      "time": "17:25 - 19:00",
+      "pair_numerator": null,
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 28,
+    "fields": {
+      "day": "4",
+      "number": 7,
+      "time": "19:10 - 20:45",
+      "pair_numerator": null,
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 29,
+    "fields": {
+      "day": "5",
+      "number": 1,
+      "time": "08:30 - 10:05",
+      "pair_numerator": "(лаб) Прикладная механика Каф",
+      "pair_denominator": "(лаб) Базы данных Каф",
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 30,
+    "fields": {
+      "day": "5",
+      "number": 2,
+      "time": "10:15 - 11:50",
+      "pair_numerator": "(лаб) Прикладная механика Каф",
+      "pair_denominator": "(лаб) Базы данных Каф",
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 31,
+    "fields": {
+      "day": "5",
+      "number": 3,
+      "time": "12:00 - 13:35",
+      "pair_numerator": "(лаб) Основы автоматизированного проектирования кк 306.5э",
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 32,
+    "fields": {
+      "day": "5",
+      "number": 4,
+      "time": "13:50 - 15:25",
+      "pair_numerator": "(лаб) Основы автоматизированного проектирования кк 306.5э",
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 33,
+    "fields": {
+      "day": "5",
+      "number": 5,
+      "time": "15:40 - 17:15",
+      "pair_numerator": null,
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 34,
+    "fields": {
+      "day": "5",
+      "number": 6,
+      "time": "17:25 - 19:00",
+      "pair_numerator": null,
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 35,
+    "fields": {
+      "day": "5",
+      "number": 7,
+      "time": "19:10 - 20:45",
+      "pair_numerator": null,
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 36,
+    "fields": {
+      "day": "6",
+      "number": 1,
+      "time": "08:30 - 10:05",
+      "pair_numerator": null,
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 37,
+    "fields": {
+      "day": "6",
+      "number": 2,
+      "time": "10:15 - 11:50",
+      "pair_numerator": null,
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 38,
+    "fields": {
+      "day": "6",
+      "number": 3,
+      "time": "12:00 - 13:35",
+      "pair_numerator": "(сем) Базы данных Каф Марков И. С.",
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 39,
+    "fields": {
+      "day": "6",
+      "number": 4,
+      "time": "13:50 - 15:25",
+      "pair_numerator": "(лек) Прикладная механика 520 Шашурин Г. В.",
+      "pair_denominator": null,
+      "is_whole": true
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 40,
+    "fields": {
+      "day": "6",
+      "number": 5,
+      "time": "15:40 - 17:15",
+      "pair_numerator": "(лек) Дискретная математика Каф Божко А. Н.",
+      "pair_denominator": "(сем) Дискретная математика Каф Божко А. Н.",
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 41,
+    "fields": {
+      "day": "6",
+      "number": 6,
+      "time": "17:25 - 19:00",
+      "pair_numerator": null,
+      "pair_denominator": "(сем) Дискретная математика Каф Божко А. Н.",
+      "is_whole": false
+    }
+  },
+  {
+    "model": "main.scheduletimeslot",
+    "pk": 42,
+    "fields": {
+      "day": "6",
+      "number": 7,
+      "time": "19:10 - 20:45",
+      "pair_numerator": null,
+      "pair_denominator": null,
+      "is_whole": false
+    }
+  }
+]

@@ -1,1 +1,5 @@
 django
+Pillow
+openpyxl
+django-webpush
+six

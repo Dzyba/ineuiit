@@ -1,4 +1,4 @@
-from django.urls import path, register_converter
+from django.urls import path, register_converter, include
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 
@@ -13,5 +13,8 @@ urlpatterns = [
     path('direction/<slug:slug>', DirectionView.as_view(), name='direction'),
     path('schedule', ScheduleView.as_view(), name='schedules'),
     path('schedule/<slug:slug>', ScheduleView.as_view(), name='schedule'),
-    path('<slug:slug>', PageView.as_view(), name='page')
+
+    path('send_push', send_push),
+
+    path('<slug:slug>', PageView.as_view(), name='page'),
 ]

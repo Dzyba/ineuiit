@@ -1,7 +1,11 @@
 from django.contrib import admin
+from django.shortcuts import render
 from main.models import ScheduleGroup, ScheduleDay, ScheduleTimeSlot
-from django.urls import reverse
+from django.urls import path, reverse
 from django.utils.html import escape, mark_safe
+from django.contrib.admin.views.decorators import staff_member_required
+from main.views import AdminPushView
+from main.forms import AdminPushForm
 
 class ScheduleDayInline(admin.TabularInline):
     model = ScheduleDay
@@ -31,7 +35,7 @@ class ScheduleDayInline(admin.TabularInline):
 class ScheduleTimeSlotInline(admin.TabularInline):
     model = ScheduleTimeSlot
     extra = 0
-    fields = ['number', 'time', 'day', 'pair', 'appearance']
+    fields = ['number', 'time', 'day', 'pair_numerator', 'pair_denominator', 'is_whole']
 
 @admin.register(ScheduleGroup)
 class ScheduleGroupAdmin(admin.ModelAdmin):
@@ -39,6 +43,31 @@ class ScheduleGroupAdmin(admin.ModelAdmin):
     list_display_links = ['name', 'slug']
 
     inlines = [ScheduleDayInline]
+
+    actions=['push']
+
+    def get_urls(self):
+        urls = super().get_urls()
+        custom_urls = [
+            path('admin/main/schedulegroup/push/<int:id>', staff_member_required(AdminPushView.as_view()), name='admin-push'),
+        ]
+        return custom_urls + urls
+
+    def push(self, request, queryset):
+        # if 'apply' in request.POST:
+        #     task_form = AdminTaskForm(request.POST)
+        #     if task_form.is_valid():
+        #         task = task_form.cleaned_data['task']
+        #         # if task == None:
+        #         #     task = Task.objects.create()
+        #         queryset.update(task=task)
+        #         self.message_user(request, '{} заявок добавлено в задание'.format(queryset.count()))
+        #         return HttpResponseRedirect(task_form.cleaned_data['path'])
+        #         # return HttpResponseRedirect(reverse('admin:main_task_change', args=[task.id]))
+
+        push_form = AdminPushForm(initial={'path':request.get_full_path()})
+        return render(request, 'admin/push.html', context={'form':push_form, 'groups': queryset})
+    push.short_description = 'Послать уведомление'
 
 @admin.register(ScheduleDay)
 class ScheduleDayAdmin(admin.ModelAdmin):
@@ -57,7 +86,7 @@ class ScheduleDayAdmin(admin.ModelAdmin):
 
 @admin.register(ScheduleTimeSlot)
 class ScheduleTimeSlotAdmin(admin.ModelAdmin):
-    list_display = ('number', 'time', 'day_link', 'group_link', 'pair', 'appearance')
+    list_display = ('number', 'time', 'day_link', 'group_link', 'pair_numerator', 'pair_denominator', 'is_whole')
     list_display_links = ['number', 'time']
 
     def day_link(self, obj):

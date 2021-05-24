@@ -23,12 +23,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'webpush',
     'main'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -41,7 +43,9 @@ ROOT_URLCONF = 'ineuiit.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            'main/templates/webpush'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -92,11 +96,21 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+WEBPUSH_SETTINGS = {
+   "VAPID_PUBLIC_KEY": "BK-wVWkb6DRRPPM9rBS7rWrMTaXJIaEVpVo1FgtIAKRh3p86s6rygWialaqnvk53PVIeC8YV3d9xnhUGsbam2nk",
+   "VAPID_PRIVATE_KEY": "0PJRwGIeLpUqCFGhxk8kTtbjKCYAyDGvAeoNcuB8dRo",
+   "VAPID_ADMIN_EMAIL": "dmitry@dzyba.ru"
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
 LANGUAGE_CODE = 'ru'
+LANGUAGES = [
+    ('en','English'),
+    ('ru', 'Русский')
+]
 
 TIME_ZONE = 'UTC'
 
@@ -115,3 +129,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'), )
