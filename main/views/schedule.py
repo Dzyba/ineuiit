@@ -25,9 +25,7 @@ class ScheduleView(View):
             context['header'] = 'Расписание ' + group.name
             context['breadcrumbs'] = group.get_breadcrumbs_dict(menu)
             context['group'] = group
-            context['webpush'] = {
-                'group': group.slug
-            }
+            context['webpush'] = {'group': 'all'}
             context['schedule'] = group.get_schedule_dict()
 
         menu = Menu.objects.filter(kind=Menu.Kind.CATHEDRA_ITEM).first()

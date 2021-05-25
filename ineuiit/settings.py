@@ -44,6 +44,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
+            'main/templates/admin',
             'main/templates/webpush'
         ],
         'APP_DIRS': True,
@@ -107,9 +108,10 @@ WEBPUSH_SETTINGS = {
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
 LANGUAGE_CODE = 'ru'
+
 LANGUAGES = [
-    ('en','English'),
-    ('ru', 'Русский')
+    ('ru', 'Русский'),
+    ('en','English')
 ]
 
 TIME_ZONE = 'UTC'

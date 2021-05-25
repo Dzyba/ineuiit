@@ -22,25 +22,25 @@ class AdminPushView(View):
         context = self._get_context(request, *args, **kwargs)
         return render(request, self.template_name, context)
 
-    def post(self, request, *args, **kwargs):
-        pass
-        # if 'apply' in request.POST:
-        #     task_form = PushForm(request.POST)
-        #     if task_form.is_valid():
-        #         task = task_form.cleaned_data['task']
-        #         if task == None:
-        #             task = Task.objects.create()
-        #         Placement.objects.filter(id=kwargs['id']).update(task=task)
-        #
-        #         messages.add_message(
-        #             request,
-        #             messages.INFO,
-        #             'Заявка добавлена в задание',
-        #             extra_tags='',
-        #             fail_silently=False
-        #         )
-        #         # return HttpResponseRedirect(task_form.cleaned_data['path'])
-        #         return HttpResponseRedirect(reverse('admin:main_task_change', args=[task.id]))
+    # def post(self, request, *args, **kwargs):
+    #     print('------------_>')
+    #     # if 'apply' in request.POST:
+    #     #     task_form = PushForm(request.POST)
+    #     #     if task_form.is_valid():
+    #     #         task = task_form.cleaned_data['task']
+    #     #         if task == None:
+    #     #             task = Task.objects.create()
+    #     #         Placement.objects.filter(id=kwargs['id']).update(task=task)
+    #     #
+    #     #         messages.add_message(
+    #     #             request,
+    #     #             messages.INFO,
+    #     #             'Заявка добавлена в задание',
+    #     #             extra_tags='',
+    #     #             fail_silently=False
+    #     #         )
+    #     #         # return HttpResponseRedirect(task_form.cleaned_data['path'])
+    #     #         return HttpResponseRedirect(reverse('admin:main_task_change', args=[task.id]))
 
 
 # Вспомогательные функции сообщений и редиректа

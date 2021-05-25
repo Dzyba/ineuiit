@@ -4,8 +4,12 @@ from main.models import ScheduleGroup, ScheduleDay, ScheduleTimeSlot
 from django.urls import path, reverse
 from django.utils.html import escape, mark_safe
 from django.contrib.admin.views.decorators import staff_member_required
+from django.http import HttpResponseRedirect
 from main.views import AdminPushView
 from main.forms import AdminPushForm
+from webpush import send_group_notification
+from django.templatetags.static import static
+
 
 class ScheduleDayInline(admin.TabularInline):
     model = ScheduleDay
@@ -39,12 +43,14 @@ class ScheduleTimeSlotInline(admin.TabularInline):
 
 @admin.register(ScheduleGroup)
 class ScheduleGroupAdmin(admin.ModelAdmin):
+    change_list_template = 'admin/schedulegroup_change_list.html'
+
     list_display = ('name', 'slug', 'message')
     list_display_links = ['name', 'slug']
 
     inlines = [ScheduleDayInline]
 
-    actions=['push']
+    # actions=['push']
 
     def get_urls(self):
         urls = super().get_urls()
@@ -54,16 +60,22 @@ class ScheduleGroupAdmin(admin.ModelAdmin):
         return custom_urls + urls
 
     def push(self, request, queryset):
-        # if 'apply' in request.POST:
-        #     task_form = AdminTaskForm(request.POST)
-        #     if task_form.is_valid():
-        #         task = task_form.cleaned_data['task']
-        #         # if task == None:
-        #         #     task = Task.objects.create()
-        #         queryset.update(task=task)
-        #         self.message_user(request, '{} заявок добавлено в задание'.format(queryset.count()))
-        #         return HttpResponseRedirect(task_form.cleaned_data['path'])
-        #         # return HttpResponseRedirect(reverse('admin:main_task_change', args=[task.id]))
+        if 'apply' in request.POST:
+            push_form = AdminPushForm(request.POST)
+            if push_form.is_valid():
+                header = push_form.cleaned_data['header']
+                text = push_form.cleaned_data['text']
+
+                payload = {
+                    'head': header,
+                    'body': text,
+                    'icon': static('main/img/logo-square.png'),
+                    'url': reverse('main:schedules')
+                }
+                send_group_notification(group_name='all', payload=payload, ttl=1000)
+
+                self.message_user(request, 'Уведомление отправлено')
+                return HttpResponseRedirect(reverse('admin:main_schedulegroup_changelist'))
 
         push_form = AdminPushForm(initial={'path':request.get_full_path()})
         return render(request, 'admin/push.html', context={'form':push_form, 'groups': queryset})
