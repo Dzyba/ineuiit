@@ -1,0 +1,50 @@
+[
+  {
+    "model": "main.announcement",
+    "pk": 1,
+    "fields": {
+      "name": "«Алюминевая азбука» на призы Русала пройдет в видеоформате",
+      "slug": "aluminum-alphabet-for-rusals-prizes-will-be-held-in-video-format",
+      "image": "main/images/announcements/images/aluminum-alphabet-for-rusals-prizes-will-be-held-in-video-format.jpg",
+      "description": "В Год науки и технологии традиционный региональный конкурс предприятия \"Боксит Тимана\" компании РУСАЛ \"Алюминиевая азбука\" в Республике Коми проходит в новом формате.",
+      "html": "В Год науки и технологии традиционный региональный конкурс предприятия \"Боксит Тимана\" компании РУСАЛ \"Алюминиевая азбука\" в Республике Коми проходит в новом формате. Юные исследователи представят свои работы в видеороликах. Новый формат, по задумке организаторов, будет способствовать популяризации научных знаний и мотивировать молодежь к использованию современных и высокотехнологичных средств и методов.",
+      "datetime": "2021-04-22T10:00:30+03:00"
+    }
+  },
+  {
+    "model": "main.announcement",
+    "pk": 2,
+    "fields": {
+      "name": "Рабочее совещание с Харбинским инженерным университетом",
+      "slug": "working-meeting-with-harbin-university-of-engineering",
+      "image": "main/images/announcements/images/working-meeting-with-harbin-university-of-engineering.jpg",
+      "description": "",
+      "html": "",
+      "datetime": "2021-04-19T12:00:30+03:00"
+    }
+  },
+  {
+    "model": "main.announcement",
+    "pk": 3,
+    "fields": {
+      "name": "Приглашение к участию в групповой экспертной дискуссии",
+      "slug": "invitation-to-participate-in-a-panel-discussion",
+      "image": "main/images/announcements/images/invitation-to-participate-in-a-panel-discussion.jpg",
+      "description": "",
+      "html": "",
+      "datetime": "2021-02-25T14:00:30+03:00"
+    }
+  },
+  {
+    "model": "main.announcement",
+    "pk": 4,
+    "fields": {
+      "name": "Всероссийская научно-практическая конференция ",
+      "slug": "all-russian-scientific-and-practical-conference",
+      "image": "main/images/announcements/images/all-russian-scientific-and-practical-conference.jpg",
+      "description": "",
+      "html": "",
+      "datetime": "2021-02-25T14:00:30+03:00"
+    }
+  }
+]

@@ -28,6 +28,11 @@ class Menu(Model):
         CATHEDRA_ITEM = 'cathedra_item', 'Кафедра'
         DIRECTION_ITEM = 'direction_item', 'Направление'
         INNER_LINK = 'inner_link', 'Внутренняя ссылка'
+        NEWS_LIST = 'news_list', 'Список новостей'
+        NEWS_ITEM = 'news_item', 'Новость'
+        ANNOUNCEMENT_LIST = 'announcement_list', 'Список анонсов'
+        ANNOUNCEMENT_ITEM = 'announcement_item', 'Анонс'
+        CERTIFICATES = 'certificates', 'Заказ справок'
 
         @staticmethod
         def get_list():
@@ -224,6 +229,14 @@ class Menu(Model):
             parent_url = self.parent.url if self.parent else ''
             inner_link = InnerLink.objects.get(menu=self).slug
             return '%s%s' % (parent_url, inner_link)
+        elif self.kind == Menu.Kind.NEWS_LIST:
+            return '/news'
+        elif self.kind == Menu.Kind.NEWS_ITEM:
+            return '/news_item/'
+        elif self.kind == Menu.Kind.ANNOUNCEMENT_LIST:
+            return '/annoncements'
+        elif self.kind == Menu.Kind.ANNOUNCEMENT_ITEM:
+            return '/annoncements/'
 
         return 'javascript:void(0);'
 

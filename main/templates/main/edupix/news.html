@@ -1,0 +1,38 @@
+{% extends 'main/edupix/layout.html' %}
+{% load static %}
+{% block content %}
+<div class="course-area section-padding">
+    <div class="container">
+        <div class="course-wrapper">
+            <div class="row">
+                {% for item in news %}
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="single-course-item mb-30">
+                        <div class="course-bg">
+                            <img src="{{ item.image.url }}" class="img-fluid" alt="">
+                        </div>
+                        <div class="course-content">
+                            <h5><a href="{{ item.url }}">{{ item.name }}</a>
+                            </h5>
+                            <p>{{ item.description }}</p>
+                            <div class="course-user"><i class="la la-calendar"></i>{{ item.datetime|date:"d.m.Y" }}</div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="pagination-block mb-15">
+                        {% if pager.prev %}<a class="next page-numbers" href="{% url 'main:news-page' pager.prev %}"><i class="las la-arrow-left"></i></a>{% endif %}
+                        {% for item in pager.pages %}
+                        <a class="page-numbers{% if pager.page == item %} current{% endif %}" href="{% url 'main:news-page' item %}">{{ item }}</a>
+                        {% endfor %}
+                        {% if pager.next %}<a class="next page-numbers" href="{% url 'main:news-page' pager.next %}"><i class="las la-arrow-right"></i></a>{% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

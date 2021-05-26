@@ -5,7 +5,7 @@
     "fields": {
       "name": "Описание",
       "slug": "#description",
-      "menu": 15
+      "menu": 19
     }
   },
   {
@@ -14,7 +14,7 @@
     "fields": {
       "name": "История",
       "slug": "#history",
-      "menu": 16
+      "menu": 20
     }
   },
   {
@@ -23,7 +23,7 @@
     "fields": {
       "name": "Контакты",
       "slug": "#contacts",
-      "menu": 17
+      "menu": 21
     }
   },
   {
@@ -32,7 +32,7 @@
     "fields": {
       "name": "Сотрудники",
       "slug": "#staff",
-      "menu": 18
+      "menu": 22
     }
   }
 ]

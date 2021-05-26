@@ -1,0 +1,51 @@
+<div class="blog-area section-padding pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-12">
+                <div class="section-title">
+                    <h2><b>Анонсы</b></h2>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 text-right">
+                <a href="{% url 'main:announcements' %}" class="main-btn transparent">Все анонсы</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-12">
+                <div class="single-blog-item large">
+                    <div class="blog-bg">
+                        <img src="{{ announcement.image.url }}" alt="">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <p class="blog-meta"><i class="las la-calendar-check"></i>{{ announcement.datetime|date:"d.m.Y" }}</p>
+                        </div>
+                        <a href="{{ announcement.url }}">{{ announcement.name }}</a>
+                        <p>{{ announcement.description }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-12">
+                {% for announcement in announcements %}
+                <div class="single-blog-item small">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-5 col-sm-12">
+                            <div class="blog-bg">
+                                <img src="{{ announcement.image.url }}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-7 col-sm-12">
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <p class="blog-meta">  <i class="las la-calendar-check"></i>{{ announcement.datetime|date:"d.m.Y" }}</p>
+                                </div>
+                                <a href="{{ announcement.url }}">{{ announcement.name }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

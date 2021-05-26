@@ -1260,7 +1260,7 @@ textarea::placeholder {
 /* Hero Area Slider 
 ==================*/
 
-.single-slide-item {
+/*.single-slide-item {
 	background-image: url(../img/slider/1.jpg);
 }
 
@@ -1278,7 +1278,7 @@ textarea::placeholder {
 
 #home-3 .single-slide-item {
 	background-image: url(../img/slider/5.jpg);
-}
+}*/
 
 
 .single-slide-item {

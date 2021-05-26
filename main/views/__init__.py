@@ -8,3 +8,5 @@ from .blocks import *
 from .directions import *
 from .schedule import *
 from .push import *
+from .news import *
+from .announcements import *

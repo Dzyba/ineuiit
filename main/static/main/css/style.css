@@ -29,3 +29,6 @@ div.bg-group-message {
     padding: .75em;
     background-color: #fcc741!important;
 }
+.single-blog-item.small .blog-content a {
+    font-size: 16px!important;
+}

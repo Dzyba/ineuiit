@@ -1,0 +1,20 @@
+{% extends 'main/edupix/layout.html' %}
+{% load static %}
+{% block content %}
+<div id="single-course-page" class="gray-bg section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="single-course-wrapper white-bg">
+                    <div class="single-course-img">
+                        <img src="{{ announcement.image.url }}" alt="">
+                    </div>
+                    <div class="course-overview">
+                        <p>{{ announcement.html|safe }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -19,7 +19,7 @@
       "is_sidebar": true,
       "sidebar_name": null,
       "slug": "structure",
-      "menu": 3,
+      "menu": 7,
       "html": "{block_directions_p}"
     }
   },
@@ -31,7 +31,7 @@
       "is_sidebar": true,
       "sidebar_name": "Документы",
       "slug": "education",
-      "menu": 8,
+      "menu": 12,
       "html": ""
     }
   },
@@ -43,7 +43,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "deanery",
-      "menu": 4,
+      "menu": 8,
       "html": ""
     }
   },
@@ -55,7 +55,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "council",
-      "menu": 5,
+      "menu": 9,
       "html": ""
     }
   },
@@ -67,7 +67,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "museum",
-      "menu": 6,
+      "menu": 10,
       "html": ""
     }
   },
@@ -79,7 +79,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "tv-studio",
-      "menu": 7,
+      "menu": 11,
       "html": ""
     }
   },
@@ -91,7 +91,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "history",
-      "menu": 11,
+      "menu": 15,
       "html": "<div class=\"row\">\n<div class=\"col-lg-6 col-md-12 col-sm-12\">\n<div class=\"info-content-area\">\n<div class=\"section-title\">\n<h2>Факультет экономики, управления и информационных технологий</h2>\n</div>\n<p>Факультет экономики, управления и информационных технологий образован 1 сентября 2020. Сегодня ФЭУиИТ является самым диверсифицированным факультетом УГТУ, выпуская специалистов для самых различных сфер деятельности: экономика, менеджмент, информационные технологии, реклама и связи с общественностью, документоведение. Все направления подготовки прошли испытание временем и являются востребованными на современном рынке труда.</p><p>Руководство факультета стремится использовать этот потенциал, объединяя весь опыт выпускающих кафедр и дополнительно прививая всем студентам ФЭУиИТ навыки эффективного менеджмента, в том числе коммуникационного, уверенного пользования ПК, знания законов рыночной экономики, а также популяризируя здоровый образ жизни и бережное отношение к окружающей среде.</p><p>Благодаря эффекту синергии в процессе обучения формируется гармонично развитая личность, чьи компетенции соответствует требованиям современности. Студенты ФЭУиИТ, независимо от направления подготовки, успешно участвуют в конкурсах и фестивалях по своим и смежным направлениям, подтверждая высокий уровень качества образования в УГТУ.</p>\n</div>\n</div>\n<div class=\"col-lg-6 col-md-12 col-sm-12\">\n<div class=\"info-img\">\n<img src=\"{image_url_main}\" alt=\"\">\n</div>\n</div></div>"
     }
   },
@@ -103,7 +103,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "contacts",
-      "menu": 12,
+      "menu": 16,
       "html": "<div class=\"info-content-area\">\n<div class=\"section-title\">\n<h2>Контакты факультета экономики, управления и информационных технологий</h2>\n</div>\n<p class=\"highlight\">Приемная декана, канцелярия факультета</p>\n<p>Адрес ул. Сенюкова, 13, Ухта, Респ. Коми, 169300</p>\n<p>Аудитория 000</p>\n<p><b>Телефон +7(8216)738627</b></p>\n<p><b>Почта ugtu.econ@yandex.ru</b></p>\n<p class=\"highlight\">Официальные сообщества в социальных сетях </p>\n<p><a class=\"active\" href=\"https://vk.com/ineuiit\">Факультет экономики, управления и информационных технологий в VK </a></p>\n</div>"
     }
   },
@@ -115,7 +115,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "open_doors",
-      "menu": 21,
+      "menu": 25,
       "html": ""
     }
   },
@@ -127,7 +127,7 @@
       "is_sidebar": true,
       "sidebar_name": null,
       "slug": "admission",
-      "menu": 22,
+      "menu": 26,
       "html": "{block_directions_table}"
     }
   },
@@ -139,7 +139,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "undergraduate",
-      "menu": 23,
+      "menu": 27,
       "html": ""
     }
   },
@@ -151,7 +151,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "masters_degree",
-      "menu": 24,
+      "menu": 28,
       "html": ""
     }
   },
@@ -163,7 +163,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "postgraduate",
-      "menu": 25,
+      "menu": 29,
       "html": ""
     }
   },
@@ -175,7 +175,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "prices",
-      "menu": 26,
+      "menu": 30,
       "html": ""
     }
   },
@@ -187,7 +187,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "graduates",
-      "menu": 27,
+      "menu": 31,
       "html": ""
     }
   },
@@ -199,7 +199,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "selection_committee",
-      "menu": 30,
+      "menu": 34,
       "html": ""
     }
   },
@@ -211,7 +211,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "recovery",
-      "menu": 31,
+      "menu": 35,
       "html": ""
     }
   },
@@ -223,7 +223,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "foreign_applicants",
-      "menu": 32,
+      "menu": 36,
       "html": ""
     }
   },
@@ -235,7 +235,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "vacancies",
-      "menu": 35,
+      "menu": 39,
       "html": ""
     }
   },
@@ -247,7 +247,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "stipend",
-      "menu": 36,
+      "menu": 40,
       "html": ""
     }
   },
@@ -259,7 +259,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "material_support",
-      "menu": 37,
+      "menu": 42,
       "html": ""
     }
   },
@@ -271,7 +271,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "student_life",
-      "menu": 38,
+      "menu": 43,
       "html": ""
     }
   },
@@ -283,7 +283,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "library",
-      "menu": 39,
+      "menu": 44,
       "html": ""
     }
   },
@@ -295,7 +295,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "grants",
-      "menu": 41,
+      "menu": 46,
       "html": ""
     }
   },
@@ -307,7 +307,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "conferences",
-      "menu": 42,
+      "menu": 47,
       "html": ""
     }
   },
@@ -319,7 +319,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "science_postgraduate",
-      "menu": 43,
+      "menu": 48,
       "html": ""
     }
   },
@@ -331,7 +331,7 @@
       "is_sidebar": false,
       "sidebar_name": null,
       "slug": "international_cooperation",
-      "menu": 44,
+      "menu": 49,
       "html": ""
     }
   }
