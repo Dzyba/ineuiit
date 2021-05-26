@@ -16,5 +16,41 @@
       "slug": "on_page",
       "value": "3"
     }
+  },
+  {
+    "model": "main.setting",
+    "pk": 3,
+    "fields": {
+      "name": "SMTP отправлителя писем",
+      "slug": "sender_email_smtp",
+      "value": "smtp.yandex.ru"
+    }
+  },
+  {
+    "model": "main.setting",
+    "pk": 4,
+    "fields": {
+      "name": "Почта отправителя писем",
+      "slug": "sender_email",
+      "value": "dmitry.dzyba@yandex.ru"
+    }
+  },
+  {
+    "model": "main.setting",
+    "pk": 5,
+    "fields": {
+      "name": "Пароль почты отправителя писем",
+      "slug": "sender_email_password",
+      "value": ""
+    }
+  },
+  {
+    "model": "main.setting",
+    "pk": 6,
+    "fields": {
+      "name": "Почта получателя писем",
+      "slug": "reciever_email",
+      "value": "dmitry@dzyba.ru"
+    }
   }
 ]

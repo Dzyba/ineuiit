@@ -233,6 +233,8 @@ class Menu(Model):
             return '/news'
         elif self.kind == Menu.Kind.NEWS_ITEM:
             return '/news_item/'
+        elif self.kind == Menu.Kind.CERTIFICATES:
+            return '/certificates'
         elif self.kind == Menu.Kind.ANNOUNCEMENT_LIST:
             return '/annoncements'
         elif self.kind == Menu.Kind.ANNOUNCEMENT_ITEM:

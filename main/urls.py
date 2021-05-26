@@ -22,6 +22,8 @@ urlpatterns = [
     path('announcements/<int:page>', AnnouncementsView.as_view(), name='announcements-page'),
     path('announcement/<slug:slug>', AnnouncementsItemView.as_view(), name='announcements-item'),
 
+    path('certificates', CertificatesView.as_view(), name='certificates'),
+
     path('send_push', send_push),
 
     path('<slug:slug>', PageView.as_view(), name='page'),

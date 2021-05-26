@@ -7,7 +7,7 @@ import re
 class PageView(View):
     template_name = 'main/edupix/page.html'
 
-    def get(self, request, *srgs, **kwargs):
+    def get(self, request, *args, **kwargs):
         page = Page.objects.get(slug=kwargs['slug'])
         page_images = PageImage.objects.filter(page=page)
         html = page.html.format(
