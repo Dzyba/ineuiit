@@ -35,10 +35,11 @@ class CertificatesView(View):
                 name=context['form'].cleaned_data['name'],
                 group=context['form'].cleaned_data['group']
             )
-            body = '<p>Фамилия и имя: {name}</p><p>Группа: {group}</p><p>Необходимая справка: {certificate}</p>'.format(
+            body = '<p>Фамилия и имя: {name}</p><p>Email: {email}</p><p>Группа: {group}</p><p>Необходимая справка: {certificate}</p>'.format(
                 name=context['form'].cleaned_data['name'],
+                email=context['form'].cleaned_data['email'],
                 group=context['form'].cleaned_data['group'],
-                certificate=context['form'].cleaned_data['certificate']
+                certificate=context['form'].cleaned_data['certificate'].name
             )
             _mail(to, subject, body)
 

@@ -9,3 +9,4 @@ from .direction import *
 from .schedule import *
 from .news import *
 from .announcement import *
+from .certificate import *
