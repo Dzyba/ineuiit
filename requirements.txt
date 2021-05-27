@@ -1,5 +1,5 @@
 django
 Pillow
 openpyxl
-django-webpush
+git+git://github.com/safwanrahman/django-webpush.git#egg=django-webpush
 six

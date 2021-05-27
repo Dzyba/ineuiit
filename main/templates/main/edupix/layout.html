@@ -10,6 +10,9 @@
 
 	<title>{{ header }} | {{ sitename }}</title>
 
+	<!-- i18n -->
+	<script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
+
 	<!--Favicon-->
 	<link rel="icon" href="{% static "main/favicons/favicon.ico" %}" type="image/jpg" />
 	<!-- Bootstrap CSS -->
@@ -34,10 +37,14 @@
 
 	<!-- Main app style and script -->
 	<link href="{% static "main/css/style.css" %}" rel="stylesheet">
+
+	<!-- WebPush -->
+	{# webpush_header #}
+	<script id="webpush-js" type="text/javascript" src="/static/webpush/webpush.js"></script>
+	<meta name="service-worker-js" content="/webpush/service-worker.js">
+	<meta name="django-webpush-vapid-key" content="BK-wVWkb6DRRPPM9rBS7rWrMTaXJIaEVpVo1FgtIAKRh3p86s6rygWialaqnvk53PVIeC8YV3d9xnhUGsbam2nk">
 	<script src="{% static "main/js/script.js" %}"></script>
 
-	<script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
-	{% webpush_header %}
 </head>
 
 <body>

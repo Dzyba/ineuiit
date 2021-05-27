@@ -1,0 +1,1 @@
+// alert(gettext('Service workers are not supported in your browser.'));

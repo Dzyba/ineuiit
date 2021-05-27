@@ -1,3 +1,5 @@
+pip install git+git://github.com/safwanrahman/django-webpush.git#egg=django-webpush
+
 git clone https://github.com/Dzyba/ineuiit.git
 python manage.py migrate
 python manage.py runserver
