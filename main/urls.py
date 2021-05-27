@@ -13,6 +13,7 @@ urlpatterns = [
     path('direction/<slug:slug>', DirectionView.as_view(), name='direction'),
     path('schedule', ScheduleView.as_view(), name='schedules'),
     path('schedule/<slug:slug>', ScheduleView.as_view(), name='schedule'),
+    path('schedule/export/<slug:slug>', staff_member_required(AdminScheduleXLSXView.as_view()), name='schedule-export'),
 
     path('news', NewsView.as_view(), name='news'),
     path('news/<int:page>', NewsView.as_view(), name='news-page'),

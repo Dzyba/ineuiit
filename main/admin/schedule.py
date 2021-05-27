@@ -45,7 +45,7 @@ class ScheduleTimeSlotInline(admin.TabularInline):
 class ScheduleGroupAdmin(admin.ModelAdmin):
     change_list_template = 'admin/schedulegroup_change_list.html'
 
-    list_display = ('name', 'slug', 'message')
+    list_display = ('name', 'slug', 'message', 'export')
     list_display_links = ['name', 'slug']
 
     inlines = [ScheduleDayInline]
@@ -80,6 +80,11 @@ class ScheduleGroupAdmin(admin.ModelAdmin):
         push_form = AdminPushForm(initial={'path':request.get_full_path()})
         return render(request, 'admin/push.html', context={'form':push_form, 'groups': queryset})
     push.short_description = 'Послать уведомление'
+
+    def export(self, obj):
+        link = reverse('main:schedule-export', args=[obj.slug])
+        return mark_safe(f'<a class="button" href="{link}">Расписание .xlsx</a>')
+    export.short_description = 'Экспорт XLSX'
 
 @admin.register(ScheduleDay)
 class ScheduleDayAdmin(admin.ModelAdmin):

@@ -1,13 +1,79 @@
 from django.views.generic import View
 from django.shortcuts import redirect, render
 from django.templatetags.static import static
-from django.http import HttpResponseRedirect
-from main.models import Menu
+from django.http import HttpResponseRedirect, HttpResponse
+from main.models import Menu, ScheduleGroup, ScheduleDay, ScheduleTimeSlot
 from django.contrib import messages
 from django.urls import reverse
 from main.forms import AdminPushForm
 from webpush import send_group_notification
+from openpyxl import Workbook
+from openpyxl.styles import Font, PatternFill, Border
+from openpyxl.writer.excel import save_virtual_workbook
+from datetime import datetime
 
+
+class AdminScheduleXLSXView(View):
+    def get(self, request, *args, **kwargs):
+        group = ScheduleGroup.objects.get(slug=kwargs['slug'])
+        schedule = group.get_schedule_dict()
+
+        wb = Workbook()
+        ws = wb.active
+        ws.title = group.name
+        ws.column_dimensions['A'].width = 5
+        ws.column_dimensions['B'].width = 15
+        ws.column_dimensions['C'].width = 30
+        ws.column_dimensions['D'].width = 30
+
+        # Стили
+        success_fill = PatternFill(start_color='cfe3d7', end_color='cfe3d7', fill_type='solid')
+        info_fill = PatternFill(start_color='e2eff7', end_color='e2eff7', fill_type='solid')
+
+        # Данные
+        day_row = 1
+        for day in schedule:
+            ws.cell(row=day_row, column=1).value = day['day'].get_day_display()
+            ws.cell(row=day_row, column=1).font = Font(bold=True)
+
+            ws.cell(row=day_row, column=2).value = 'Время'
+            ws.cell(row=day_row, column=2).font = Font(bold=True)
+
+            ws.cell(row=day_row, column=3).value = 'ЧС'
+            ws.cell(row=day_row, column=3).font = Font(bold=True)
+            ws.cell(row=day_row, column=3).fill = success_fill
+
+            ws.cell(row=day_row, column=4).value = 'ЗН'
+            ws.cell(row=day_row, column=4).font = Font(bold=True)
+            ws.cell(row=day_row, column=4).fill = info_fill
+
+            timeslot_row = 1
+            for timeslot in day['timeslots']:
+                ws.cell(row=day_row+timeslot_row, column=2).value = timeslot.time
+                if timeslot.is_whole:
+                    ws.merge_cells(
+                        start_row=day_row + timeslot_row,
+                        start_column=3,
+                        end_row=day_row + timeslot_row,
+                        end_column=4
+                    )
+                    ws.cell(row=day_row + timeslot_row, column=3).value = timeslot.pair_numerator
+                else:
+                    if timeslot.pair_numerator:
+                        ws.cell(row=day_row + timeslot_row, column=3).value = timeslot.pair_numerator
+                    if timeslot.pair_denominator:
+                        ws.cell(row=day_row + timeslot_row, column=4).value = timeslot.pair_denominator
+                timeslot_row += 1
+            day_row += day['rowspan'] + 2
+
+        response = HttpResponse(
+            content=save_virtual_workbook(wb),
+            headers={
+                'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                'Content-Disposition': 'attachment; filename=schedule_%s_%s.xlsx' % (group.slug, datetime.now().strftime('%Y-%m-%d_%H_%M_%S'))
+            }
+        )
+        return response
 
 class AdminPushView(View):
     template_name = 'admin/push.html'
