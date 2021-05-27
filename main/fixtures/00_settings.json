@@ -32,7 +32,7 @@
     "fields": {
       "name": "Почта отправителя писем",
       "slug": "sender_email",
-      "value": "dmitry.dzyba@yandex.ru"
+      "value": "feuiit@yandex.ru"
     }
   },
   {
@@ -41,7 +41,7 @@
     "fields": {
       "name": "Пароль почты отправителя писем",
       "slug": "sender_email_password",
-      "value": ""
+      "value": "625339137E"
     }
   },
   {
@@ -50,7 +50,7 @@
     "fields": {
       "name": "Почта получателя писем",
       "slug": "reciever_email",
-      "value": "dmitry@dzyba.ru"
+      "value": "ugtu.econ@yandex.ru"
     }
   }
 ]
