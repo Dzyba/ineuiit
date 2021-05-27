@@ -55,7 +55,7 @@ class ScheduleGroupAdmin(admin.ModelAdmin):
     def get_urls(self):
         urls = super().get_urls()
         custom_urls = [
-            path('admin/main/schedulegroup/push/<int:id>', staff_member_required(AdminPushView.as_view()), name='admin-push'),
+            path('push', staff_member_required(AdminPushView.as_view()), name='push'),
         ]
         return custom_urls + urls
 

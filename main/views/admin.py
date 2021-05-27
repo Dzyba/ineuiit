@@ -1,46 +1,49 @@
 from django.views.generic import View
 from django.shortcuts import redirect, render
+from django.templatetags.static import static
 from django.http import HttpResponseRedirect
 from main.models import Menu
 from django.contrib import messages
 from django.urls import reverse
 from main.forms import AdminPushForm
-from main.models import ScheduleGroup
+from webpush import send_group_notification
+
 
 class AdminPushView(View):
-    template_name = 'admin/add_to_task.html'
+    template_name = 'admin/push.html'
 
     def _get_context(self, request, *args, **kwargs):
-        ref = request.META.get('HTTP_REFERER', '')
-        context = {
-            'form': AdminPushForm(initial={'path':ref}),
-            'groups':ScheduleGroup.objects.filter(id=kwargs['id'])
-        }
+        context = {}
         return context
 
     def get(self, request, *args, **kwargs):
         context = self._get_context(request, *args, **kwargs)
+
+        ref = request.META.get('HTTP_REFERER', '')
+        context['form'] = AdminPushForm(initial={'path': ref})
+
         return render(request, self.template_name, context)
 
-    # def post(self, request, *args, **kwargs):
-    #     print('------------_>')
-    #     # if 'apply' in request.POST:
-    #     #     task_form = PushForm(request.POST)
-    #     #     if task_form.is_valid():
-    #     #         task = task_form.cleaned_data['task']
-    #     #         if task == None:
-    #     #             task = Task.objects.create()
-    #     #         Placement.objects.filter(id=kwargs['id']).update(task=task)
-    #     #
-    #     #         messages.add_message(
-    #     #             request,
-    #     #             messages.INFO,
-    #     #             'Заявка добавлена в задание',
-    #     #             extra_tags='',
-    #     #             fail_silently=False
-    #     #         )
-    #     #         # return HttpResponseRedirect(task_form.cleaned_data['path'])
-    #     #         return HttpResponseRedirect(reverse('admin:main_task_change', args=[task.id]))
+    def post(self, request, *args, **kwargs):
+        if 'apply' in request.POST:
+            push_form = AdminPushForm(request.POST)
+            if push_form.is_valid():
+                header = push_form.cleaned_data['header']
+                text = push_form.cleaned_data['text']
+
+                payload = {
+                    'head': header,
+                    'body': text,
+                    'icon': static('main/img/logo-square.png'),
+                    'url': reverse('main:schedules')
+                }
+                send_group_notification(group_name='all', payload=payload, ttl=1000)
+
+                messages.add_message(request, messages.INFO, 'Уведомление отправлено', extra_tags='', fail_silently=False)
+                return HttpResponseRedirect(reverse('admin:main_schedulegroup_changelist'))
+
+        push_form = AdminPushForm(initial={'path': request.get_full_path()})
+        return render(request, 'admin/push.html', context={'form': push_form})
 
 
 # Вспомогательные функции сообщений и редиректа
