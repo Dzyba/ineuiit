@@ -36,3 +36,12 @@ div.bg-success-message {
 .single-blog-item.small .blog-content a {
     font-size: 16px!important;
 }
+.breadcroumb-area {
+    padding-bottom: 30px;
+}
+.programme-list {
+    padding-top: 10px!important;
+}
+.section-padding {
+    padding: 60px 0!important;
+}
