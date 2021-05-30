@@ -13,6 +13,6 @@ class StaffView(View):
         context['sitename'] = Setting.get('sitename')
         context['breadcrumbs'] = staff.get_breadcrumbs_dict(menu)
         context['menus'] = Menu.get_dict()
-        context['staff'] = staff
+        context['person'] = staff
         context['html'] = staff.html
         return render(request, self.template_name, context)

@@ -4,12 +4,9 @@
 {% for person in staff %}
 {% if person.category == "leader" %}
 <div class="row">
-    <div class="col-lg-6">
-        <div class="single-programme-bg">
-            <img src="{{ person.image.url }}" alt="">
-        </div>
+    <div class="col-lg-12">
+        <a href="{{ person.url }}">{{ person.name }}, {{ person.position }}</a>
     </div>
-    <div class="content"><a href="{{ person.url }}">{{ person.name }}, {{ person.position }}</a></div>
 </div>
 {% endif %}
 {% endfor %}
@@ -17,12 +14,9 @@
 {% for person in staff %}
 {% if person.category != "leader" %}
 <div class="row">
-    <div class="col-lg-6">
-        <div class="single-programme-bg">
-            <img src="{{ person.image.url }}" alt="">
-        </div>
+    <div class="col-lg-12">
+        <a href="{{ person.url }}">{{ person.name }}, {{ person.position }}</a>
     </div>
-    <div class="content"><a href="{{ person.url }}">{{ person.name }}, {{ person.position }}</a></div>
 </div>
 <br>
 {% endif %}

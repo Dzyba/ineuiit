@@ -4,7 +4,12 @@
 <div id="programme-page" class="programme-details-section section-padding">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-6">
+                <div class="single-programme-bg">
+                    <img src="{{ person.image.url }}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6">
                 {{ html | safe }}
             </div>
         </div>
