@@ -44,7 +44,7 @@
       "sidebar_name": null,
       "slug": "deanery",
       "menu": 8,
-      "html": ""
+      "html": "<h5>Дирекция факультета экономики, управления и информационных технологий</h5>{block_staff_table_deanery}"
     }
   },
   {
@@ -56,7 +56,7 @@
       "sidebar_name": null,
       "slug": "council",
       "menu": 9,
-      "html": ""
+      "html": "<h5>Учёный совет</h5>{block_staff_table_council}"
     }
   },
   {

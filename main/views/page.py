@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.views import View
 from main.models import Setting, Menu, Page, PageImage
 from .blocks import Blocks
-import re
+from .staff import Staff
+
 
 class PageView(View):
     template_name = 'main/edupix/page.html'
@@ -13,6 +14,8 @@ class PageView(View):
         html = page.html.format(
             block_directions_p=Blocks.block_directions_p(),
             block_directions_table=Blocks.block_directions_table(),
+            block_staff_table_deanery=Blocks.block_staff_table([Staff.Category.DEANERY]),
+            block_staff_table_council=Blocks.block_staff_table([Staff.Category.COUNCIL]),
             **{'image_url_%s' % (page_image.slug):page_image.image.url for page_image in page_images }
         )
 

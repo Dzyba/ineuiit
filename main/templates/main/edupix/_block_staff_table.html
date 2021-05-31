@@ -1,0 +1,13 @@
+{% load nbsp %}
+<table class="table borderless mt-3">
+    <tbody>
+        {% for person in staff %}
+        <tr>
+            <td>{{ person.position }}</td>
+            <td>{{ person.name }}</td>
+            <td><img src="{{ person.image.url }}" width="200"></td>
+            <td>{{ person.html|safe }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

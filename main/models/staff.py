@@ -9,6 +9,8 @@ class Staff(Model):
     class Category(TextChoices):
         STAFF = 'staff', 'Штатный'
         LEADER = 'leader', 'Руководитель'
+        DEANERY = 'deanery', 'Деканат'
+        COUNCIL = 'council', 'Учёный совет'
 
         @staticmethod
         def get_list():

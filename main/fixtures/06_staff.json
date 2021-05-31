@@ -128,5 +128,44 @@
       "image": "main/images/staff/images/andruhova.jpg",
       "html": ""
     }
+  },
+  {
+    "model": "main.staff",
+    "pk": 11,
+    "fields": {
+      "name": "Крестовских Татьяна Сергеевна",
+      "cathedra": null,
+      "category": "deanery",
+      "position": "декан ФЭУиИТ",
+      "slug": "krestovskih",
+      "image": "main/images/staff/images/krestovskih.jpg",
+      "html": "тел. 738-627<br><br>каб. 319 Л"
+    }
+  },
+  {
+    "model": "main.staff",
+    "pk": 12,
+    "fields": {
+      "name": "Жникина Ирина Валерьевна",
+      "cathedra": null,
+      "category": "deanery",
+      "position": "заместитель декана ФЭУиИТ",
+      "slug": "zhnikina",
+      "image": "main/images/staff/images/zhnikina.jpg",
+      "html": "<a href=\"mailto:izhnikina@ugtu.net\">izhnikina@ugtu.net</a><br><br>тел. 774-568<br><br>каб. 315 Л"
+    }
+  },
+  {
+    "model": "main.staff",
+    "pk": 13,
+    "fields": {
+      "name": "Родионова Татьяна Петровна",
+      "cathedra": null,
+      "category": "deanery",
+      "position": "старший диспетчер",
+      "slug": "radionova",
+      "image": "main/images/staff/images/radionova.jpg",
+      "html": "<a href=\"mailto:trodionova@ugtu.net\">trodionova@ugtu.net</a><br><br>тел. 700-224<br><br>каб. 315 Л"
+    }
   }
 ]
