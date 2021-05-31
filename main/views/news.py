@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from main.models import Setting, Menu, News
+from .index import css_theme
 
 class NewsView(View):
     template_name = 'main/edupix/news.html'
@@ -12,6 +13,7 @@ class NewsView(View):
         on_page = Setting.get('on_page')
         context['header'] = 'Новости'
         context['sitename'] = Setting.get('sitename')
+        context['theme'] = css_theme(request)
         context['breadcrumbs'] = menu.get_breadcrumbs_dict()
         context['menus'] = Menu.get_dict()
         context['news'] = News.objects.filter().order_by('-datetime')[(page-1)*on_page:page*on_page]
@@ -38,6 +40,7 @@ class NewsItemView(View):
         menu = Menu.objects.filter(kind=Menu.Kind.NEWS_ITEM).first()
         context['header'] = news_item.name
         context['sitename'] = Setting.get('sitename')
+        context['theme'] = css_theme(request)
         context['breadcrumbs'] = menu.get_breadcrumbs_dict()
         context['menus'] = Menu.get_dict()
         context['news_item'] = news_item

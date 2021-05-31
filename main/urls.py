@@ -25,6 +25,8 @@ urlpatterns = [
 
     path('certificates', CertificatesView.as_view(), name='certificates'),
 
+    path('theme/<slug:slug>', ThemeView.as_view(), name='theme'),
+
     path('send_push', send_push),
 
     path('<slug:slug>', PageView.as_view(), name='page'),

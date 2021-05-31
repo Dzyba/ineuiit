@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="logo">
-                    <a class="navbar-brand" href="/"><img src="{% static "main/img/logo.png" %}" alt=""></a>
+                    <a class="navbar-brand" href="/"><img src="{% if not theme or theme == 'common' %}{% static "main/img/logo.png" %}{% else %}{% static "main/img/contrast-logo.png" %}{% endif %}" alt=""></a>
                 </div>
             </div>
 

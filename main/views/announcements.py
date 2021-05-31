@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views import View
 from main.models import Setting, Menu, Announcement
+from .index import css_theme
+
 
 class AnnouncementsView(View):
     template_name = 'main/edupix/announcements.html'
@@ -12,6 +14,7 @@ class AnnouncementsView(View):
         on_page = Setting.get('on_page')
         context['header'] = 'Анонсы'
         context['sitename'] = Setting.get('sitename')
+        context['theme'] = css_theme(request)
         context['breadcrumbs'] = menu.get_breadcrumbs_dict()
         context['menus'] = Menu.get_dict()
         context['announcements'] = Announcement.objects.filter().order_by('-datetime')[(page-1)*on_page:page*on_page]
@@ -38,6 +41,7 @@ class AnnouncementsItemView(View):
         menu = Menu.objects.filter(kind=Menu.Kind.ANNOUNCEMENT_ITEM).first()
         context['header'] = announcement.name
         context['sitename'] = Setting.get('sitename')
+        context['theme'] = css_theme(request)
         context['breadcrumbs'] = menu.get_breadcrumbs_dict()
         context['menus'] = Menu.get_dict()
         context['announcement'] = announcement

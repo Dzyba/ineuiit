@@ -8,11 +8,19 @@
 					<i class="las la-envelope"></i> ugtu.econ@yandex.ru
 				</div>
 			</div>
-<!--			<div class="col-lg-6 col-md-12 col-sm-12 text-right">-->
-<!--				<div class="site-info">-->
-<!--					Opening Hours: Monday-Saturday - 08.00 a.m. to 5.00 p.m.-->
-<!--				</div>-->
-<!--			</div>-->
+			<div class="col-lg-6 col-md-12 col-sm-12 text-right">
+				<div class="site-info">
+					{% if theme %}
+						{% if theme == 'common' %}
+					<a href="{% url 'main:theme' 'contrast' %}">Версия для слабовидящих</a>
+						{% else %}
+					<a href="{% url 'main:theme' 'common' %}">Обычная версия</a>
+						{% endif %}
+					{% else %}
+					<a href="{% url 'main:theme' 'contrast' %}">Версия для слабовидящих</a>
+					{% endif %}
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views import View
 from main.models import Setting, Menu, Direction
+from .index import css_theme
+
 
 class DirectionView(View):
     template_name = 'main/edupix/direction.html'
@@ -11,6 +13,7 @@ class DirectionView(View):
         menu = Menu.objects.filter(kind=Menu.Kind.DIRECTION_ITEM).first()
         context['header'] = direction.name
         context['sitename'] = Setting.get('sitename')
+        context['theme'] = css_theme(request)
         context['breadcrumbs'] = direction.get_breadcrumbs_dict(menu)
         context['menus'] = Menu.get_dict()
         context['direction'] = direction

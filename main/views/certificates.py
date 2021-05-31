@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from main.models import Setting, Menu
 from main.forms import CertificateOrderForm
+from .index import css_theme
 
 import smtplib
 from email.mime.text import MIMEText
@@ -15,6 +16,7 @@ class CertificatesView(View):
         context['header'] = 'Заказ справок'
         context['breadcrumbs'] = Menu.objects.filter(kind=Menu.Kind.CERTIFICATES).first().get_breadcrumbs_dict()
         context['sitename'] = Setting.get('sitename')
+        context['theme'] = css_theme(request)
         context['menus'] = Menu.get_dict()
 
         return context

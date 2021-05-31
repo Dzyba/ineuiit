@@ -2,6 +2,13 @@ from django.shortcuts import render
 from django.views import View
 from main.models import Setting, Menu, Page, News, Announcement
 
+def css_theme(request):
+    try:
+        theme = request.session['theme']
+    except:
+        return 'common'
+    return 'contrast' if theme == 'contrast' else 'common'
+
 class IndexView(View):
     template_name = 'main/edupix/index.html'
 
@@ -13,6 +20,7 @@ class IndexView(View):
         # context['page'] = page
 
         context['sitename'] = Setting.get('sitename')
+        context['theme'] = css_theme(request)
         context['menus'] = Menu.get_dict()
         context['slider'] = News.objects.filter(is_slider=True).order_by('-datetime')[:3]
         context['news'] = News.objects.filter().order_by('-datetime')[:3]

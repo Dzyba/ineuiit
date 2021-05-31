@@ -11,3 +11,4 @@ from .push import *
 from .news import *
 from .announcements import *
 from .certificates import *
+from .theme import *

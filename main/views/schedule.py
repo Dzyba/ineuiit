@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from main.models import Setting, Menu, ScheduleGroup, ScheduleDay, ScheduleTimeSlot
 from django.utils import translation
+from .index import css_theme
 
 
 class ScheduleView(View):
@@ -31,5 +32,6 @@ class ScheduleView(View):
         menu = Menu.objects.filter(kind=Menu.Kind.CATHEDRA_ITEM).first()
 
         context['sitename'] = Setting.get('sitename')
+        context['theme'] = css_theme(request)
         context['menus'] = Menu.get_dict()
         return render(request, self.template_name, context)

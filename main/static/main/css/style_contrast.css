@@ -48,3 +48,18 @@ div.bg-success-message {
 .site-info a{
     color: #ffffff!important;
 }
+.navbar-toggler-icon {
+    background-color: #000000!important;
+}
+.main-menu .sub-menu li a {
+    color: #000000!important;
+}
+.table td, .table th {
+    border-top: 1px solid #000000!important;
+}
+body {
+    color: #000000!important;
+}
+.programme-list h5 {
+	color: #ffffff!important;
+}

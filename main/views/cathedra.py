@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views import View
 from main.models import Setting, Menu, Cathedra, InnerLink, Staff
+from .index import css_theme
+
 
 class CathedraView(View):
     template_name = 'main/edupix/cathedra.html'
@@ -14,6 +16,7 @@ class CathedraView(View):
 
         context['header'] = cathedra.name
         context['sitename'] = Setting.get('sitename')
+        context['theme'] = css_theme(request)
         context['breadcrumbs'] = menu.get_breadcrumbs_dict()
         context['menus'] = Menu.get_dict()
         context['cathedra'] = cathedra

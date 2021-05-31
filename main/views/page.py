@@ -3,6 +3,7 @@ from django.views import View
 from main.models import Setting, Menu, Page, PageImage
 from .blocks import Blocks
 from .staff import Staff
+from .index import css_theme
 
 
 class PageView(View):
@@ -23,6 +24,7 @@ class PageView(View):
         context['header'] = page.name
         context['breadcrumbs'] = page.menu.get_breadcrumbs_dict()
         context['sitename'] = Setting.get('sitename')
+        context['theme'] = css_theme(request)
         context['menus'] = Menu.get_dict()
         context['page'] = page
         context['html'] = html

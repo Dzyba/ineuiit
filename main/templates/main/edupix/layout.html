@@ -28,21 +28,25 @@
 	<!-- Owl Carousel CSS -->
 	<link href="{% static "main/edupix/css/owl.carousel.css" %}" rel="stylesheet">
 	<!-- Style CSS -->
+	{% if not theme or theme == 'common' %}
 	<link href="{% static "main/edupix/css/style.css" %}" rel="stylesheet">
+	<link href="{% static "main/css/style.css" %}" rel="stylesheet">
+	{% else %}
+	<link href="{% static "main/edupix/css/style_contrast.css" %}" rel="stylesheet">
+	<link href="{% static "main/css/style_contrast.css" %}" rel="stylesheet">
+	{% endif %}
 	<!-- Responsive CSS -->
 	<link href="{% static "main/edupix/css/responsive.css" %}" rel="stylesheet">
 
 	<!-- jquery -->
 	<script src="{% static "main/edupix/js/jquery-1.12.4.min.js" %}"></script>
 
-	<!-- Main app style and script -->
-	<link href="{% static "main/css/style.css" %}" rel="stylesheet">
 
 	<!-- WebPush -->
-	{# webpush_header #}
-	<script id="webpush-js" type="text/javascript" src="/static/webpush/webpush.js"></script>
-	<meta name="service-worker-js" content="/webpush/service-worker.js">
-	<meta name="django-webpush-vapid-key" content="BK-wVWkb6DRRPPM9rBS7rWrMTaXJIaEVpVo1FgtIAKRh3p86s6rygWialaqnvk53PVIeC8YV3d9xnhUGsbam2nk">
+	{% webpush_header %}
+<!--	<script id="webpush-js" type="text/javascript" src="/static/webpush/webpush.js"></script>-->
+<!--	<meta name="service-worker-js" content="/webpush/service-worker.js">-->
+<!--	<meta name="django-webpush-vapid-key" content="BK-wVWkb6DRRPPM9rBS7rWrMTaXJIaEVpVo1FgtIAKRh3p86s6rygWialaqnvk53PVIeC8YV3d9xnhUGsbam2nk">-->
 	<script src="{% static "main/js/script.js" %}"></script>
 
 </head>
