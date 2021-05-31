@@ -1,1 +1,1 @@
-alert(gettext('Service workers are not supported in your browser.'));
+// alert(gettext('Service workers are not supported in your browser.'));

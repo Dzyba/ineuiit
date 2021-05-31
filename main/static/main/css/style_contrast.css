@@ -63,3 +63,6 @@ body {
 .programme-list h5 {
 	color: #ffffff!important;
 }
+a:hover {
+    color: #000000!important;
+}
