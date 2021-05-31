@@ -1139,9 +1139,9 @@ textarea::placeholder {
 	margin-right: 40px;
 }
 
-.main-menu li.nav-item:last-child {
+/*.main-menu li.nav-item:last-child {
 	margin-right: 0;
-}
+}*/
 
 .main-menu .navbar-nav .nav-link {
 	text-transform: uppercase;
