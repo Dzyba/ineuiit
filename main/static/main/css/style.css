@@ -48,3 +48,16 @@ div.bg-success-message {
 .site-info a{
     color: #ffffff!important;
 }
+h5>button {
+  border: none;
+  color: #000000;
+  background-color: inherit;
+  padding: 10px 0px 10px 0px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-block;
+}
+h5>button:hover {
+    color: #007bff;
+}
