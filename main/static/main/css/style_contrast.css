@@ -66,3 +66,16 @@ body {
 a:hover {
     color: #000000!important;
 }
+h5>button {
+  border: none;
+  color: #000000;
+  background-color: inherit;
+  padding: 10px 10px 10px 10px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-block;
+}
+h5>button:hover {
+    background-color: #eeeeee;
+}
