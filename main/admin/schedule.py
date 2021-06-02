@@ -110,7 +110,7 @@ class ScheduleTimeSlotAdmin(admin.ModelAdmin):
         if not obj.day_id:
             return '-'
         link = reverse('admin:main_scheduleday_change', args=[obj.day_id])
-        return mark_safe(f'<a href="{link}">{escape(obj.day.name)}</a>')
+        return mark_safe(f'<a href="{link}">{escape(obj.day.get_day_display())}</a>')
     day_link.short_description = 'Учебный день'
     day_link.admin_order_field = 'day'
 
